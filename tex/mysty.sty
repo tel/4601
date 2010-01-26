@@ -11,6 +11,7 @@
 \usepackage[comma]{natbib}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{lastpage}
 \usepackage[left=1in,top=3.5cm,bottom=2cm]{geometry}
 
 \setcitestyle{super,open=,close=}
@@ -20,7 +21,7 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\thepage}
+\fancyfoot[R]{Page \thepage{} of \pageref{LastPage}}
 
 \newcommand{\result}[1]{
   \vspace{1em}
