@@ -1,0 +1,94 @@
+\ProvidesPackage{mysty}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{tikz} 
+\usetikzlibrary{matrix,arrows} 
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{siunitx}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage[comma]{natbib}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[left=1in,top=3.5cm,bottom=2cm]{geometry}
+
+\setcitestyle{super,open=,close=}
+
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\thepage}
+
+\newcommand{\result}[1]{
+  \vspace{1em}
+  \noindent\textit{\large{#1}}
+  \vspace{.25em}
+}
+\def\mathclap#1{\text{\hbox to 0pt{\hss$\mathsurround=0pt#1$\hss}}}
+
+\newcommand{\figcaption}[1]{\caption{\small{#1}}}
+
+\newcommand{\spacedot}{\ensuremath{\thinspace\cdot\thinspace}}
+
+\newcommand{\cn}{\ensuremath{^{\text{[CITATION NEEDED]}}}}
+
+\newcommand{\ul}{\ensuremath{\mathrm{\mu}}l}
+
+\newcommand{\ac}[1]{\textsc{#1}}
+
+\DeclareMathOperator{\norm}{\mathcal{N}}
+
+\newcommand{\maketitlepage}[2]{
+  \onehalfspacing
+  \frenchspacing
+
+  \begin{titlepage}
+    
+    \begin{flushright}
+      
+      \ \\[.5in]
+      
+      \textbf{TA:} Garth Thompson \\
+      \textbf{Sponsor:} National Instruments
+      
+      \ \\[.5in]
+      
+      \textit{BMED 4601 --- T83 --- \today}
+      
+      \ \\[.1in]
+      
+      {\huge Enabling Advanced Ophthalmological Research via Precision 3D Micrometry
+      }\\[.5in]
+      
+      \begin{minipage}{0.8\textwidth}
+        \begin{flushright}
+          \large \textbf{#1}
+        \end{flushright}
+      \end{minipage}
+      
+      \vfill
+      
+    \end{flushright}
+    
+    \begin{flushleft}
+      Joseph Abrahamson \\
+      Sanjay Challa \\ 
+      Shuyen Liu \\ 
+      Ginger Tsai \\[.1in]
+
+      (\textit{primary author is #2}) \\[.4in]
+      
+      \textbf{Advisor:} Dr. John M. Nickerson, Ph. D. \\
+      Emory School of Medicine, Dept. of Ophthalmology \\
+      John.Nickerson@emory.edu \\
+      1365B Clifton Road NE, Room B5602 \\
+      404-778-4411
+    \end{flushleft}
+    
+  \end{titlepage}
+
+  \newpage
+}
