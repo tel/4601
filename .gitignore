@@ -6,3 +6,6 @@
 *.toc
 */auto/*
 *.pdf
+*.bbl
+*.blg
+
