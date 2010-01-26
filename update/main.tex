@@ -11,13 +11,20 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 \newpage
-\section{Executive Summary}
+\listoftables
+\listoffigures
+\newpage
+
+
+\section*{Executive Summary}
 \label{sec:exec-summary}
 Extremely precise measuremnts of the mouse eye are a key aspect of current ophthalmological research, which uses genetic mice models to study the role of genetics in diseases such as myopia. Due to the small size of the mouse eye, current technology is incapble of providing the requried resolution with ease and within a rapid timeframe. A device capable of 3D imaging with high precision is thus needed to facilitate progress of such ophthalmological research. 
 
 The focus of work this semester invovles iterative functional prototyping, drawing from alternative design solutions explored during the previous semester. In this document, a preliminary approach is outlined for the assembly of an initial functional prototype. If a prototype fails to meet the standards outlined in the design specifications, the team will focus on making improvements to allow the next iteration of the functional prototype to succeed where the previous version failed. 
 
 Lastly, this document outlines the design team's proposed plan to complete accompanying documentation including an FDA Compliance Report, Societal Impact Report, and Protocol for Use Document. The document also makes note of the frequency and extent of communication between the design group and the client, Dr. Nickerson.
+
+\newpage
 
 \section{Project Description}
 \label{sec:project-description}
@@ -98,11 +105,11 @@ purposes, in the capacity of a measurement device.
 A complete list of engineering design specifications are shown in Table \ref{tab:eds}.
 
 \subsection{Functional and Customer Requirements}
-The customer requirements can be split into three categories: needs, wants, and desires. "Needs" are the functional requirements and constitute essential aspects of the device required for proper use, while "wants" are non‐essential aspects of the device that would facilitate proper use. "Desires" are aspects of the device which, if satisfied, would please the customer beyond proper functioning.  
+The customer requirements can be split into three categories: needs, wants, and desires. ``Needs'' are the functional requirements and constitute essential aspects of the device required for proper use, while ``wants'' are non‐essential aspects of the device that would facilitate proper use. ``Desires'' are aspects of the device which, if satisfied, would please the customer beyond proper functioning.  
 
 The most significant feature that the device needs to have is the ability to take automated measurements of ocular dimensions with a resolution of 0.5 diopters, equivalent to a resolution of 2 $\mu$m for mouse eyes. The critical active sensing components of the device needs to have a resolution below 2 $\mu$m in order to ensure precise measurements at a resolution of 2 $\mu$m. The device also needs to be able to convert raw measurements into a 3D interactive reconstruction of the eyeball on a computer interface. As requested by the client, the device needs to be able to take a complete set of measurements in under 3 minutes in order to prevent the eye from drying out and distorting the results. Also, the device needs to be able to fit onto a typical laboratory bench, into a space of 1mx1mx1m, but does not need to maintain a sterile field.      
 
-One "want" of the client is that the device has mobility; that is, it can be lifted and carried from one lab bench to another by an average healthy researcher from age 20‐50. Therefore, the device should be lightweight; the weight of the device should not exceed 40 lbs (18 kg)\cite{gross03}. To fulfill the mobility want, the size of the device must also be small. As specified earlier, the device must be able to fit in a space of 1mx1mx1m. The device should also not be cumbersome; the design of the device should be simple and manageable with few external components.
+One ``want'' of the client is that the device has mobility; that is, it can be lifted and carried from one lab bench to another by an average healthy researcher from age 20‐50. Therefore, the device should be lightweight; the weight of the device should not exceed 40 lbs (18 kg)\cite{gross03}. To fulfill the mobility want, the size of the device must also be small. As specified earlier, the device must be able to fit in a space of 1mx1mx1m. The device should also not be cumbersome; the design of the device should be simple and manageable with few external components.
 
 The customer also wants the device to have a simple user interface with which measurements taken by the device may be transferred onto a connected computer with just 1 click of the mouse. The device should  be reusable for up to 4 years given constant daily use of the device at least 5 times a day, with 1 hour per use\cite{keyence01}. The device should not require any maintenance unless one of the components stops functioning\cite{keyence01}. In addition, the device should cause little to no vibration during operation such that the accuracy of measurements is unaffected. Currently, the amount of vibration an eyeball can experience without affecting measurement accuracy is untested. Finally, the client desires that the device be aesthetically pleasing, and not make much noise during operation. The noise produced by the device should not exceed the level of 80 dB, the loudness of the average car\cite{truax09}.  
 
@@ -127,11 +134,6 @@ Each functional prototype will be evaluated primarily by its ability to meet the
 
 \section{ Project Plan}
 The semester project plan is outlined in the form of a Gantt Chart in Figure \ref{fig:gantt}. Additionally, the group will continue biweekly email reports to the client, and meet in person with the client on an as-needed basis. 
-
-\newpage
-\bibliographystyle{unsrt}
-\bibliography{../tex/bibl}
-\newpage
 
 \section{Addendums}
 \label{sec:addendums}
@@ -225,5 +227,9 @@ The semester project plan is outlined in the form of a Gantt Chart in Figure \re
   \label{fig:schematic1}
 \end{figure}
 
+\newpage
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{unsrt}
+\bibliography{../tex/bibl}
 
 \end{document}
