@@ -8,7 +8,7 @@
 
 \maketitlepage{Project Update}{Sanjay Challa}
 
-%\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{2}
 \tableofcontents
 \newpage
 
@@ -122,6 +122,35 @@ animal. It is not used for diagnosis, cure, mitigation, treatment, or
 prevention of disease. Moreover, the device is not even intended for
 sterile use. The device is instead intended strictly for research
 purposes.
+
+\section{Engineering Design Specifications}
+\subsection{Functional and Customer Requirements}
+The customer requirements can be split up into three categories: needs, wants, and desires. "Needs" are also known as functional requirements and are defined as essential aspects of the device required for proper use, while "wants" are non‐essential aspects of the device that would facilitate proper use. "Desires" are aspects of the device that are unrelated to use but which, if satisfied, would please the customer in addition to proper functioning of the device.  
+
+The most significant aspect that the device needs to have is the ability to take automated measurements of ocular dimensions at a resolution of 0.5 diopters, which is equivalent to 2 $\mu$m for mouse eyes. The critical active sensing components of the device need to have a resolution below 2 $\mu$m in order to ensure precise measurements at a resolution of 2 $\mu$m. Upon connection to a computer, the device also needs to be able to convert measurements into a 3D interactive reconstruction of the eyeball. As requested by Dr. Nickerson, the device needs to be able to take a complete set of measurements in under 3 minutes in order to prevent the eye from drying out. Also, the device needs to be able to fit onto a typical laboratory bench, into a space of 1mx1mx1m, but it does not need to maintain a sterile field.      
+The primary "want" of the client is that the device has high mobility; that is, it can be easily lifted and carried from one lab bench to another by an average healthy researcher from age 20‐50. Therefore, the device should be lightweight; the weight of the device should not exceed 40 lbs (18 kg).16 To fulfill the mobility requirement, the size of the device must also be small. As specified earlier, the device must be able to fit in a space of 1mx1mx1m. The device should also not be cumbersome; the design of the device should be simple and manageable with few external components.
+
+The customer also wants the device to have a simple user interface with which measurements taken by the device may be transferred onto a connected computer with just 1 click of the mouse. The device should also be reusable for up to 4 years given constant daily use of the device at least 5 times a day, with 1 hour per use.17 The device should not require any maintenance unless one of the components stops functioning.17 In addition, the device should cause little to no vibration during operation such that the accuracy of measurements is unaffected. Currently, the amount of vibration an eyeball can experience without affecting measurement accuracy is untested. Finally, the desires of the customer are that the device be aesthetically pleasing. The device should also not make very much noise during performance. The noise produced by the device should not exceed the level of 80 dB, the loudness of the average car.18  
+
+\subsection{Engineering Characteristics}
+The device needs to be robust enough to withstand the stresses of everyday lab use. Robustness is defined as the ability to withstand rough accidental movement such as being dropped from the top of a lab bench, typically at a height of 3 feet, or shoved sideways on the bench surface. The device should also be able to hold the weight of small objects no heavier than 5 pounds, such as lab notebooks and pens. The device needs to be able to function in a wide range of temperature typically found in the laboratory, typically 22±5 oC, and as specified earlier, it needs to fit comfortably onto a lab bench within a space of 1mx1mx1m. The non‐electrical components of the device should be inert and should not be affected by small quantities (less than 1 mL) of minimally hazardous solutions such as PBS, 12 which is typically used to keep the eye moist. Electrically, the device needs to function with 120V 60Hz AC, the standard power supply of the United States.
+
+\subsection{Constraints}
+The device needs to be built using the Keyence LS‐7000 series LED Micrometer and should be able to perform in conjunction with a computer. The controlling computer should have at least 2GB RAM as well as a CPU and graphics card capable of 3D image processing.
+
+
+\section{Prototype Discussion}
+\subsection{Approach to Prototype Design}
+By analyzing the EDS, it can be concluded that the prototype will have to perform two main tasks: produce rotational motion and linear translational motion. These motions will change the relative positions between the object (eyeball) and the measuring device (laser micrometer). Thus there are the choices of moving eyeball only, moving micrometer only, rotating eyeball and translating micrometer, or rotating micrometer and translating eyeball. Since moment of inertia greatly affects the rotational energy of a rotating system at a given angular speed, it would be preferable to rotate a system with low moment of inertia. And because moment of inertia is determined by the mass and mass distribution of the system, it is preferable to rotate the eyeball which is lighter and smaller than the micrometer. Because moving a rotating system can cause instability of the system, it would be reasonable to linearly translate the micrometers. 
+
+The design then will consist of: a tweezers which holds the eyeball at its optic nerve, a controlled motor which can hold the tweezers with a designed connector, support stage for the micrometer, linear actuator that controls the movement of the micrometers, and a structural frame work that holds every component in place. The motor will be mounted on the ceiling of the frame work. The tweezers holding the eyeball will be connected to the shaft of the motor. The linear actuator will be mounted on the floor of the frame work, supporting the stage with the micrometer set. The above components will line up in such way that the eyeball will move in and out of the sheet of measuring plane. All the wiring will be fixed to the wall of the frame and exit the frame work to connect to the power supply, the control system and the computer.
+
+\subsection{Planned Methods of Construction}
+Tweezers, motors, and micrometer are readily available for assembly. Linear actuator and micrometer mount (which would be a microscope stage) are commercially available and will be purchased. The listed components will be made via CAD programs and 3D printing: connector piece between motor and tweezers; and pieces of structural framework. The prototype will be manually assembled with screws connecting the parts.
+
+\section{Semester Project Plan}
+
+\section{Tables and Figures}
 
 
 \newpage
