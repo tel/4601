@@ -1,0 +1,128 @@
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+\documentclass{article}
+\usepackage{../tex/mysty}
+\begin{document}
+
+\maketitlepage{Project Update}{Joseph Abrahamson}
+
+\tableofcontents
+\newpage
+
+\section{Project Description}
+\label{sec:project-description}
+
+\subsection{Problems in Current Research}
+\label{sec:probl-curr-rese}
+
+The current cutting edge of ophthamological research is becoming
+increasingly precise, especially driven by the connection between
+gross anatomical shape and eye health and function. Particularly, new
+research is interested in precision measurement of the exact exterior
+shape of the eye [CITE]. While historically the eye shape was
+parameterized by three axial lengths, the anterior-posterior (AP)
+axis, the nasal-temporal (NT) axis, and the superior-inferior (SI)
+axis, new studies are also interested in non-linear, higher-order
+parameterizations such as sphericity or even elliptical properties of
+surface splines at any location.
+
+An example domain for this research is the investigation of the
+genetic factors involved in myopia. Myopia, an extremely common [HOW
+COMMON] disesase impacting eye function and focus, is well-known to be
+caused by environmental factors, such as sustained near-viewing, but
+is increasingly shown to also have a genetic correlate [CITE
+2,3,4]. Studies of the interaction of genetic factors with eye shape
+seek to determine both ultimate and developmental genetic effects
+which result in myopic eyes. Since the symptoms of myopia are directly
+caused by overextension of the AP axis leading to a focal point that
+resides within the cavity of the eye instead of at the sensitive
+retinal well, these researchers are first interested in accurate
+measurement of the AP axis [CITE 6], but want to consider more
+sophisticated deformations in order to truly understand the genetic
+basis [CITE 5].
+
+In order to perform genetic testing, much of this research is carried
+out on mouse animal models due to availability, ease of genetic
+manipulation, and affordability [CITE 5]. Unfortunately, this means
+that the observations are made on the mouse eye which ranges between
+1.5 and 4 millimeters in diamter. At this size, affective anatomical
+deformations occur at resolutions of 5 microns. Current research
+methods include laborious, error-prone, unrepeatable manual micrometry
+[CITE 6]; expensive and low-resolution MRI/PET imaging [CITE 7];
+error-inducing histological sectioning [CITE 5]; or complex,
+inefficient optical interferometry [CITE 5,8].
+
+\subsection{The Opportunity}
+\label{sec:opportunity}
+
+Generally, this research is highly impeded by the lack of measurement
+techniques that can capture the sophisticated, high-resolution
+deformations of the mouse eye that are most interestng while
+maintaining repeatability, affordability, and speed.
+
+A lab-bench sized, automated digitizer which can handle small, organic
+objects such a dissected mouse eyes would be able to fill this
+technical void in the ongoing research and has been called for
+repeatedly in published literature [CITE]. While other technical
+methods involve complex optical manipulations, the current technique
+of manual measurement, especially aided by high-precision micrometry
+such as that provided by high-throughput industrial LED micrometers,
+could fill all the needs of the researchers if manipulation and
+measurement using the micrometer could be automated.
+
+The ideal design advance involves a high-precision articulation frame
+which locates and manipulates the measurement plane of an attached
+micrometer in order to scan over the full geometry of the eye before
+being sent to a computer controller for decoding and construction of a
+digital, 3D model of the scanned object. Such a device could quickly,
+precisely, and repeatably provide the full gross geometric shape of a
+dissected eye and then provide for software to statistically analyze
+trends in shape over populations and experimental treatments.
+
+In this case, genetic myopia researchers could correlate genetic
+manipulations with exact and non-parametric anatomical changes above
+and beyond simple 3-axis measurements.
+
+\subsection{Market Analysis}
+\label{sec:market-analysis}
+
+The device suggested would be, by reference, marketable as a
+high-preicision general lab device. Typical prices range between
+\$30,000 and \$100,000 and so the could be marketed within that
+range. Additionally, this device is targeted at a niche with
+relatively little current competition since researchers suffice using
+the expensive, inaccurate, or difficult current technology.
+
+The proximate market includes genetic myopia researchers and, slightly
+more generally, all researchers involved in advanced ophthalmological
+research involving gross anatomical measurements. Approximately 500
+researchers working at 70 medical research institutions around the US
+would benefit from the device suggesting between 50 and 120 initial
+purchases and a market of \$2 to \$10 million.
+
+An extended market exists, however, in all research involved in
+anatomical mouse models or small-structure human models. For instance,
+ear research is highly concerned with the exact shape and function of
+the ossicles. This research is likely carried out at a similar number
+of research institutions thus increasing the market to two or three
+purchases per institution and raising the market value to \$30 million
+or higher.
+
+\subsection{Potential FDA Regulation}
+\label{sec:potent-fda}
+
+This device is not considered an FDA regulated medical device. It has
+no direct or indirect interaction with living tissue, human or
+animal. It is not used for diagnosis, cure, mitigation, treatment, or
+prevention of disease. Moreover, the device is not even intended for
+sterile use. The device is instead intended strictly for research
+purposes.
+
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{../tex/bibl}
+
+\end{document}
