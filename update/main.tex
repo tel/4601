@@ -20,15 +20,11 @@
 \subsection{Problems in Current Research}
 \label{sec:probl-curr-rese}
 
-The current cutting edge of ophthamological research is becoming increasingly precise, especially driven by the connection between gross anatomical shape and eye health and function. Particularly, new research is interested in precision measurement of the exact exterior shape of the eye\cite{atchison04,zhou99:genes,zhou99:models,guggenheim04,wallman04}. While historically the eye shape was parameterized by three axial lengths, the anterior-posterior (AP) axis, the nasal-temporal (NT) axis, and the superior-inferior (SI) axis, new studies are also interested in non-linear, higher-order parameterizations such as sphericity or even elliptical properties of surface splines at any location.
+The cutting edge of ophthamological research is focused on extremely precise measurements of the eye, as research suggests a strong connection between gross anatomical shape and eye health and function. Particularly, new research is interested in precision measurement of the exact exterior shape of the eye\cite{atchison04,zhou99:genes,zhou99:models,guggenheim04,wallman04}. While historically eye shape was parameterized by three axial lengths, the anterior-posterior (AP) axis, the nasal-temporal (NT) axis, and the superior-inferior (SI) axis, new studies are interested in non-linear, higher-order parameterizations involving sphericity or even elliptical properties of surface splines at any location on the eye.
 
 An example domain for this research is the investigation of the genetic factors involved in myopia. Myopia, an extremely common --- with 25\% prevalence in western cultures and nearly 80\% prevalence in some Asian populations\cite{rajan98} --- disesase impacting eye function and focus, is well-known to be caused by environmental factors, such as sustained near-viewing, but is increasingly shown to also have a genetic correlate\cite{zhou99:genes,zhou99:models,schmucker04}. Studies of the interaction of genetic factors with eye shape seek to determine both ultimate and developmental genetic effects which result in myopic eyes. Since the symptoms of myopia are directly caused by overextension of the AP axis leading to a focal point that resides within the cavity of the eye instead of at the sensitive retinal well, these researchers are first interested in accurate measurement of the AP axis\cite{wallman04}, but want to consider more sophisticated deformations in order to truly understand the genetic basis\cite{schaeffel04}.
 
-In order to perform genetic testing, much of this research is carried
-out on mouse animal models due to availability, ease of genetic
-manipulation, and affordability\cite{schaeffel04}. Unfortunately, this
-means that the observations are made on the mouse eye which ranges
-between 1.5 and 4 millimeters in diamter. At this size, affective
+In order to perform such genetic analysis, much of this research is carried out on mouse animal models due to availability, ease of genetic manipulation, and affordability\cite{schaeffel04}. Unfortunately, this means that the observations are made on the mouse eye which ranges between 1.5 and 4 millimeters in diamter. At this size, affective
 anatomical deformations occur at resolutions of 5 microns. Current
 research methods include laborious, error-prone, unrepeatable manual
 micrometry\cite{wallman04}; expensive and low-resolution MRI/PET
@@ -39,9 +35,9 @@ interferometry\cite{schaeffel04,guggenheim04}.
 \subsection{The Opportunity}
 \label{sec:opportunity}
 
-Generally, this research is highly impeded by the lack of measurement
+Current research is highly impeded by the lack of measurement
 techniques that can capture the sophisticated, high-resolution
-deformations of the mouse eye that are most interestng while
+deformations of the mouse eye while
 maintaining repeatability, affordability, and speed.
 
 A lab-bench sized, automated digitizer which can handle small, organic objects such a dissected mouse eyes would be able to fill this technical void in the ongoing research and has been called for repeatedly in published literature\cite{schaeffel04,atchison04,zhou99:genes,zhou99:models}. While other technical methods involve complex optical manipulations, the current technique of manual measurement, especially aided by high-precision micrometry such as that provided by high-throughput industrial LED micrometers, could fill all the needs of the researchers if manipulation and measurement using the micrometer could be automated.
@@ -63,11 +59,10 @@ and beyond simple 3-axis measurements.
 \label{sec:market-analysis}
 
 The device suggested would be, by reference, marketable as a
-high-preicision general lab device. Typical prices range between
-\$30,000 and \$100,000 and so the could be marketed within that
+high-preicision general lab device. Typical prices of such devices range between
+\$30,000 and \$100,000, and this device could be marketed within that
 range. Additionally, this device is targeted at a niche with
-relatively little current competition since researchers suffice using
-the expensive, inaccurate, or difficult current technology.
+relatively little current competition since researchers are currently using expensive, inaccurate, or difficult current technology.
 
 The proximate market includes genetic myopia researchers and, slightly
 more generally, all researchers involved in advanced ophthalmological
@@ -77,7 +72,7 @@ would benefit from the device suggesting between 50 and 120 initial
 purchases and a market of \$2 to \$10 million.
 
 An extended market exists, however, in all research involved in
-anatomical mouse models or small-structure human models. For instance,
+anatomical mouse models or small-structure models. For instance,
 ear research is highly concerned with the exact shape and function of
 the ossicles. This research is likely carried out at a similar number
 of research institutions thus increasing the market to two or three
@@ -90,9 +85,9 @@ or higher.
 This device is not considered an FDA regulated medical device. It has
 no direct or indirect interaction with living tissue, human or
 animal. It is not used for diagnosis, cure, mitigation, treatment, or
-prevention of disease. Moreover, the device is not even intended for
-sterile use. The device is instead intended strictly for research
-purposes.
+prevention of disease. Moreover, the device is not intended for
+sterile use. The device is intended strictly for research
+purposes, in the capacity of a measurement device.
 
 \section{Engineering Design Specifications}
 \subsection{Functional and Customer Requirements}
@@ -113,12 +108,12 @@ The device needs to be built using the Keyence LS‐7000 series LED Micrometer a
 
 \section{Prototype Discussion}
 \subsection{Approach to Prototype Design}
-By analyzing the EDS, it can be concluded that the prototype will have to perform two main tasks: produce rotational motion and linear translational motion. These motions will change the relative positions between the object (eyeball) and the measuring device (laser micrometer). Thus there are the choices of moving eyeball only, moving micrometer only, rotating eyeball and translating micrometer, or rotating micrometer and translating eyeball. Since moment of inertia greatly affects the rotational energy of a rotating system at a given angular speed, it would be preferable to rotate a system with low moment of inertia. And because moment of inertia is determined by the mass and mass distribution of the system, it is preferable to rotate the eyeball which is lighter and smaller than the micrometer. Because moving a rotating system can cause instability of the system, it would be reasonable to linearly translate the micrometers. 
+It is clear from the EDS that the prototype will have to perform two key motions: rotational motion and linear translational motion. These motions are required to produce the tomography-like sections, chosen to be the best design alternative. Thus choices exist between moving the eyeball only, moving the micrometer only, rotating eyeball and translating micrometer, or rotating micrometer and translating eyeball. Since the moment of inertia greatly affects the rotational energy of a rotating system at a given angular speed, it would be preferable to rotate a system with a low moment of inertia. Thus, it would be preferable to rotate the eyeball, which is lighter and more compact than the micrometer. Since moving a rotating system can cause instability, it would furthermore be reasonable to linearly translate the micrometer. 
 
-The design then will consist of: a tweezers which holds the eyeball at its optic nerve, a controlled motor which can hold the tweezers with a designed connector, support stage for the micrometer, linear actuator that controls the movement of the micrometers, and a structural frame work that holds every component in place. The motor will be mounted on the ceiling of the frame work. The tweezers holding the eyeball will be connected to the shaft of the motor. The linear actuator will be mounted on the floor of the frame work, supporting the stage with the micrometer set. The above components will line up in such way that the eyeball will move in and out of the sheet of measuring plane. All the wiring will be fixed to the wall of the frame and exit the frame work to connect to the power supply, the control system and the computer.
+The design, as depicted in Figure \ref{fig:schematic1}, will consist of: a pair of tweezers which hold the eyeball by its optic nerve, a controlled motor which can hold the tweezers with a designed connector, a support stage for the micrometer, a linear actuator that controls the movement of the micrometer, and a structural frame work that holds all components in place. The motor will be mounted on the ceiling of the frame work. The tweezers holding the eyeball will be connected to the shaft of the motor. The linear actuator will be mounted on the floor of the frame work, supporting the stage with the micrometer set. The components will be assembled such that the eyeball will move in and out of the measuring plane. All the wiring will be fixed to the wall of the frame and exit the frame work to connect to the power supply, the control system and the computer.
 
 \subsection{Planned Methods of Construction}
-Tweezers, motors, and micrometer are readily available for assembly. Linear actuator and micrometer mount (which would be a microscope stage) are commercially available and will be purchased. The listed components will be made via CAD programs and 3D printing: connector piece between motor and tweezers; and pieces of structural framework. The prototype will be manually assembled with screws connecting the parts.
+Tweezers, motors, and micrometer are readily available for assembly. The linear actuator and micrometer mount (initially a microscope stage) are commercially available and can be purchased. The listed components will be made via CAD programs and 3D printing: the connector piece between motor and tweezers, and pieces of structural framework. The prototype will be manually assembled with screws and/or glue connecting the parts.
 
 \section{Semester Project Plan}
 
@@ -157,28 +152,5 @@ Tweezers, motors, and micrometer are readily available for assembly. Linear actu
   \label{fig:schematic1}
 \end{figure}
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\linewidth]{../img/schematic2}
-  \figcaption{\textbf{This is a figure heading.}  
-  This is a description}
-  \label{fig:schematic2}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\linewidth]{../img/render1}
-  \figcaption{\textbf{This is a figure heading.}  
-  This is a description}
-  \label{fig:render1}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\linewidth]{../img/render2}
-  \figcaption{\textbf{This is a figure heading.}  
-  This is a description}
-  \label{fig:render2}
-\end{figure}
 
 \end{document}
