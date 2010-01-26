@@ -32,7 +32,7 @@ Lastly, this document outlines the design team's proposed plan to complete accom
 \subsection{Problems in Current Research}
 \label{sec:probl-curr-rese}
 
-The cutting edge of ophthamological research is focused on extremely precise measurements of the eye, as research suggests a strong connection between gross anatomical shape and eye health and function. Particularly, new research is interested in precision measurement of the exact exterior shape of the eye\cite{atchison04,zhou99:genes,zhou99:models,guggenheim04,wallman04}. While historically eye shape was parametrized by three axial lengths, the anterior-posterior (AP) axis, the nasal-temporal (NT) axis, and the superior-inferior (SI) axis, new studies are interested in non-linear, higher-order parametrizations involving sphericity or even elliptical properties of surface splines at any location on the eye.
+The cutting edge of ophthalmological research is focused on extremely precise measurements of the eye, as research suggests a strong connection between gross anatomical shape and eye health and function. Particularly, new research is interested in precision measurement of the exact exterior shape of the eye\cite{atchison04,zhou99:genes,zhou99:models,guggenheim04,wallman04}. While historically eye shape was parametrized by three axial lengths, the anterior-posterior (AP) axis, the nasal-temporal (NT) axis, and the superior-inferior (SI) axis, new studies are interested in non-linear, higher-order parameterizations involving sphericity or even elliptical properties of surface splines at any location on the eye.
 
 An example domain for this research is the investigation of the genetic factors involved in myopia. Myopia, an extremely common --- with 25\% prevalence in western cultures and nearly 80\% prevalence in some Asian populations\cite{rajan98} --- disease impacting eye function and focus, is well-known to be caused by environmental factors, such as sustained near-viewing, but is increasingly shown to also have a genetic correlate\cite{zhou99:genes,zhou99:models,schmucker04}. Studies of the interaction of genetic factors with eye shape seek to determine both ultimate and developmental genetic effects which result in myopic eyes. Since the symptoms of myopia are directly caused by over-extension of the AP axis leading to a focal point that resides within the cavity of the eye instead of at the sensitive retinal well, these researchers are first interested in accurate measurement of the AP axis\cite{wallman04}, but want to consider more sophisticated deformations in order to truly understand the genetic basis\cite{schaeffel04}.
 
@@ -107,14 +107,48 @@ A complete list of engineering design specifications are shown in Table \ref{tab
 \subsection{Functional and Customer Requirements}
 The customer requirements can be split into three categories: needs, wants, and desires. ``Needs'' are the functional requirements and constitute essential aspects of the device required for proper use, while ``wants'' are non‐essential aspects of the device that would facilitate proper use. ``Desires'' are aspects of the device which, if satisfied, would please the customer beyond proper functioning.  
 
-The most significant feature that the device needs to have is the ability to take automated measurements of ocular dimensions with a resolution of 0.5 diopters, equivalent to a resolution of 2 $\mu$m for mouse eyes. The critical active sensing components of the device needs to have a resolution below 2 $\mu$m in order to ensure precise measurements at a resolution of 2 $\mu$m. The device also needs to be able to convert raw measurements into a 3D interactive reconstruction of the eyeball on a computer interface. As requested by the client, the device needs to be able to take a complete set of measurements in under 3 minutes in order to prevent the eye from drying out and distorting the results. Also, the device needs to be able to fit onto a typical laboratory bench, into a space of 1mx1mx1m, but does not need to maintain a sterile field.      
+The most significant feature that the device needs to have is the
+ability to take automated measurements of ocular dimensions with a
+resolution of 0.5 diopters, equivalent to a resolution of 2 $\mu$m for
+mouse eyes. The critical active sensing components of the device needs
+to have a resolution below 2 $\mu$m in order to ensure precise
+measurements at a resolution of 2 $\mu$m. The device also needs to be
+able to convert raw measurements into a 3D interactive reconstruction
+of the eyeball on a computer interface. As requested by the client,
+the device needs to be able to take a complete set of measurements in
+under 3 minutes in order to prevent the eye from drying out and
+distorting the results. Also, the device needs to be able to fit onto
+a typical laboratory bench, into a space of 1m $\times$ 1m $\times$
+1m, but does not need to maintain a sterile field.
 
-One ``want'' of the client is that the device has mobility; that is, it can be lifted and carried from one lab bench to another by an average healthy researcher from age 20‐50. Therefore, the device should be lightweight; the weight of the device should not exceed 40 lbs (18 kg)\cite{gross03}. To fulfill the mobility want, the size of the device must also be small. As specified earlier, the device must be able to fit in a space of 1mx1mx1m. The device should also not be cumbersome; the design of the device should be simple and manageable with few external components.
+One ``want'' of the client is that the device has mobility; that is,
+it can be lifted and carried from one lab bench to another by an
+average healthy researcher from age 20‐50. Therefore, the device
+should be lightweight; the weight of the device should not exceed 40
+lbs (18 kg)\cite{gross03}. To fulfill the mobility want, the size of
+the device must also be small. As specified earlier, the device must
+be able to fit in a space of 1m $\times$ 1m $\times$ 1m. The device
+should also not be cumbersome; the design of the device should be
+simple and manageable with few external components.
 
 The customer also wants the device to have a simple user interface with which measurements taken by the device may be transferred onto a connected computer with just 1 click of the mouse. The device should  be reusable for up to 4 years given constant daily use of the device at least 5 times a day, with 1 hour per use\cite{keyence01}. The device should not require any maintenance unless one of the components stops functioning\cite{keyence01}. In addition, the device should cause little to no vibration during operation such that the accuracy of measurements is unaffected. Currently, the amount of vibration an eyeball can experience without affecting measurement accuracy is untested. Finally, the client desires that the device be aesthetically pleasing, and not make much noise during operation. The noise produced by the device should not exceed the level of 80 dB, the loudness of the average car\cite{truax09}.  
 
 \subsection{Engineering Characteristics}
-The device needs to be robust enough to withstand the stresses of everyday lab use. Robustness is defined as the ability to withstand rough accidental movement such as being dropped from the top of a lab bench, typically at a height of 3 feet, or shoved sideways on the bench surface. The device should also be able to hold the weight of small objects no heavier than 5 pounds, such as lab notebooks, pens, or a rack of test tubes. The device needs to be able to function in the wide range of temperatures typically found in the laboratory (22±5 $^\circ$C) and, as mentioned, fit comfortably onto a lab bench within a space of 1mx1mx1m. The non‐electrical components of the device should be inert and should not be affected by small quantities (less than 1 mL) of minimally hazardous solutions such as PBS\cite{users_manual}, which is typically used to keep the eye moist. Electrically, the device needs to function with 120V 60Hz AC, the standard power supply of the United States.
+The device needs to be robust enough to withstand the stresses of
+everyday lab use. Robustness is defined as the ability to withstand
+rough accidental movement such as being dropped from the top of a lab
+bench, typically at a height of 3 feet, or shoved sideways on the
+bench surface. The device should also be able to hold the weight of
+small objects no heavier than 5 pounds, such as lab notebooks, pens,
+or a rack of test tubes. The device needs to be able to function in
+the wide range of temperatures typically found in the laboratory (22±5
+$^\circ$C) and, as mentioned, fit comfortably onto a lab bench within
+a space of 1m $\times$ 1m $\times$ 1m. The non‐electrical components
+of the device should be inert and should not be affected by small
+quantities (less than 1 mL) of minimally hazardous solutions such as
+PBS\cite{users_manual}, which is typically used to keep the eye
+moist. Electrically, the device needs to function with 120V 60Hz AC,
+the standard power supply of the United States.
 
 \subsection{Constraints}
 The device needs to be built using the Keyence LS‐7000 series LED Micrometer and should be able to perform in conjunction with a computer. The controlling computer should have at least 2GB RAM as well as a CPU and graphics card capable of 3D image processing.
@@ -146,7 +180,7 @@ The semester project plan is outlined in the form of a Gantt Chart in Figure \re
   \centering
   \begin{tabularx}{\textwidth}{llXX}
     \toprule
-    \textbf{Type} & \textbf{Specficiation} & \textbf{Metric} & \textbf{Justification} \\
+    \textbf{Type} & \textbf{Specification} & \textbf{Metric} & \textbf{Justification} \\
     \hline
     Need & Resolution & 2 micron & Choice of scan pattern \\
     Need & Speed & 1 scan within 3 minutes & Choice of scan pattern and drive \\
@@ -225,7 +259,7 @@ The semester project plan is outlined in the form of a Gantt Chart in Figure \re
   \centering
   \includegraphics[width=\linewidth]{../img/schematic1}
   \figcaption{\textbf{Schematic of the Prototype:}  
-  This figure illustrates the physical organization of the various components of the design within an enclosed framework. Each component is labelled. }
+  This figure illustrates the physical organization of the various components of the design within an enclosed framework. Each component is labeled. }
   \label{fig:schematic1}
 \end{figure}
 
