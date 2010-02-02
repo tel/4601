@@ -66,6 +66,7 @@ As of commit d7d3942
        + Is it our concern for how the dissection procedes? We'll be
          only in contact with excised material. FDA doesn't cover this
          according to their website.
+       + Biohazard might be a concern, but that's EPA not FDA.
 *** TODO EDS
 **** TODO 2.1
      - Capitalize Needs, Desires, Wants
