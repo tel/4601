@@ -32,17 +32,11 @@ Lastly, this document outlines the design team's proposed plan to complete accom
 \subsection{Problems in Current Research}
 \label{sec:probl-curr-rese}
 
-The cutting edge of ophthalmological research is focused on extremely precise measurements of the eye, as research suggests a strong connection between gross anatomical shape and eye health and function. Particularly, new research is interested in precision measurement of the exact exterior shape of the eye\cite{atchison04,zhou99:genes,zhou99:models,guggenheim04,wallman04}. While historically eye shape was parametrized by three axial lengths, the anterior-posterior (AP) axis, the nasal-temporal (NT) axis, and the superior-inferior (SI) axis, new studies are interested in non-linear, higher-order parameterizations involving sphericity or even elliptical properties of surface splines at any location on the eye.
+The cutting edge of ophthalmological research is focused on extremely precise measurements of the eye, as research suggests a strong connection between gross anatomical shape and eye health and function. Particularly, new research is interested in precision measurement of the exact exterior shape of the eye.\cite{atchison04,zhou99:genes,zhou99:models,guggenheim04,wallman04} While historically eye shape was parametrized by three axial lengths, the anterior-posterior (AP) axis, the nasal-temporal (NT) axis, and the superior-inferior (SI) axis, new studies are interested in non-linear, higher-order parameterizations involving sphericity or even elliptical properties of surface splines at any location on the eye.
 
-An example domain for this research is the investigation of the genetic factors involved in myopia. Myopia, an extremely common --- with 25\% prevalence in western cultures and nearly 80\% prevalence in some Asian populations\cite{rajan98} --- disease impacting eye function and focus, is well-known to be caused by environmental factors, such as sustained near-viewing, but is increasingly shown to also have a genetic correlate\cite{zhou99:genes,zhou99:models,schmucker04}. Studies of the interaction of genetic factors with eye shape seek to determine both ultimate and developmental genetic effects which result in myopic eyes. Since the symptoms of myopia are directly caused by over-extension of the AP axis leading to a focal point that resides within the cavity of the eye instead of at the sensitive retinal well, these researchers are first interested in accurate measurement of the AP axis\cite{wallman04}, but want to consider more sophisticated deformations in order to truly understand the genetic basis\cite{schaeffel04}.
+An example domain for this research is the investigation of the genetic factors involved in myopia. Myopia, an extremely common --- with 25\% prevalence in western cultures and nearly 80\% prevalence in some Asian populations\cite{rajan98} --- disease impacting eye function and focus, is well-known to be caused by environmental factors, such as sustained near-viewing, but is increasingly shown to also have a genetic correlate.\cite{zhou99:genes,zhou99:models,schmucker04} Studies of the interaction of genetic factors with eye shape seek to determine both ultimate and developmental genetic effects which result in myopic eyes. Since the symptoms of myopia are directly caused by over-extension of the AP axis leading to a focal point that resides within the cavity of the eye instead of at the sensitive retinal well, these researchers are first interested in accurate measurement of the AP axis,\cite{wallman04} but want to consider more sophisticated deformations in order to truly understand the genetic basis.\cite{schaeffel04}
 
-In order to perform such genetic analysis, much of this research is carried out on mouse animal models due to availability, ease of genetic manipulation, and affordability\cite{schaeffel04}. Unfortunately, this means that the observations are made on the mouse eye which ranges between 1.5 and 4 millimeters in diameter. At this size, affective
-anatomical deformations occur at resolutions of 5 microns. Current
-research methods include laborious, error-prone, unrepeatable manual
-micrometry\cite{wallman04}; expensive and low-resolution MRI/PET
-imaging\cite{atchison04}; error-inducing histological
-sectioning\cite{schaeffel04}; or complex, inefficient optical
-interferometry\cite{schaeffel04,guggenheim04}.
+In order to perform such genetic analysis, much of this research is carried out on mouse animal models due to availability, ease of genetic manipulation, and affordability.\cite{schaeffel04} Unfortunately, this means that the observations are made on the mouse eye which ranges between 1.5 and 4 millimeters in diameter. At this size, affective anatomical deformations occur at resolutions of 5 microns. Current research methods include laborious, error-prone, unrepeatable manual micrometry;\cite{wallman04} expensive and low-resolution MRI/PET imaging;\cite{atchison04} error-inducing histological sectioning;\cite{schaeffel04} or complex, inefficient optical interferometry.\cite{schaeffel04,guggenheim04}
 
 \subsection{The Opportunity}
 \label{sec:opportunity}
@@ -52,7 +46,7 @@ techniques that can capture the sophisticated, high-resolution
 deformations of the mouse eye while
 maintaining repeatability, affordability, and speed.
 
-A lab-bench sized, automated digitizer which can handle small, organic objects such a dissected mouse eyes would be able to fill this technical void in the ongoing research and has been called for repeatedly in published literature\cite{schaeffel04,atchison04,zhou99:genes,zhou99:models}. While other technical methods involve complex optical manipulations, the current technique of manual measurement, especially aided by high-precision micrometry such as that provided by high-throughput industrial LED micrometers, could fill all the needs of the researchers if manipulation and measurement using the micrometer could be automated.
+A lab-bench sized, automated digitizer which can handle small, organic objects such a dissected mouse eyes would be able to fill this technical void in the ongoing research and has been called for repeatedly in published literature.\cite{schaeffel04,atchison04,zhou99:genes,zhou99:models} While other technical methods involve complex optical manipulations, the current technique of manual measurement, especially aided by high-precision micrometry such as that provided by high-throughput industrial LED micrometers, could fill all the needs of the researchers if manipulation and measurement using the micrometer could be automated.
 
 The ideal design advance involves a high-precision articulation frame
 which locates and manipulates the measurement plane of an attached
@@ -125,13 +119,13 @@ One ``want'' of the client is that the device has mobility; that is,
 it can be lifted and carried from one lab bench to another by an
 average healthy researcher from age 20‐50. Therefore, the device
 should be lightweight; the weight of the device should not exceed 40
-lbs (18 kg)\cite{gross03}. To fulfill the mobility want, the size of
+lbs (18 kg).\cite{gross03} To fulfill the mobility want, the size of
 the device must also be small. As specified earlier, the device must
 be able to fit in a space of 1m $\times$ 1m $\times$ 1m. The device
 should also not be cumbersome; the design of the device should be
 simple and manageable with few external components.
 
-The customer also wants the device to have a simple user interface with which measurements taken by the device may be transferred onto a connected computer with just 1 click of the mouse. The device should  be reusable for up to 4 years given constant daily use of the device at least 5 times a day, with 1 hour per use\cite{keyence01}. The device should not require any maintenance unless one of the components stops functioning\cite{keyence01}. In addition, the device should cause little to no vibration during operation such that the accuracy of measurements is unaffected. Currently, the amount of vibration an eyeball can experience without affecting measurement accuracy is untested. Finally, the client desires that the device be aesthetically pleasing, and not make much noise during operation. The noise produced by the device should not exceed the level of 80 dB, the loudness of the average car\cite{truax09}.  
+The customer also wants the device to have a simple user interface with which measurements taken by the device may be transferred onto a connected computer with just 1 click of the mouse. The device should  be reusable for up to 4 years given constant daily use of the device at least 5 times a day, with 1 hour per use.\cite{keyence01} The device should not require any maintenance unless one of the components stops functioning.\cite{keyence01} In addition, the device should cause little to no vibration during operation such that the accuracy of measurements is unaffected. Currently, the amount of vibration an eyeball can experience without affecting measurement accuracy is untested. Finally, the client desires that the device be aesthetically pleasing, and not make much noise during operation. The noise produced by the device should not exceed the level of 80 dB, the loudness of the average car.\cite{truax09}
 
 \subsection{Engineering Characteristics}
 The device needs to be robust enough to withstand the stresses of
@@ -146,7 +140,7 @@ $^\circ$C) and, as mentioned, fit comfortably onto a lab bench within
 a space of 1m $\times$ 1m $\times$ 1m. The non‐electrical components
 of the device should be inert and should not be affected by small
 quantities (less than 1 mL) of minimally hazardous solutions such as
-PBS\cite{users_manual}, which is typically used to keep the eye
+PBS,\cite{users_manual} which is typically used to keep the eye
 moist. Electrically, the device needs to function with 120V 60Hz AC,
 the standard power supply of the United States.
 

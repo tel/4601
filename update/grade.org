@@ -12,7 +12,7 @@ As of commit d7d3942
     "It was important to clearly explain how your device functions. I
     was lft with many questions. As a first time reader I still do not
     clearly understand your project."
-*** TODO Formatting
+*** DONE Formatting
     "JAMA formatting: references fall outside of punctuation"
 ** Section Specific
 *** TODO Executive Summary
