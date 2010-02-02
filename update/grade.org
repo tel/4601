@@ -14,6 +14,10 @@ As of commit d7d3942
     clearly understand your project."
 *** DONE Formatting
     "JAMA formatting: references fall outside of punctuation"
+*** TODO Improved schematic
+    We probably need to create a solidworks mock-up and provide a
+    isometric view of the piece. This would help to give people a
+    solid idea of the construction and implementation of our device.
 ** Section Specific
 *** TODO Executive Summary
     "The executive summary should be almost a page long. There should
