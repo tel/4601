@@ -23,14 +23,16 @@ As of commit d7d3942
     + This might need improvement, but I don't think it's going to
       reach 1 page
 *** TODO Project Description
-**** TODO 1.1
-***** TODO Explanation of Sophisticated Measurements
+**** DONE 1.1
+     CLOSED: [2010-02-02 Tue 15:22]
+***** DONE Explanation of Sophisticated Measurements
       _directly caused_ -> "If myopia related directly to
       over-exhaustion of the AP axis, why are the other more
       sophisticated measures necessary?"
 ****** Commentary
        + Myopia is thought to be a symptom of greater changes to eye
-         shape
+         shape. We noted this in the rest of the sentence, but it
+         could perhaps be made more clear.
 **** TODO 1.2
 ***** TODO Functional Description
       - _automated digitizer_ -> "What is this?"
