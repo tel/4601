@@ -33,8 +33,10 @@ As of commit d7d3942
        + Myopia is thought to be a symptom of greater changes to eye
          shape. We noted this in the rest of the sentence, but it
          could perhaps be made more clear.
-**** TODO 1.2
-***** TODO Functional Description
+**** DONE 1.2
+     CLOSED: [2010-02-02 Tue 16:42]
+***** DONE Functional Description
+      CLOSED: [2010-02-02 Tue 16:40]
       - _automated digitizer_ -> "What is this?"
       - "An image of the proposed device would be helpful here so I can
         visualize it."
