@@ -2,76 +2,90 @@ TA Response :: Matthew Magusson
 As of commit d7d3942
 * Matt's Comments
 ** Overall
-   - "Very nice formatting"
-   - "Work on getting a proper executive summary next time"
-   - "More detailed information about your plan for the semester is also important"
-   - "It was important to clearly explain how your device functions. I
-     was lft with many questions. As a first time reader I still do not
-     clearly understand your project."
+*** DONE Page Formatting
+    "Very nice formatting"
+*** TODO Proper Executive Summary
+    "Work on getting a proper executive summary next time"
+*** TODO Gantt Chart and Semester Plans
+    "More detailed information about your plan for the semester is also important"
+*** TODO Device Functional Overview
+    "It was important to clearly explain how your device functions. I
+    was lft with many questions. As a first time reader I still do not
+    clearly understand your project."
+*** TODO Formatting
+    "JAMA formatting: references fall outside of punctuation"
 ** Section Specific
-*** Executive Summary
-    - "The executive summary should be almost a page long. There should
-      be an important sentence or two relating to each section in the
-      report. You don't have any specfics from the EDS section or
-      prototype sections."
-      + This might need improvement, but I don't think it's going to
-        reach 1 page
-*** Project Description
-**** 1.1
-     - "JAMA formatting: references fall outside of punctuation"
-     - _directly caused_ -> "If myopia related directly to
-          over-exhaustion of the AP axis, why are the other more
-          sophisticated measures necessary?"
-       - Myopia is thought to be a symptom of greater changes to eye
+*** TODO Executive Summary
+    "The executive summary should be almost a page long. There should
+    be an important sentence or two relating to each section in the
+    report. You don't have any specfics from the EDS section or
+    prototype sections."
+    + This might need improvement, but I don't think it's going to
+      reach 1 page
+*** TODO Project Description
+**** TODO 1.1
+***** TODO Explanation of Sophisticated Measurements
+      _directly caused_ -> "If myopia related directly to
+      over-exhaustion of the AP axis, why are the other more
+      sophisticated measures necessary?"
+****** Commentary
+       + Myopia is thought to be a symptom of greater changes to eye
          shape
-**** 1.2
-     - _automated digitizer_ -> "What is this?"
-       + Vocabulary term or need to improve description?
-     - _measurement plane of an attached micrometer_ -> "I'm confused
-          as to what your device actally is. I get the opportunty but I
-          still don't know what your device is."
+**** TODO 1.2
+***** TODO Functional Description
+      - _automated digitizer_ -> "What is this?"
+      - "An image of the proposed device would be helpful here so I can
+        visualize it."
+      - _measurement plane of an attached micrometer_ -> "I'm confused
+        as to what your device actally is. I get the opportunty but I
+        still don't know what your device is."
+****** Commentary
+       + Cite the schematic figure, except it's not very clear (needs improvement)
        + Improve and cite schematics
-     - "An image of the proposed device would be helpful here so I can
-       visualize it."
-       + Cite the schematic figure, except it's not very clear
-**** 1.3
-     - _by reference_
-     - _expensive_ -> "More expensive than 30-100k. What are the other
-       options?"
-       + I don't understand this comment? What are the other lab
-         grade devices? What are other methods to measure eyes?
-     - _likely carried out at a similar number of research
-       institutions_
-     - raising the market value to $30 million or higher_ -> "This
-          isn't too definitive"
-**** 1.4
-     - _no direct or indirect interaction with living tissue_ ->
-       "You're going to measure eyeballs without touching them?"
+       + Vocabulary term or need to improve description?
+**** TODO 1.3
+***** TODO Market Analysis
+      - _by reference_
+      - _expensive_ -> "More expensive than 30-100k. What are the other
+        options?"
+      - _likely carried out at a similar number of research
+        institutions_
+      - raising the market value to $30 million or higher_ -> "This
+           isn't too definitive"
+****** Commentary
+       + I don't understand the "expensive" comment? What are the
+         other lab grade devices? What are other methods to measure
+         eyes?
+**** TODO 1.4
+***** TODO FDA Indemnity
+      - _no direct or indirect interaction with living tissue_ ->
+        "You're going to measure eyeballs without touching them?"
+****** Commentary
        + Is it our concern for how the dissection procedes? We'll be
          only in contact with excised material. FDA doesn't cover this
          according to their website.
-*** EDS
-**** 2.1
+*** TODO EDS
+**** TODO 2.1
      - Capitalize Needs, Desires, Wants
      - "Wow, these are some lofty goals"
-**** 2.2
+**** TODO 2.2
      - "225 degrees C"
-**** 2.3
+**** TODO 2.3
      - _Keyence LS7000 series LED micrometer_ -> "Why this micrometer?"
-*** Prototype Discussion
-**** 3.1
+*** TODO Prototype Discussion
+**** TODO 3.1
      - "Where is the micrometer in Figure 3?"
-**** 3.2
+**** TODO 3.2
      - "How do the tweezers lock in place? I could ask 1000 questions
        here. It still isn't clear how your device will function. What
        is your final device?"
      - "How much is this going to cost your user?"
      - "How will you assimilate and process this information? Data
        storate, etc."
-**** 3.3
+**** TODO 3.3
      - "Are you planning on implementing this reconstruction
        algorithm?"
-*** Project Plan
+*** TODO Project Plan
     - "More specific information on plans, meetings, deadlines,
       etc. are needed. Your Gantt chart should be much more detailed."
 
