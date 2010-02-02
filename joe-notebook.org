@@ -1,0 +1,7 @@
+4601 Sr. Des. Notes
+* <2010-01-30 Sat>
+** Playing with the Micrometer
+*** Dimensions
+    http://www.keyence.com/products/vision/micrometer/ls7000/ls7000_dimensions_1.php
+*** Notes
+    + We'll need a rectangular case for preventing LED beam distortion
