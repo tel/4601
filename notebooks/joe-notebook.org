@@ -1,7 +1,112 @@
-4601 Sr. Des. Notes
-* <2010-01-30 Sat>
-** Playing with the Micrometer
-*** Dimensions
-    http://www.keyence.com/products/vision/micrometer/ls7000/ls7000_dimensions_1.php
-*** Notes
-    + We'll need a rectangular case for preventing LED beam distortion
+4601 Sr. Des. Notebook
+* [2010-01-14 Thu 12:00] Discussing Project Update Report (I)
++ Duties are:
+  + Joe :: Project Description, Tables
+  + Ginger/Shuyen :: EDS & Prototype Discussion
+  + Sanjay :: (lead editor) Project Plan, Executive Summary
+* [2010-01-20 Wed 12:00] Discussion Project Update Report (II)
++ Duties are the same as previously:
+  + Joe :: Project Description, Tables
+  + Ginger/Shuyen :: EDS & Prototype Discussion
+  + Sanjay :: (lead editor) Project Plan, Executive Summary
+** Design Considerations
+*** Spinning things
++ /We're definitely not going to spin the micrometer/
+  - High moment of inertia
+  - Impossible to power/connect without breaking chords
+  - High potential for vibration data contamination
++ What about moving the eye    
+  - Eye can be fixed in some sort of plastic/polymer
+  - Total device becomes much simpler
+*** Eye attachment
+We may need to build a custom eye harness to insert it into the
+device.
++ Tweezers form core component
++ Custom fabricated part to link harness to spinning motor (?)
++ Containment cylinder for cleaning purposes and, possibly, filling
+  the fixative
+* [2010-01-25 Mon 22:00] Crafting Project Update Report
+Project moved to LaTeX typesetting and git/Github version control.
++ Pros
+  + Can manage multiple files
+  + Instant typesetting
+  + Beautiful typesetting
+  + References automatically managed
+  + Tables and figures automatically managed
+  + Consistent style
++ Cons
+  - Difficult to install and use
+    - Especially on windows
+  - Steep learning curve for git/github
+
+/But we're doing it anyway/
+
+[[http://github.com/tel/4601][Github page]]
+[[http://github.com/tel/4601/commits/master][Commit log]]
+
+Very, very successful editing session between Sanjay and I. Highly
+coordinated, very little conflict between merges.
+* [2010-01-27 Wed 12:00] Discussing Societal Impact
+(Outline some societal impact factors)
+** Duties
++ Ginger :: Lead editor
++ Joe/Sanjay/Shuyen :: Content producers, each person should share
+     writing the bulk of the document by examining societal impact
+     concerns.
+* [2010-01-30 Sat 15:00] Playing with the Micrometer
+ + Micrometer can detach from power source for mounting. Probably not
+   necessary.
+ + Strong distortion of LED beam through test-tube + water. Need to
+   correct with lens.
+   + We'll need a rectangular case for preventing LED beam distortion
+ + Dimensions available [[http://www.keyence.com/products/vision/micrometer/ls7000/ls7000_dimensions_1.php][@]]
+** Micrometer output -> Binary Coded Decimal
+   + 40 pins total, 30 for BCD and 10 for signals/escape/coding/timing
+     + (4 pins x 7 digit) + (2 pins for polarity) = 30 pins
+     + Strobe pin fires at 24,000/sec as update stream
+   + Hirose HIF3B Ribbon Cable (HIF3-40CV) ([[http://www.hirose-connectors.com/connectors/H204ProductList.aspx?c1=HIF3B&c3=3][website]])
+** NI Single-board RIO
+   + Selection [[http://sine.ni.com/tabcat/app/main/p/ap/imc/lang/en][available]]
+   + We only need digital IO
+     + Analog IO is super expensive!
+   + Best choice likely [[http://sine.ni.com/nips/cds/view/p/lang/en/nid/205892][NI sbRIO-9602/9602XT]]
+   + Sanjay will have to talk with boss and Essy to figure out what
+     the best choice is.
+** Actuators & Frame
++ We have screw-matrix board and aluminum column to host platform
++ We have microscope stand w/ motor+rotary encoder to get vertical motion
++ We have (small?) motor+rotary encoder for spinning
+* [2010-02-01 Mon 16:30] Meeting with TA + SIA Meetup
++ Turns out we have a new TA: Matthew Magnuson <magnuson1@gmail.com>
++ SIA Report will be manned edited by Ginger
++ Each person responsible for covering 2x societal concerns
+* [2010-02-02 Tue 13:00] Meeting with Nickerson
++ Optical quality cuvets -> available through Nickerson (~$100-500)
++ LED beam corrective lens -> Edmund Scientific (?)
+** Eye biomechanics
++ Largely qualitative -> nobody has studied this sort of thing
+  + /PAPER/: Mechanical properties of a spinning eyeball
++ Optic nerve is largely stiff excepting at the interface with the eye
+  + Operates like a ball-socket joint to allow for motion of eye
+  + /DRAW THIS/
+*** Concerns
+We'll have to model the stiffness of the optic nerve, the ball and
+socket attachment model, the weight and moment of inertia of the eye
+body, and the internal visous humour.
+** Eye fixation
++ Methyl-celluose + buffer -> this can be used to fix (toothpaste
+  viscosity?) eye while extending safety time before it dries out.
++ Metal bar can be fixed using super glue
++ Super glue fixation is perhaps possible
+** Eye models
++ Nothing special here: just nylon string an a ball-bearing
+** User Needs -> Relative importance of speed
+Nickerson suggests that if we prevent the eye from drying, the total
+scan time can expand to ~1hr or more. Effectively:
+
+/DIGITIZATION ACCURACY IS MORE IMPORTANT THAN SPEED/
+
+Such a good tradeoff.
+* Config
+#+STARTUP: overview
+#+STARTUP: indent
