@@ -47,7 +47,30 @@ Project moved to LaTeX typesetting and git/Github version control.
 Very, very successful editing session between Sanjay and I. Highly
 coordinated, very little conflict between merges.
 * [2010-01-27 Wed 12:00] Discussing Societal Impact
-(Outline some societal impact factors)
+** Noted Societal Concerns
+*** Research (proximate impact)
+help researchers who will be able to make changes 
+- taxpayers money via NIH, savings from efficiency
+*** Medical (future impacts)
+research leads to treatments (intro)
+*** Environment
+manufacturing and disposal, materials
+
++ during operation, no environmental impact
++ method to deal with contamination by biological elements –
+  disposable case that catches the eye and prevents it from being
+  shredded into machine b.  during creation – raw materials impact,
+  manufacturing processes impact (what processes are we using),
+  transportation (pollution and trucks!)
+
+*** Disposal
+EWH vs. we recycle parts
+*** Packaging
+cardboard box, styrofoam padding, environmentally friendly, minimal
+space?
+*** Electrical 
+There is a small electrical impact that people in Africa would care
+about because they actually need to conserve energy.
 ** Duties
 + Ginger :: Lead editor
 + Joe/Sanjay/Shuyen :: Content producers, each person should share
