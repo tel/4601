@@ -1,0 +1,44 @@
+Societal Impact Report
+* Concerns
+** Improving Research (proximate impact)
+   Our device helps researchers to better perform their own research
+   while also enabling new avenues to study the eye.
+
+   This translates directly to savings to many people who fund
+   research
+   + NIH
+   + Other government grants
+   + Business R&D
+
+** Medical Opportunities (distal impacts)
+   It's possible that this device will open up new knowledge about the
+   development of the eye leading to medical treatment for
+   ophthalmological diseases.
+
+** Environmental Impacts
+
+*** Manufacturing
+    Creation of devices should consider tradeoff between
+    environmentally friendly manufacturing processes and cost to
+    consumers.
+
+*** Packaging
+    There's nothing besides price that prevents us from packaging the
+    device as environmentally friendly as possible. Concerns include
+    the weight and delicate nature of the machine requiring creative
+    shock absorbers in the packaging. These are often environmentally
+    horrific styrofoam, but maybe we could use recycled newspaper or
+    something.
+
+    + IDEA: the box should be something the lab can keep around and
+      use, either to store the device after it's done being actively
+      used or for other purposes.
+
+*** Operation
+    Operation is likely to be pretty minimally impactful. Disposable
+    pieces are minimized and energy consumption shouldn't be terrible.
+
+*** Disposal
+    Disposal can be a huge issue. We could possibly reclaim old
+    devices to reuse component pieces or the devices could be donated
+    to programs such as EWH when they outlive their 1st world benefit.
