@@ -1,10 +1,10 @@
 4601 Sr. Des. Notebook
-* [2010-01-14 Thu 12:00] Discussing Project Update Report (I)
+* <2010-01-14 Thu 12:00> Discussing Project Update Report (I)
 + Duties are:
   + Joe :: Project Description, Tables
   + Ginger/Shuyen :: EDS & Prototype Discussion
   + Sanjay :: (lead editor) Project Plan, Executive Summary
-* [2010-01-20 Wed 12:00] Discussion Project Update Report (II)
+* <2010-01-20 Wed 12:00> Discussion Project Update Report (II)
 + Duties are the same as previously:
   + Joe :: Project Description, Tables
   + Ginger/Shuyen :: EDS & Prototype Discussion
@@ -25,7 +25,7 @@ device.
 + Custom fabricated part to link harness to spinning motor (?)
 + Containment cylinder for cleaning purposes and, possibly, filling
   the fixative
-* [2010-01-25 Mon 22:00] Crafting Project Update Report
+* <2010-01-25 Mon 22:00> Crafting Project Update Report
 Project moved to LaTeX typesetting and git/Github version control.
 + Pros
   + Can manage multiple files
@@ -46,7 +46,7 @@ Project moved to LaTeX typesetting and git/Github version control.
 
 Very, very successful editing session between Sanjay and I. Highly
 coordinated, very little conflict between merges.
-* [2010-01-27 Wed 12:00] Discussing Societal Impact
+* <2010-01-27 Wed 12:00> Discussing Societal Impact
 ** Noted Societal Concerns
 *** Research (proximate impact)
 help researchers who will be able to make changes 
@@ -76,7 +76,7 @@ about because they actually need to conserve energy.
 + Joe/Sanjay/Shuyen :: Content producers, each person should share
      writing the bulk of the document by examining societal impact
      concerns.
-* [2010-01-30 Sat 15:00] Playing with the Micrometer
+* <2010-01-30 Sat 15:00> Playing with the Micrometer
  + Micrometer can detach from power source for mounting. Probably not
    necessary.
  + Strong distortion of LED beam through test-tube + water. Need to
@@ -99,11 +99,11 @@ about because they actually need to conserve energy.
 + We have screw-matrix board and aluminum column to host platform
 + We have microscope stand w/ motor+rotary encoder to get vertical motion
 + We have (small?) motor+rotary encoder for spinning
-* [2010-02-01 Mon 16:30] Meeting with TA + SIA Meetup
+* <2010-02-01 Mon 16:30> Meeting with TA + SIA Meetup
 + Turns out we have a new TA: Matthew Magnuson <magnuson1@gmail.com>
 + SIA Report will be manned edited by Ginger
 + Each person responsible for covering 2x societal concerns
-* [2010-02-02 Tue 13:00] Meeting with Nickerson
+* <2010-02-02 Tue 13:00> Meeting with Nickerson
 + Optical quality cuvets -> available through Nickerson (~$100-500)
 + LED beam corrective lens -> Edmund Scientific (?)
 ** Eye biomechanics
