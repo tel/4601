@@ -12,4 +12,4 @@
 working/*
 *.lof
 *.lot
-
+*.synctex.gz
