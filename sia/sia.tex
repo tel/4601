@@ -30,18 +30,18 @@ reconstruction of gross eye shape using a vertically translating LED
 micrometer in conjunction with a rotary motor and framework, linear
 encoder, linear actuator, and sbRIO board.
 
-Five possible impacts the device may have on society are
+Five potential impacts the device may have on society are
 presented. Economically, the device will aid researchers of
 ophthalmology, paleontology, and mechanical engineering by providing a
 long-term cost- and time-saving tool with which to conduct
 measurements, while the manufacture, use, and disposal of the device
 leaves a minimal ecological footprint upon the environment. The
 ethical implications of the device include changes in national policy
-as well as the public abuse of genetic information, and the device
-faces little to no minimal regulation by the Food and Drug
-Administration and local research facilities. In general, the device
-benefits society by presenting an investment whose proper use may lead
-to previously undiscovered treatments or to new avenues of research
+as well as the public abuse of genetic information. The device faces
+little to no regulation by the Food and Drug Administration and local
+research facilities. In general, the device benefits society by
+providing a tool which enables researchers to discover previously
+undiscovered treatments and to pursue new avenues of research
 regarding genetic factors and their effects on eye shape.
 
 % oh no it's only 207 words! Do we really need 43 more words in there
@@ -49,7 +49,7 @@ regarding genetic factors and their effects on eye shape.
 
 \newpage
  
- 
+  
 \section{Introduction}
 \label{sec:Introduction}
  
@@ -89,7 +89,7 @@ In order to perform such genetic analysis, much of this research is
 carried out on mouse animal models due to availability, ease of
 genetic manipulation, and
 affordability\cite{schaeffel04}. Unfortunately, this means that the
-observations are made on the mouse eye, which ranges between 1.5 to 4
+observations must be made on mouse eyes, which range between 1.5 to 4
 millimeters in diameter. At this size, affective anatomical
 deformations occur at resolutions of 5 microns. Current research
 methods include laborious, error-prone, unrepeatable manual
@@ -124,22 +124,11 @@ microscope frame augmented with another motor/encoder pair to provide
 linear articulation in the z-direction while maintaining
 high-resolution position data. Finally, the data from the two encoders
 and the micrometer is fed into a National Instruments Single-board
-Real-time Input Output device (sbRIO), which provides real-time
+Reconfigurable Input Output device (sbRIO), which provides real-time
 feedback and control while collecting data for online
 reconstruction. The reconstruction algorithm itself is a modified
 back-projection algorithm supplemented by cosine interpolation in the
 z-direction.
- 
-The entire device operates by accelerating the eye harness up to a
-fixed angular velocity and then taking measurements while adjusting
-the micrometer head location. This results in a data set which has
-very high resolution data at locations on the eye with small
-circumferences, but the velocities of both actuators can be chosen to
-limit the minimum resolution along the widest circumferences as to be
-within spec. While the over-scanning that occurs in low circumference
-areas is unnecessary and increases scan time, the methyl-cellulose
-buffer increases eye survival time to several hours, thus relaxing the
-need for rapid scanning.
  
 In the process of designing and manufacturing a device, it is
 important to consider the various impacts the device may have on
@@ -156,15 +145,15 @@ particularly those who conduct studies requiring accurate measurements
 of an eye. An estimated number of 500 researchers working at 70
 medical research institutions will benefit from the device
 \cite{Nickerson}, which will introduce new avenues to study the eye
-while helping researchers conduct their research better and
+while enabling researchers to conduct current research easier and
 faster. Specifically, the device enables three-dimensional analysis,
 allowing researchers to study more variables such as eyeball
 sphericity and uniaxial eye length in a quantitative, less strenuous,
 and less time-consuming manner. The improved performance supplied by
 the device would translate into savings, in terms of both time and
-money, for both researchers and organizations that fund them like the
-NIH, and this in turn would allow money from the general public and
-resources at research institutions to be invested in making
+money, for both researchers and organizations that fund them, such as
+the NIH. This in turn would allow money from the general public
+and resources at research institutions to be invested in making
 discoveries on more fronts, advancing scientific knowledge at a
 greater rate.
  
@@ -289,14 +278,30 @@ the accessible emission limits" \cite{fdaguidelines}.
 \label{sec:Conclusion}
 
 In general, the device contributes to society in a beneficial
-manner. It not only requires minimal regulation and leaves a minimal
-ecological footprint, but it also acts as a cost- and time-saving
-long-term investment for ophthalmological researchers and possibly for
+manner. It requires minimal regulation and leaves a minimal ecological
+footprint, while serving as a cost- and time-saving long-term
+investment for ophthalmological researchers and possibly for
 researchers in paleontology and mechanical engineering.  Though the
 use of the device must be confined to confidential medical and
 research contexts, the device presents a novel influence on national
 policy and on further treatment for myopia or other genetic causes of
 eye deformation.
+
+\section{Addendums}
+\label{sec:addendums}
+
+\subsection{Figures}
+\label{sec:figures}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{../img/schematic1}
+  \figcaption{\textbf{Schematic of the Prototype:} This figure
+    illustrates the physical organization of the various components of
+    the design within an enclosed framework. Each component is
+    labeled. }
+  \label{fig:schematic}
+\end{figure}
  
 \newpage
 \addcontentsline{toc}{section}{References}
