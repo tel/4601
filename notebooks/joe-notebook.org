@@ -130,6 +130,16 @@ scan time can expand to ~1hr or more. Effectively:
 /DIGITIZATION ACCURACY IS MORE IMPORTANT THAN SPEED/
 
 Such a good tradeoff.
+* <2010-02-02 Tue 21:00> Review TA comments and fix report
+* <2010-02-05 Fri 12:00> TA Meeting
+* <2010-02-05 Fri 21:00> Fake data (python version)
+* <2010-02-07 Sun 23:00> SIA Sections (Environmental/Ethics)
+* <2010-02-08 Mon 15:00> More fake data work (python/haskell)
+* <2010-02-08 Mon 23:00> SIA Editing through the night
+* <2010-02-10 Wed 12:00> Meeting with Shuyen (design thoughts)
++ /3 attached sheets/
+* <2010-02-12 Fri 15:00> NI Equipment arrives
+* <2010-02-15 Mon 13:08> Sanjay got the micrometer
 * Config
 #+STARTUP: overview
 #+STARTUP: indent
