@@ -5,6 +5,7 @@
 *.aux
 *.toc
 */auto/*
+auto/*
 *.pdf
 *.bbl
 *.blg
@@ -12,8 +13,5 @@
 working/*
 *.lof
 *.lot
-<<<<<<< Updated upstream:.gitignore
 *.synctex.gz
-=======
 *.pyc
->>>>>>> Stashed changes:.gitignore
