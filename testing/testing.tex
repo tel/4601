@@ -38,11 +38,87 @@
 \section{Testing Protocols}
 \label{sec:protocols}
 
-%
-%
-% Everyone, fill out your testing details here.
-%
-%
+Ginger: physical structure of the harness (it must support the eye, keep it safe, rotate cleanly, fit into frame, etc etc)
+
+Name of test: Tweezer support and eyeballs
+Importance of test (vital for operation ~ interesting to know): Tests whether the optic nerve is held tightly enough by the tweezers to prevent unnecessary 
+eyeball movement/rotation 
+Purpose and background: The reverse action tweezers have been modified to fit into the physical top cap of the piece. This test tests whether the cap has been made
+properly, that is, whether the tweezers are still functional within the cap (do they hold the eye tightly enough - but not too tight that the optic nerve breaks when
+motor is spun)
+Functionality this ties in to (maybe even tie it to an EDS if that's pertinent): don't think this fits with any EDS. Functionality: effect of cap on tweezers...does the
+cap actually work???
+How to test (measurement, outline of a protocol)
+1. spin the motor - incrementally increase speed
+2. scan eyeball at same time
+3. note any distorted images or extreme movement of eyeball (like is the eye hitting the side of the tube)
+The set of test metrics (possibly just one, I suppose): speed at which tweezers drop the eyeball
+Possible test results (what does a successful test look like, what does a failed test look like, miserably failed test?): miserable failure - eyeball breaks off from optic nerve; 
+eyeball gets dropped
+(with this one, quantify: exactly how bad might we expect a failure to be? how separable are the test metrics in a good and a failed device?)
+ummm...it qualifies as failure if the eyeball breaks off from nerve when the motor is spinning at a speed range that we expect to use for the actual device. If it breaks off at 
+an extreme speed not to be used to operate the device, doesn't count as failure. 
+Exactly how bad do we expect a failure to be...I'm not sure...
+
+Any other notes that would help me write the details: ? 
+
+
+Name of test: Bottom cap/motor
+Importance: Does the bottom cap connect and fit into the motor and not fall off the motor when the motor spins really fast - so basically is the bottom cap held tightly enough
+by the motor
+Purpose/background: This is a physical check to make sure that the motor and the cap are connecting properly and that the cap is rotating at same speed as motor
+Functionality: same as purpose????
+Protocol: 
+1. spin the motor - incrementally increase speed
+2. find speed at which bottom cap disconnects from motor
+Test Metrics: the range of #2 above
+Possible test results: successful test - stays on, failed test - begins to come loose, miserably failed - flies across the room and kills somebody or shatters into the wall epic fail
+an epic failure would be if the cap disconnects at a speed which we expect to use in the actual device (a low speed)
+Notes: sorry this test is made of fail 
+
+
+
+Name of test: Tweezers/top cap
+Importance: Do the tweezers fit
+Purpose/background: There are two components. Is the hole big enough on the top cap or is the hole designed properly to support tweezers
+Functionality: don't think this fits into EDS. 
+Protocol: 
+1. stick the tweezers in the hole
+2. do they fall through? 
+3. can you open and close the tweezers by a large enough distance that they can still grasp the eyeball?
+Test Metrics: how much can you open and close the tweezers? see #3 on protocol. Is there enough leeway (not sure how much numerically) to grasp eyeball and support eyeball when
+tweezer is inserted into the top cap?
+Possible test results: 
+FAILURE: they don't fit - they fall through the hole or cannot be opened
+SUCCESS: the tweezers are still functional inside the hole
+MODERATE: tweezers can open and close but not enough to grasp eyeball
+Notes:
+
+
+Name of test: Tube/caps/silicon
+Importance: do the caps and silicon seal the tube
+Purpose/background: are the caps going to fall off with high velocity motor spin?
+Functionality: same as purpose?
+Protocol: 
+1. spin motor and incrementally increase speed
+2. do caps fall off? (does Si seal the caps to the tube as it should?)
+Test Metrics: not sure of any numbers  - range of distance that caps detach from the tube
+Possible test results: does cap completely detach from tube or just a little bit at high-velocity motor speed (or lower motor speeds that we use to perate the device)
+Notes:
+
+
+Name of test: fluid inside tube 
+Importance: Is fluid transparent enough for scanning to be successful
+Purpose/background: eye will be fixed in polymer solution, so how much does sol'n affect the scan? can eyeball be detected effectively or does solution completely block transmittance of light?
+Functionality: 
+Protocol: 
+1. fill fluid in tube
+2. scan eyeball
+Test Metrics: ???
+Possible test results: eyeball detected but distorted by the solution; eyeball detected and not distorted at all by solution; eyeball cannot be detected at all because solution is too opaque (also the tube we use may have an effect)
+Notes: 
+
+I'll do the final copy-editing as usual -Ginger 
 
 
 \section{Addendums}
