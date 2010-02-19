@@ -121,6 +121,67 @@ Notes:
 I'll do the final copy-editing as usual -Ginger 
 
 
+Shuyen's part--------------------v----------------------------
+Name: harness frame strength test
+Importance: good to know that it’s strong, meeting robustness EDS
+Purpose: making sure the frame is strong enough to hold things in place
+Functionality: Probably related to robustness – things must survive some amount of force
+How to test: subject individual pieces to different loading: tensile and bending
+          Take one piece; hold it in place with clamp(s)
+          Load weight on it: 30g, 50g, 100g, 300g, (1kg?) at different position
+          Change the orientation of the piece and load again
+          Repeat for different pieces
+Test metrics: Orientation of piece
+Amount of weight loaded, 
+           Position of loading
+           Breaking (y/n)
+Possible results: Good: no breaking
+              Bad: anything breaks
+
+Name: harness frame assembly failure test 
+Importance: meeting EDS
+Purpose: To verify the specification of ability to sustain 3-ft drop impact
+Functionality: see above
+How to test: Assemble frame structure onto base
+          Drop the assembly from 3-ft height to concrete floor
+          Examine frame for any material failure (i.e. fracture, breaking) or detachment from base or from each other
+           Repeat several (5-10?) times and record the number of repeat and the result of each repeat
+Test metrics: number of repeat (values are from 1-10)
+                   Fracture (y/n)
+                   Breaking (y/n)
+                   Detachment from base (y/n)
+                   Loose connection between frame pieces (y/n) 
+Possible test results: good result: all the y/n question receives an “n” (no fracture, breaking, detachment etc)
+                 Bad result: any fracture, breaking, detachment 
+
+Name: harness frame stiffness test
+Importance: meeting stability EDS
+Purpose: make sure the frame can hold things in their relative position without much deviation
+Functionality: probably related to stability and accurate measurement – things need to be in the right places and not move too much
+How to test: see harness frame strength test
+           Note significant bending (visible to the eye, y/n)
+           Measure deflection distance, also record bending direction
+Test metrics: same as frame strength test
+Significant bending (y/n)
+           Deflection (length unit)
+Possible results: Good: no significant bending at all
+              Bad: Significant bending, especially at low weight (low force)
+
+Name: Thermal expansion test
+Importance: good to know? May need to meet EDS 
+Purpose: to verify that the device will work in the temperature range of 22±5 °C
+Functionality: structural integrity at room temperature
+How to test: Assemble the device at 17 °C
+          Heat the device up to 27 °C (use a convection incubator or something)
+          Examine device for fracture  
+          Assemble the device at 27°C
+          Cool it down to 17°C (refrigerator?)
+          Examine device for loose connection or detachment
+Test Metrics: fracture with increased T (y/n)
+           Loose connection with decreased T (y/n)
+Possible results: good: no fracture or loose parts
+              Bad: fracture/loose parts, or not able to assemble when temperature is higher
+
 \section{Addendums}
 \label{sec:addendums}
 
