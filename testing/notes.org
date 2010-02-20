@@ -222,3 +222,46 @@ Notes on the Testing and Verification Protocol
          and the one attached to the rotational motor. 
      11. Stop output of any actively outputting digital lines. Stop
          reading input of any actively recording digital lines.
+**** Results
+     + Test Metrics
+       1. Did the input from the micrometer correspond with the actual
+          physical dimension of the test piece throughout testing?
+       2. Did the z-motor move at a proper rate when engaged with a
+          digital pulse?
+       3. Did the z-motor encoder record the distance covered by the
+          z-motor properly?
+       4. Did the rotational motor move at a proper rate when engaged
+          with a digital pulse?
+       5. Did the rotational motor encoder record the theta-value
+          covered by the rotational motor properly?
+       6. Did both motors move when activated simultaneously? 
+       7. Did both encoders properly record the movement of the motors
+          when activated simultaneously?
+       8. Did the micrometer measurements sustain properly during both
+          single and simultaneous activation of the motors and encoders?
+     + Possible Results
+       1. Good: Yes to all the questions above
+       2. No: Yes to all but the last 3 questions (suggesting issue
+          with simultaneous activation)
+       3. No: Yes to all but the first and last question (suggesting
+          failure of I/O to the micrometer)
+       4. No: No to all but the first and last question (suggesting
+          failure of I/O to the motors and encoders)
+*** Reconstruction Algorithm
+    + Importance :: The reconstruction algorithm is key to moving from
+                    raw data to useable information. Without
+                    generating a proper reconstruction, the device
+                    would be useless as a tool for scientific
+                    investigation.
+    + Purpose :: To verify that the reconstruction algorithm properly
+                 converts from raw data to a 3-D rendering of the test
+                 sample.
+**** Protocol
+     1. Stand-Alone Testing: 
+	a. Generate an artificial data set which contains no noise,
+        and encodes the measurements for an object of pre-determined
+        dimension (aka a sphere of set radius)
+	b. Input artificial data into the reconstruction algorithm
+
+
+
