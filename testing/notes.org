@@ -185,3 +185,40 @@ Notes on the Testing and Verification Protocol
        + Good :: no fracture or loose parts
        + Bad :: fracture/loose parts, or not able to assemble when
                 temperature is higher
+** Sanjay
+*** Data Input/Output
+    + Importance :: To check whether or not the system is setup such
+                    that data is properly streaming in from the
+                    micrometer, motors, and encoders to the
+                    computer. If there is a data I/O error, then the
+                    device won't function properly!
+    + Purpose :: To verify that the physical and software setup on for
+                 the I/O is properly done, meaning that data from the
+                 encoders and the micrometer is properly streaming in,
+                 and that the digital pulses to drive the motors are
+                 properly reaching the motors.
+**** Protocol
+     1. Fully connect and power the device (all motors and encoders
+        are connected and powered; the micrometer is connected and
+        powered; the NI hardware is powered and connected to the
+        device and to a computer)
+     2. Load an object of known dimension (sphere, cube etc.) into the
+        device.
+     2. Record the distance measured by the micrometer by reading from
+        the digital I/O lines which encode the distance. Update the
+        measurement every time the latch digital line on the
+        micrometer activates, indicating an updated measured value.
+     3. Send out a digital pulse train to the motor controlling the
+        z-direction movement of the micrometer. 
+     4. Record from the encoder attached to the z-motor
+     5. Stop digital pulse train to the z-motor
+     6. Send out a digital pulse to the motor controlling the rotation
+        of the eyeball/test tube
+     7. Record from the encoder attached to the rotational motor
+     8. Stop digital pulse train to the rotational motor
+     9. Send out a digital pulse to both the z-motor and the
+        rotational motor.
+     10. Record from both encoders -- the one attached to the z-motor,
+         and the one attached to the rotational motor. 
+     11. Stop output of any actively outputting digital lines. Stop
+         reading input of any actively recording digital lines.
