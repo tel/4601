@@ -202,51 +202,69 @@ Notes on the Testing and Verification Protocol
         are connected and powered; the micrometer is connected and
         powered; the NI hardware is powered and connected to the
         device and to a computer)
-     2. Load an object of known dimension (sphere, cube etc.) into the
+     2. Load an object of known dimension (eg: sphere) into the
         device.
      2. Record the distance measured by the micrometer by reading from
         the digital I/O lines which encode the distance. Update the
         measurement every time the latch digital line on the
         micrometer activates, indicating an updated measured value.
-     3. Send out a digital pulse train to the motor controlling the
+     3. Record from the encoder attached to the z-motor
+     4. Send out a digital pulse train to the motor controlling the
         z-direction movement of the micrometer. 
-     4. Record from the encoder attached to the z-motor
-     5. Stop digital pulse train to the z-motor
-     6. Send out a digital pulse to the motor controlling the rotation
+     5. Stop digital pulse train to the z-motor after a set number
+        (eg: 1000) of ticks have been recorded by the encoder attached
+        to the z-motor
+     6. Record from the encoder attached to the rotational motor
+     7. Send out a digital pulse to the motor controlling the rotation
         of the eyeball/test tube
-     7. Record from the encoder attached to the rotational motor
-     8. Stop digital pulse train to the rotational motor
+     8. Stop digital pulse train to the rotational motor after a set
+        number (eg: 1000) of ticks have been recorded by the encoder
+        attached to the rotational motor. 
      9. Send out a digital pulse to both the z-motor and the
         rotational motor.
      10. Record from both encoders -- the one attached to the z-motor,
          and the one attached to the rotational motor. 
-     11. Stop output of any actively outputting digital lines. Stop
-         reading input of any actively recording digital lines.
+     11. Stop output to the motors, and stop input from the encoders
+         and the micrometer. 
 **** Results
      + Test Metrics
-       1. Did the input from the micrometer correspond with the actual
-          physical dimension of the test piece throughout testing?
-       2. Did the z-motor move at a proper rate when engaged with a
-          digital pulse?
-       3. Did the z-motor encoder record the distance covered by the
-          z-motor properly?
-       4. Did the rotational motor move at a proper rate when engaged
-          with a digital pulse?
-       5. Did the rotational motor encoder record the theta-value
-          covered by the rotational motor properly?
-       6. Did both motors move when activated simultaneously? 
-       7. Did both encoders properly record the movement of the motors
-          when activated simultaneously?
-       8. Did the micrometer measurements sustain properly during both
-          single and simultaneous activation of the motors and encoders?
+       1. Did the decoded input from the micrometer correspond with
+          the reading on the screen?
+       2. Did the z-motor move at a proper rate and the proper amount
+          when engaged with a digital pulse?
+       3. Did the rotational motor move at a proper rate and the
+          proper amount when engaged with a digital pulse?
+       4. Did the movment of the two motors correspond with the
+          readout from the encoders when activated simultaneously?
+       5. Did the decoded signal from the micrometer correspond with
+          the readout on the screen during both single and
+          simultaneous activation of the motors and encoders?
      + Possible Results
-       1. Good: Yes to all the questions above
-       2. No: Yes to all but the last 3 questions (suggesting issue
-          with simultaneous activation)
-       3. No: Yes to all but the first and last question (suggesting
-          failure of I/O to the micrometer)
-       4. No: No to all but the first and last question (suggesting
-          failure of I/O to the motors and encoders)
+       1. Yes to Metric 1 indicates that the data was being properly
+          sent down the digital lines to the NI board and was being
+          decoded properly
+       2. For Metric number 2 and 3, if the motor moved at the proper
+          rate (correleating with the specifications/calibration of
+          the motor), it means that the motor didn't slip, and that
+          the digital output to the motor is properly functioning. If
+          the encoder ticks didn't correspond to the motor distance,
+          it indicates that the encoder failed to propery record the
+          movement of the motor. If the motors didn't move at all, it
+          indicates a failure in the digital output to the motor, and
+          if the encoder failed to record any movment, it indicates a
+          failure in the setup of the encoder.
+       3. For Metric 4, if the movement of the two motors corresponded
+          to the encoder readings, it indicates successful
+          simultaneous activation of the motor control system. If
+          there is a discrepency between the movement of the motors
+          and the readout from the encoder, it indicates an
+          unsuccessful simultaneous activation of the motor control system.
+       4. For Metric 5, if the decoded signal corresponded with the
+          readout on the screen, it indicates successful simultaneous
+          activation of the micrometer with the motor system. If the
+          decoded signal failed to match the readout on the screen, it
+          indicates that the micrometer and motor control system fail
+          to work properly in parallel.
 *** Reconstruction Algorithm
     + Importance :: The reconstruction algorithm is key to moving from
                     raw data to useable information. Without
@@ -257,11 +275,23 @@ Notes on the Testing and Verification Protocol
                  converts from raw data to a 3-D rendering of the test
                  sample.
 **** Protocol
-     1. Stand-Alone Testing: 
-	a. Generate an artificial data set which contains no noise,
+     1. Generate an artificial data set which contains no noise,
         and encodes the measurements for an object of pre-determined
         dimension (aka a sphere of set radius)
-	b. Input artificial data into the reconstruction algorithm
+     2. Input artificial data into the reconstruction algorithm
+     3. Check the output of the reconstruction algorithm against the
+        object defined by the input data
+**** Results
+     + Test Metric
+       1. Did the reconstruction (output from the reconstruction
+          algorithm) match the original object defined by the
+          generated data?
+     + Possible Results
+       1. The reconstruction (output) matches the object defined by
+          the raw data input, meaning that the reconstruction
+          algorithm is fuctioning properly. If the output doesn't
+          match the input, it indicates an error in the reconstruction
+          algorithm.
 
 
 
