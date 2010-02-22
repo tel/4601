@@ -12,28 +12,122 @@
 \tableofcontents
 \newpage
 
-\listoftables
-\listoffigures
-\newpage
-
-
-\section*{Executive Summary}
+\section*{Executive summary}
 \label{sec:exec-summary}
 
 
 \newpage
 
-\section{Testing Methods}
+\section{Testing methods}
 \label{sec:testing-protocols}
 
-\subsection{Data Acquisition and Storage}
+A prototype device is considered successful if it fufills the needs
+outlined in the Engineering Design Specifications. For our device,
+this can be simplified to four testing concerns which combine
+effectively to ensure a successful device. These concerns will be
+referred to throughout this document.
+
+\paragraph{Fixation} The eye to be measured must fit into its harness
+and thus be appropriately fixed. It should act as a rigid body under
+the forces (and pertubations from) constant velocity during
+measurement. It should remain fixed in location relative to its
+harness and not slip or wobble.
+
+\paragraph{Articulation and positioning} The harness must be
+articulated accurately and precisely by the frame
+motors. Additionally, the position of the harness must be accurately
+measured by the motors' encoders in order to perform the
+reconstruction.
+
+\paragraph{Recording} The micrometer must be able to read the eye
+without hinderance or distortion from the harness.
+
+\paragraph{Noise minimization} The noise induced from eye, harness,
+and frame vibrations should not total to overwhelm the desired
+accuracy bounds. Additionally, the reconstruction algorithm should not
+transform small signal noise to large disortions at any point.
+
+A device implementation which can achieve these four ends will succeed
+in meeting the design specifications and thus be a strong choice for a
+final prototype.
+
+\subsection{Performing the tests}
+\label{sec:hierarchical-testing}
+
+Since all device implementations will contain a number of subsystems,
+it is necessary to test each one in isolation as a set of unit
+tests. The necessary assumptions for a subsystem to act as a unit is
+that each component is fault-free and no components interact to cause
+a failure. For our device, this demands that each motor and frame
+component is individually tested and then in combination. This forces
+a necessary hierarchy and ordering on the tests: systems are only
+tested once all of their dependent systems have individually passed.
+
+The test protocols in the rest of this document are presented with
+respect to this dependency ordering.
+
+\subsection{Data acquisition and storage}
 \label{sec:data-acqu-stor}
+
+The data obtained during these tests is never sensitive but may very
+easily be extremely high volume. This implies that storage need not be
+secure, but some preproccessing will be necessary. Each test sequence
+will be labeled by date, prototype ID and necessary preprocessing and
+sufficient summary statistics will be presented in each section as
+necessary as the \emph{stored test data}.
 
 \subsection{Statistics}
 \label{sec:statistics}
 
+The tests considered follow two general patterns: continuous error
+propagation and binary (pass/fail) decisions. Each test will be
+labeled by the form of statistic needed to evaluate test certainty.
+
+\subsubsection{Continuous}
+\label{sec:continuous}
+
+These tests result in an uncertain measurement of the amount of
+physical noise induced by a given subsystem. Since physical noise is
+linear and has infinite support, we represent noise as the variance in
+a Gaussian term. Since overall noise must be less than \SI{2}{\micro
+  m} in order to ensure sufficient accuracy, these tests only fail if
+we are less than 95\% certain that the noise induced by this level is
+sub-\SI{2}{\micro m}.
+
+The geometry of the device is used to combine errors in larger
+systems. For instance, the noise at a certain subsystem could be the
+weighted sum of the noises generated at its component sublayers. In
+general, the expectation of total error is monotonically increasing in
+more complex subsystems and the uncertainty is additive therefore
+exceeding \SI{2}{\micro m} at any point constitutes a failure and
+justifies discontinuing tests.
+
+\subsubsection{Binary}
+\label{sec:binary}
+
+These tests can result as either a certain or probabilistic pass or
+failure. For instance, the type of support polymer used in the eye
+harness could either obstruct the LED measurement beam (fail) or
+permit it (pass). Since this is purely a function of very consistent
+physical processes --- the absorbance spectrum of the polymer --- a
+single test is sufficient for prototyping purposes. Other binary tests
+such as the presence slippage between the harness and the articulating
+motors may be better modeled via a full failure analysis.
+
+Failure analysis is interested in the average time between failures or, in the event of catastrophic failure, the average lifetime. These are roughly equivalent provided the chance of failure ($p$) is low and can both be represented as a discrete count $m = 1/p$. In general, to be 95\% certain that the average failure time is less than some $m$ you must
+
 \subsection{Presentation}
 \label{sec:presentation}
+
+Due to the dependent nature of the full testing protocol, the
+progress of a given prototype through the full verification protocal
+can be easily visualized. Additionally, since both expected value and
+uncertainty about the induced noise are maintained and combined, at
+any given point the distribution of the noise can be graphically
+presented to indicate chance of a sufficiently accurate measurement.
+
+An example summary table is presented in Figure
+\ref{fig:result-summary}.
 
 \section{Testing Protocols}
 \label{sec:protocols}
