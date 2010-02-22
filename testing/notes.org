@@ -1,4 +1,4 @@
-Notes on the Testing and Verification Protocol
+﻿Notes on the Testing and Verification Protocol
 * TESTS
 ** Ginger 
    physical structure of the harness (it must support the eye, keep it
@@ -151,19 +151,33 @@ Notes on the Testing and Verification Protocol
                        measurement – things need to be in the right
                        places and not move too much
 **** Protocol
+    + For Individual components ::
     (see harness frame strength test)
     + Note significant bending (visible to the eye, y/n)
     + Measure deflection distance, also record bending direction
+    + For Assembly: 
+    + Mark the test tube black with dry-erase marker
+    + Assemble the frame harness and core piece (testtube and caps)
+    + Measure the test tube with the micrometer at low angular speed (assumption: low angular speed will not cause large force on the frame and in turn create deflection in the frame pieces)
+    + Measure the test tube with the micrometer at high speed again
+    + Compare the data set obtained at different angular speed
 **** Results
-     + Test metrics
+     + Test metrics ::
+       for Individual components
        (same as frame strength test)
        1. Significant bending (y/n)
        2. Deflection (length unit)
+       for assembly ::
+       1. angular speed
+       2. measurement data set
      + Possible results
+       + for individual components
        + Good :: no significant bending at all
        + Bad :: Significant bending, especially at low weight (low
                 force)
-
+       + for assembly
+       + Good :: small/statistically insignificant difference between the measurement data at different angular speed
+       + Bad :: opposite of good
 *** Thermal expansion test
     + Importance :: good to know? May need to meet EDS
     + Purpose :: to verify that the device will work in the
