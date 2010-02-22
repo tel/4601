@@ -5,35 +5,26 @@
    safe, rotate cleanly, fit into frame, etc etc)
 
 *** Tweezer support and eyeballs
-    + Importance :: (vital for operation ~ interesting to know): Tests
-                    whether the optic nerve is held tightly enough by
-                    the tweezers to prevent unnecessary eyeball
-                    movement/rotation
+    + Importance :: (vital for operation ~ interesting to know): good to know that the tweezers are holding eyeball at right amount of force so that the eyeball will not slip during spinning/scanning process and significantly affect data. 
     + Purpose and background :: The reverse action tweezers have been
          modified to fit into the physical top cap of the piece. This
-         test tests whether the cap has been made properly, that is,
-         whether the tweezers are still functional within the cap (do
-         they hold the eye tightly enough - but not too tight that the
-         optic nerve breaks when motor is spun)
-    + Functionality :: effect of cap on tweezers...does the cap actually
-                       work???
-**** Protocol Details
-      1. spin the motor - incrementally increase speed
-      2. scan eyeball at same time
-      3. note any distorted images or extreme movement of eyeball
-         (like is the eye hitting the side of the tube)
-      4. spin the motor - incrementally increase speed
-      5. find speed at which bottom cap disconnects from motor    
-**** Results
-     + Test Metrics :: the range of #2 above
-     + Possible Results :: Possible test results: successful test -
-          stays on, failed test - begins to come loose, miserably
-          failed - flies across the room and kills somebody or
-          shatters into the wall epic fail an epic failure would be if
-          the cap disconnects at a speed which we expect to use in the
-          actual device (a low speed) Notes: sorry this test is made
-          of fail
+         tests whether the cap has been made properly, that is,
+         whether the tweezers are still functional within the cap (where in they won't break optic nerve (by gripping with too much force) or release optic nerve (and eyeball) during scanning (by griping with too little force)
+    + Functionality :: meets speed EDS; essentially tests the force of tweezer upon eyeball
 
+**** Protocol Details
+    1. Use tweezers to hold the eyeball at a set force
+    2. Spin the motor at constant velocity we are choosing to use for operation
+    3. See whether optic nerve breaks or slips
+    4. See whether eyeball wobbles too much using that set amount of force
+--> notes: Is there any way we can measure the force of the tweezers upon the eyeball using some kind of load cell or equivalent???
+    5. Repeat with different amount of force.
+**** Results
+     + Test Metrics :: the range of force at which tweezers hold eyeball without slippage and breaking; the position of the eyeball during the tests
+     + Possible Results :: 
+1. the force which we hold eyeball causes optic nerve slippage or breakage = failure
+2. moderate failure - force does not cause slippage/breakage but does make eyeball "wobble" too much and significantly affects position data (or scanning)
+3. success = force causes no slippage/breakage, any "wobbling" that occurs does not significantly affect position data
 
 *** Tube/caps/silicon
     + Importance :: do the caps and silicon seal the tube
