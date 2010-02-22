@@ -34,30 +34,6 @@
           actual device (a low speed) Notes: sorry this test is made
           of fail
 
-*** Tweezers/top cap
-    + Importance :: Do the tweezers fit
-    + Purpose/background :: There are two components. Is the hole big
-         enough on the top cap or is the hole designed properly to
-         support tweezers
-    + Functionality :: don't think this fits into EDS.
-**** Protocol
-     1. stick the tweezers in the hole
-     2. do they fall through? 
-     3. can you open and close the tweezers by a large enough distance
-        that they can still grasp the eyeball?
-**** Results
-     + Test Metrics :: how much can you open and close the tweezers?
-                       see #3 on protocol. Is there enough leeway (not
-                       sure how much numerically) to grasp eyeball and
-                       support eyeball when tweezer is inserted into
-                       the top cap?
-
-     + Possible test results :: 
-          1. FAILURE :: they don't fit - they fall through the hole or
-             cannot be opened
-          2. SUCCESS :: the tweezers are still functional inside the hole
-          3. MODERATE :: tweezers can open and close but not enough to
-                         grasp eyeball
 
 *** Tube/caps/silicon
     + Importance :: do the caps and silicon seal the tube
