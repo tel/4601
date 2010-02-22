@@ -40,25 +40,30 @@
                        that caps detach from the tube
      + Possible test results :: does cap completely detach from tube
           or just a little bit at high-velocity motor speed (or lower
-          motor speeds that we use to perate the device) Notes:
+          motor speeds that we use to perate the device) Notes: this isn't that important. 
 
 *** Name of test: fluid inside tube
-    + Importance :: Is fluid transparent enough for scanning to be
-                    successful
-    + Purpose/background :: eye will be fixed in polymer solution, so
+    + Importance :: Does the polymer affect the scanning? (Will it cause light diffusion to the point of damaging our measurement as Joe states?)
+    + Purpose/background :: The eye will be fixed in polymer solution, so
          how much does sol'n affect the scan? can eyeball be detected
          effectively or does solution completely block transmittance
-         of light?
-    + Functionality :: ???
+         of light? 
+    + Functionality :: Resolution EDS
 **** Protocol
-     1. fill fluid in tube
-     2. scan eyeball
+     1. fill fluid in (optic) tube, fix eyeball in center using tweezers
+     2. scan eyeball by rotating at constant velocity and collect position data
+     3. perform 3D reconstruction upon data and see resulting shape/dimensions
+     4. repeat using control - an (optic) tube with no fluid
+     5. We could possibly use different polymer compositions - our current fluid is 10% methyl cellulose to water; we could also try 5% MC/H2O or Karo corn syrup
+
 **** Results
-     + Test Metrics :: ???
-     + Possible test results :: eyeball detected but distorted by the
-          solution; eyeball detected and not distorted at all by
-          solution; eyeball cannot be detected at all because solution
-          is too opaque (also the tube we use may have an effect)
+     + Test Metrics :: the scanning/position data of each case; the 3D reconstruction/calculated dimensions of each case
+     + Possible test results :: 
+      failure: exp. and control position/reconstruction data differs significantly (eyeball cannot be detected at all because solution
+          is too opaque)
+      success: exp. and control position and reconstruction data does not differ significantly
+      Notes: The heart of the question is twofold: 1) can we adjust the micrometer to penetrate the support polymer and still measure the object in the center and 2) does the polymer cause light diffusion to the point of damaging our measurement - I have only addressed #2 here. 
+
 
 ** Shuyen
 *** Harness frame strength
