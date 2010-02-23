@@ -15,11 +15,11 @@
 \section*{Executive summary}
 \label{sec:exec-summary}
 
-This document outlines testing concerns and protocols useful to encapsulate the prototyping process providing feedback between potential prototypes and the needs of the consumer as specified in the engineering design specification. The tested device, a desktop 3-dimensional digitizer specialized for organic material, is a highly complex device including many subsystems. This hierarchical structure affects the tests by providing clear failure and noise propagation dependencies, but also illuminates the difficulty of fully testing the device.
+This document outlines testing concerns and protocols useful for encapsulating the prototyping process, providing feedback between potential prototypes and the needs of the consumer as specified in the engineering design specification. The tested device, a desktop three-dimensional digitizer specialized for organic material, is a highly complex device including many subsystems. This hierarchical structure affects the tests by providing clear failure and noise propagation dependencies, but also illuminates the difficulty of fully testing the device.
 
-Administrative details are outlined including the best methods for reducing data dimensionality, storing, and protecting the acquired testing data. Additionally, general concerns for the statistical frameworks that will be used to intelligently compare results are addressed including global estimates for necessary sample sizes. It is noted that tests tend to either have binary (pass/fail) summaries or Gaussian estimates for the amount of noise produced at a given level. Finally, a method of converting complex testing data to interpretable summary graphics for presentation is suggested.
+Administrative details are outlined, including the best methods for reducing data dimensionality, storing, and protecting the acquired testing data. Additionally, general concerns for the statistical frameworks that will be used to intelligently compare results are addressed, including global estimates for necessary sample sizes. It is noted that tests tend to either have binary (pass/fail) summaries or Gaussian estimates for the amount of noise produced at a given level. Finally, a method of converting complex testing data to interpretable summary graphics for presentation is suggested.
 
-Testing concerns and example protocols are examined both for the top level functional tests and then many of the component unit-level tests. In particular, testing is considered at the unit levels of the eye harness, the stability of the frame, the actuation of the frame, the input/output and control circuitry, and the reconstruction algorithm.
+Testing concerns and example protocols are examined both for the top-level functional tests and then many of the component unit-level tests. In particular, testing is considered at the unit levels of the eye harness, the stability of the frame, the actuation of the frame, the input/output and control circuitry, and the reconstruction algorithm.
 
 This document does not attempt to be a comprehensive testing protocol at each and every level, but instead outlines details and concerns which would be necessary components in the generation of any complete testing protocol. It also attempts to illustrate the deeper connections that create the testing dependencies mentioned so as to aid in troubleshooting and deconstruction of failures when they occur.
 
@@ -39,7 +39,7 @@ Methodological testing requires a consistent basis for data acquisition, storage
 \subsection{Data acquisition and storage}
 \label{sec:data-acqu-stor}
 
-Unlike many other medical testing experiments, the primary problem with data acquisition and storage is not related to privacy concerns but instead to the high data volume of each test. Each test will be identified by the date and the ID %what is ID? of the prototype being tested and stored in a central, mirrored relational database. Tests that involve a high data density step are reduced to a few sufficient summary statistics known as the \textit{retained statistics}. In order to be comparable across prototypes and useful for design analysis, these statistics must encode all relevant information from the tests.
+Unlike many other medical testing experiments, the primary problem with data acquisition and storage is not related to privacy concerns but instead to the high data volume of each test. Each test will be identified by the date and the identification number of the prototype being tested and stored in a central, mirrored relational database. Tests that involve a high data density step are reduced to a few sufficient summary statistics known as the \textit{retained statistics}. In order to be comparable across prototypes and useful for design analysis, these statistics must encode all relevant information from the tests.
 
 \subsection{Statistics}
 \label{sec:statistics}
@@ -51,16 +51,16 @@ labeled by the form of statistic needed to evaluate test certainty.
 \subsubsection{Continuous}
 \label{sec:continuous}
 
-These statistics represent an uncertain estimation of the physical variance in measurement induced at some given unit. The retained statistics are thus means and $(5\%, 25\%, 75\%, 95\%)$ quantiles of the standard deviation of measurements, reported in physical units (\textit{viz.} \SI{}{\micro m}). However, since variances are spread measures and thus exist on a exponential support they are best graphically compared on a logarithmic scale.
+These statistics represent an uncertain estimation of the physical variance in measurement induced at some given unit. The retained statistics are thus means and $(5\%, 25\%, 75\%, 95\%)$ quantiles of the standard deviation of measurements, reported in physical units (\textit{viz.} \SI{}{\micro m}). However, since variances are spread measures and the differences between variances follow an exponential scale, they are best graphically compared on a logarithmic scale.
 
-Given that we are most concerned with these measurements when they are sub-\SI{2}{\micro m} we can estimate them accurately with $N \ge 10$ repetitions.
+Given that we are most concerned with these measurements when they are sub-\SI{2}{\micro m}, we can estimate them accurately with $N \ge 10$ repetitions.
 
 \subsubsection{Binary}
 \label{sec:binary}
 
-These statistics represent tests which can result in either passage or failure and may have a certain lifetime before failure. For instance, slippage may be induced between the radial actuation drive and the eye harness on average once in every one hundred repetitions. If it's reasonable to believe a very strong dependence between repetitions --- the absorbency properties of the eye-support polymer will either pass or fail and are unlikely to change on repetition --- then no estimation of the failure probability is needed.
+These statistics represent tests which can result in either passage or failure and may have a certain lifetime before failure. For instance, slippage may be induced between the radial actuation drive and the eye harness once in every one hundred repetitions on average. If it is reasonable to believe a very strong dependence between repetitions --- that is, if the absorbency properties of the eye-support polymer will either pass or fail and are unlikely to change on repetition --- then no estimation of the failure probability is needed.
 
-If failure probability $p$ is required then an acceptable time to fail must be determined ($m = 1/p$ repetitions, for instance) and greater than $N \ge 4m$ repetitions must be observed for 95\% confidence that the failure probability is indeed successfully constrained. After $N$ observations with $S$ successes, the best estimate of failure probability can be reported as
+If failure probability $p$ is required, then an acceptable time to fail must be determined ($m = 1/p$ repetitions, for instance), and greater than $N \ge 4m$ repetitions must be observed, for 95\% confidence that the failure probability is indeed successfully constrained. After $N$ observations with $S$ successes, the best estimate of failure probability can be reported as
 \begin{align}
   \hat{p} &= \frac{S}{2 + N}
 \end{align}
@@ -77,7 +77,7 @@ Due to the sequential nature of the full testing protocol, the progress of a giv
   \centering
   \includegraphics[width=\linewidth]{../img/testing_summary}
   \figcaption{\textbf{Example testing summary figure:}  
-  Each test of any given prototype is indexed by date and prototype ID. For each subsection the tests are marked by boxes arranged in a predetermined order. Green means test success, red means failure, gray means unperformed. Additionally, a graphical summary of the noise from two major sources is documented with both the maximally likely value and the uncertainty about the measurement.}
+  Each test of any given prototype is indexed by date and prototype ID. For each subsection, the tests are marked by boxes arranged in a predetermined order. Green indicates test success, red indicates failure, and gray indicates unperformed. Additionally, a graphical summary of the noise from two major sources is documented with both the maximally likely value and the uncertainty about the measurement.}
   \label{fig:summary}
 \end{figure}
 
@@ -89,45 +89,45 @@ The following are protocols for the most important tests required to confirm a p
 \subsection{Functionality Tests}
 \label{sec:functional-tests}
 
-The full functionality of the device can be tested at once via a fabricated eye model of known dimensions. An ideal model is a painted fabricated metal ball accurately measured in a metrology lab, however, simple models with areas of high curvature, such as a cross, can also be expected to be useful test objects since they are difficult for our device to accurately measure but easy to measure with a physical micrometer.
+The full functionality of the device can be tested at once via a fabricated eye model of known dimensions. An ideal model is a painted fabricated metal ball accurately measured in a metrology lab; however, simple models with areas of high curvature, such as a cross, may also be useful test objects since they are easy to measure with a physical micrometer but not with the device. 
 
 This test has both binary and continuous components. The test can show a pass or fail for measuring the complete object and also will report a final, high-level measurement variance which will be a monotonic combination of all unit-level noises.
 
 \begin{quotation}
-\noindent\textbf{Base protocol} Obtain a test object along with a gold standard digital mesh of its surface. Load the object into the device identically to a subject eye and scan once per repetition. After $N = 10$ repetitions compute the representative deviations for each repetition as the three axial lengths (anterior-posterior, nasal-temporal, dorsal-ventral) minus their corresponding length on the gold standard model. Record and store mean and quantiles of the deviation for each axis.
+\noindent\textbf{Base protocol} Obtain a test object along with a gold standard digital mesh of its surface. Load the object into the device in an identical manner as a subject eye and scan once per repetition. After $N = 10$ repetitions, compute the representative deviations for each repetition as the three axial lengths (anterior-posterior, nasal-temporal, dorsal-ventral) minus their corresponding length on the gold standard model. Record and store mean and quantiles of the deviation for each axis.
 \end{quotation}
 
-This test, being entangled with all components of the system, can provide the most useful information to the functioning of the device, however, in the simple way it is stated here the primary purpose is as a final marker of a successful prototype. With diagnostic design analysis in mind, the reconstructions this test performs should be retained in addition to the errors mentioned in the protocol.
+This test, being entangled with all components of the system, can provide the most useful information to the functioning of the device. However, in the simple way it is stated here, the primary purpose of the test is as a final marker of a successful prototype. With diagnostic design analysis in mind, the reconstructions this test performs should be retained in addition to the errors mentioned in the protocol.
 
-Success of this test implies that the device is fully functional to the needs of the final consumer, though it alone is not sufficient for testing purposes. Without the supporting evidence of the unit tests it is difficult to understand either why this test fails if it does or if the device will perform consistently with repetition.
+Success of this test implies that the device is fully functional to the needs of the final consumer, though it alone is not sufficient for testing purposes. Without the supporting evidence of the unit tests, it is difficult to understand either why this test fails if it does or if the device will perform consistently with repetition.
 
 \subsection{Unit tests}
 \label{sec:unit-tests}
 
-Should the functionality test fail it is evident that some or many parts of the device are failing to perform at the required spec. Unit tests dissect the problem by functional subunit.
+Should the functionality test fail, it is evident that some or many parts of the device are failing to perform at the required spec. Unit tests dissect the problem by functional subunit.
 
 
 \subsubsection{Eye harness subunit}
-The eye harness consists of an optical cuvette, a transparent support polymer, a tweezer support, a lens correcting for the curve of the cuvette, and end caps which link it into the frame of the device. The primary sources of error are optical concerning the aberrations in the glass cuvette, miscorrection of the lens, and the light dispersion from the polymer causing blurring of the LED signal.
+The eye harness consists of an optical cuvette, a transparent support polymer, a tweezer support, a lens correcting for the curve of the cuvette, and end caps which link it into the frame of the device. The primary sources of error are optical, concerning the aberrations in the glass cuvette, miscorrection of the lens, and the light dispersion from the polymer causing blurring of the LED signal.
 
 Each test is best performed using the micrometer itself. A test piece such as a black metal rod of known thickness can be used to judge for optical aberrations.
 
 \begin{quotation}
-  \textbf{Base protocol} Insert and fix test piece into eye harness   using the cupped bottom and a piece of clay to fix its position. Fix   the harness to a baseplate and position the micrometer to measure   through the the cuvette, polymer, and lens system. Record   measurements of the diameter of the bar, varying the vertical   position of the measurement plane. Also take not for any visible   blurring or aberration. Repeat the measurements $N$ times and record   the retained mean and quantiles of induced noise as the   \textit{continuous} statistic.
+  \textbf{Base protocol} Insert and fix test piece into eye harness using the cupped bottom and a piece of clay to fix its position. Fix the harness to a baseplate and position the micrometer to measure through the the cuvette, polymer, and lens system. Record measurements of the diameter of the bar, varying the vertical position of the measurement plane. Also take note of any visible blurring or aberration. Repeat the measurements $N$ times and record the retained mean and quantiles of induced noise as the \textit{continuous} statistic.
 \end{quotation}
 
-This test can also be further extended by separating out each piece separately and testing them in isolation. For instance, if the deviation is consistently negative indicating that the light path is shrinking it may be necessary to confirm that the lens is properly correcting for the optical properties of the cuvette/polymer system. If the measurement simply fails entirely or records as far thicker than the known diameter check to be certain that the LED beam can correctly pass through the support polymer.
+This test can also be further extended by separating out each piece and testing it in isolation. For instance, if the deviation is consistently negative, indicating that the light path is shrinking, it may be necessary to confirm that the lens is properly correcting for the optical properties of the cuvette/polymer system. If the measurement simply fails entirely or records as far thicker than the known diameter of the test piece, this indicates that the LED beam is not able to pass through the support polymer.
 
 
-\subsubsection{Frame structure}
-The frame, as the support for the actuating drives, micrometer, and harness, is fundamental in reducing physical noise. Looseness in the connections of the frame, vibrations which translate through it, and changes in size and shape due to temperature all can cause noise and misalignment destroying the accuracy of the device
+\subsubsection{Frame Stability}
+The frame, as the support for the actuating drives, micrometer, and harness, is fundamental in reducing physical noise. Looseness in the connections of the frame, vibrations which translate through it, and changes in size and shape due to temperature all can cause noise and misalignment, destroying the accuracy of the device.
 
 \begin{quotation}
-  \textbf{Base protocol: vibration} Insert eye harness to device but   remove the micrometer to track the upper crossbar of the frame. Run   the harness rotation at speed for measurement and measure the   variance of the position of the top bar. Since the micrometer can   capture data at 2,400 samples per second, trim to one sample every   \SI{0.1}{\second} to decrease autocorrelation and increase   statistical power. Retain and store the mean deviation and the   quantiles as the \textit{continuous} statistic.
+  \textbf{Base protocol: vibration} Insert eye harness into device, but   remove the micrometer to track the upper crossbar of the frame. Run   the harness rotation at speed for measurement and measure the   variance of the position of the top bar. Since the micrometer can   capture data at 2,400 samples per second, trim to one sample every   \SI{0.1}{\second} to decrease autocorrelation and increase   statistical power. Retain and store the mean deviation and the   quantiles as the \textit{continuous} statistic.
 \end{quotation}
 
 \begin{quotation}
-  \textbf{Base protocol: thermal expansion} Fix micrometer position to   measure the top crossbar of the frame using a material unlikely to   undergo much thermal expansion. Move the device to a controlled   environment at a temperature of $\sim$\SI{15}{\degree C} and measure   height. Reset the device in an environment of $\sim$\SI{30}{\degree     C} and take new measurement. If this difference is greater than   \SI{2}{\micro m} reject the frame as failing this \textit{binary} test.
+  \textbf{Base protocol: thermal expansion} Fix micrometer position to   measure the top crossbar of the frame using a material unlikely to   undergo much thermal expansion. Move the device to a controlled   environment at a temperature of $\sim$\SI{15}{\degree C} and measure   height. Reset the device in an environment of $\sim$\SI{30}{\degree     C} and take new measurement. If this difference is greater than   \SI{2}{\micro m}, reject the frame as failing this \textit{binary} test.
 \end{quotation}
 
 
@@ -135,19 +135,19 @@ The frame, as the support for the actuating drives, micrometer, and harness, is 
 The frame mounts the two actuation drives. These motors are responsible for the position and motion of the eye harness with respect to the micrometer's measurement plane. Functional failure can arise from either a failure to move in a consistent fashion or from excessive noise in the drive.
 
 \begin{quotation}
-  \textbf{Base protocol: motion consistency} Motion consistency can be measured using the micrometer to detect the position of some driven piece. For the linear encoder, the micrometer is set to take rapid position measurements of the frame as it rises and the instantaneous velocity is computed. The variance of the instantaneous velocity is the \textit{continuous} retained statistic. A similar test can be performed for the radial actuator by measuring the x-position of an L-shaped test piece. It's position should follow a sinusoidal function with relation to the rate of the rotation and its deviance is another \textit{continuous} test statistic.
+  \textbf{Base protocol: motion consistency} Motion consistency can be measured using the micrometer to detect the position of some driven piece. For the linear encoder, the micrometer is set to take rapid position measurements of the frame as it rises and the instantaneous velocity is computed. The variance of the instantaneous velocity is the \textit{continuous} retained statistic. A similar test can be performed for the radial actuator by measuring the x-position of an L-shaped test piece. Its position should follow a sinusoidal function with relation to the rate of the rotation and its deviance is another \textit{continuous} test statistic.
 \end{quotation}
 
-This subsystem is perhaps the most likely test to require an evaluation of the failure rate. Each motor is a highly precise device which performs thousands of minute operations during one repetition of a measurement. If motor failure is suspected it would become important to drill down to that level of testing and attempt to quantify the chance of motor failures. At this level it becomes very important to differentiate motor failure due to design and due to motor resiliance, however, and this is a difficult procedure.
+This subsystem is perhaps the most likely test to require an evaluation of the failure rate. Each motor is a highly precise device which performs thousands of minute operations during one repetition of a measurement. If motor failure is suspected, it becomes important to drill down to that level of testing and attempt to quantify the chance of motor failures. At this level, however, it becomes very important - and difficult -  to differentiate motor failure due to design and due to motor resilience.
 
-\subsubsection{Input/output streaming and control}
+\subsubsection{Input/Output functionality}
 The entire device's operation is orchestrated by the controller board. Since this board sends data to and from the motors, encoders, and micrometer it is necessary for functionality to prove that the entire setup is correctly streaming.
 
 \begin{quotation}
-  \textbf{Base protocol} Full power the device and controller and load   a test piece similar to the functional test. For each motor, send a   fixed number of pulses (for instance 1000) in a discrete event and   check the encoder for an update (\textit{binary} test). Vary this   number of pulses and check for a linear relationship between pulse   count and encoder readout (\textit{binary} test). Read from the   micrometer through several positions on the test piece demonstrating   that single measurements are similar to the known dimensions of the   piece.
+  \textbf{Base protocol} Fully power the device and controller, and load   a test piece similar to the functional test. For each motor, send a   fixed number of pulses (for instance 1000) in a discrete event and   check the encoder for an update (\textit{binary} test). Vary this   number of pulses and check for a linear relationship between pulse   count and encoder readout (\textit{binary} test). Read from the   micrometer through several positions on the test piece, demonstrating   that single measurements are similar to the known dimensions of the   piece.
 \end{quotation}
 
-This subsystem does not introduce noise (besides negligible line noises on the insulate wires) but instead offers a battery of binary tests which demonstrate the control system's ability to operate the device.
+This subsystem does not introduce noise (besides negligible line noises on the insulate wires), but instead offers a battery of binary tests which demonstrate the control system's ability to operate the device.
 
 \subsubsection{Data reconstruction}
 The data reconstruction algorithm is the final step between the object and its digitized representation. Although noise up to this point might have been manageable, it is necessary to demonstrate the error-preserving nature of this final transformation. Additionally, it is necessary to prove that the algorithm does not introduce geometric aberrations itself.
@@ -157,26 +157,26 @@ The data reconstruction algorithm is the final step between the object and its d
 \end{quotation}
 
 \begin{quotation}
-  \textbf{Base protocol: error transformations} Generate a test data   set similar to above and add isotonic (spherical) noise of a given   variance ($\sigma <$ \SI{2}{\micro m}). Reconstruct a digitized mesh   from this data and check the noise against the sphere equation.   Subtracting the interpolation error from the first test, check as a   \textit{binary} test result whether the noise is still isotonic or   if it's been shifted or augmented.
+  \textbf{Base protocol: error transformations} Generate a test data   set similar to above and add isotonic (spherical) noise of a given   variance ($\sigma <$ \SI{2}{\micro m}). Reconstruct a digitized mesh   from this data and check the noise against the sphere equation.   Subtracting the interpolation error from the first test, check as a   \textit{binary} test result whether the noise is still isotonic or   if it has been shifted or augmented.
 \end{quotation}
 
 \section{Discussion}
 \label{sec:discussion}
 
-Fully unit testing a complex measuring device such as this is a equally complex affair. Each subsystem has its own battery of tests and can be decomposed into further meaningful sub-subsystems. However, the general need for this testing is to ensure two main goals: full functionality and sufficiently minimal noise.
+Fully unit-testing a complex measuring device such as this is an equally complex affair. Each subsystem has its own battery of tests and can be decomposed into further meaningful sub-subsystems. However, the general need for this testing is to ensure two main goals: full functionality and sufficiently minimal noise.
 
-To the end of testing functionality, most tests are able to take simple pass/fail values. Since the tests have a strong hierarchical relationship it becomes easy to drill down to troubleshoot failures or build up to prove the functionality of the device. A successful prototype will pass every single functional test demonstrating its ability to satisfy the needs of the consumer.
+To the end of testing functionality, most tests are able to take simple pass/fail values. Since the tests have a strong hierarchical relationship, it becomes easy to drill down to troubleshoot failures or build up to prove the functionality of the device. A successful prototype will pass every single functional, test demonstrating its ability to satisfy the needs of the consumer.
 
 Noise level testing is a far more difficult affair. Noises are additive and suspect to transformations due to the geometry of the device. For this reason working up the dependencies from subsystem to full system does not ensure that small noises from certain areas will not grow into large, functionally damaging noises. To fully analyze these sources of noise is a difficult problem which will have to be considered on a prototype-by-prototype basis.
 
 It is additionally necessary to note that the battery of tests proposed in this document are designed to encapsulate the step of prototype choice. These tests are fundamental to the functioning of a successful device and thus can inform any sort of testing protocol, but the needs when considering other design choices, for instance scaling for manufacture or lifetime analysis for final products, may be far more extensive, trying, and statistically rigorous.
 
-The goal of these methods however is to generate the kind of summary knowledge similar to the representation in figure \ref{fig:summary}. This overview of prototype progress combined with the differential changes between them is vital for making informed design choices and finally choosing the strongest prototype.
+The goal of these methods, however, is to generate the kind of summary knowledge similar to the representation in figure \ref{fig:summary}. This overview of prototype progress combined with the differential changes between them is vital for making informed design choices and finally choosing the strongest prototype.
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-The testing choices and protocols outlined in this document are presented with the goal to aid and inform the design and prototyping process. They will enable meticulous quantification of sources of noise which can corrupt the goal of highly accurate reconstructions while also fleshing out and confirming the core functionalities which make the device operate. The final reporting will also serve as an immediate summary of the relative ability of each prototype to serve the consumer.
+The testing choices and protocols outlined in this document are presented with the goal to aid and inform the design and prototyping process. They will enable meticulous quantification of sources of noise, which can corrupt the goal of highly accurate reconstructions, while also fleshing out and confirming the core functionalities which make the device operate. The final reporting will also serve as an immediate summary of the relative ability of each prototype to serve the consumer.
 
 \section{Addendums}
 \label{sec:addendums}
