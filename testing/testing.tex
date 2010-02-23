@@ -95,9 +95,15 @@ Success of this test implies that the device is fully functional to the needs of
 Should the functionality test fail it is evident that some or many parts of the device are failing to perform at the required spec. Unit tests dissect the problem by functional subunit.
 
 \subsubsection{Eye harness subunit}
-The eye harness consists of an optical cuvette, a transparent support polymer, a tweezer support, a lens correcting for the curve of the cuvette, and end caps which link it into the frame of the device. The primary sources of error are optical concerning the aberrations in the glass cuvette, the light dispersion from the polymer causing blurring of the LED signal, and miscorrection of the lens.
+The eye harness consists of an optical cuvette, a transparent support polymer, a tweezer support, a lens correcting for the curve of the cuvette, and end caps which link it into the frame of the device. The primary sources of error are optical concerning the aberrations in the glass cuvette, miscorrection of the lens, and the light dispersion from the polymer causing blurring of the LED signal.
 
-\textit{TO BE CONTINUED}
+Each test is best performed using the micrometer itself. A test piece such as a black metal rod of known thickness can be used to judge for optical aberrations.
+
+\begin{quotation}
+  \textbf{Base protocol} Insert and fix test piece into eye harness using the cupped bottom and a piece of clay to fix its position. Fix the harness to a baseplate and position the micrometer to measure through the the cuvette, polymer, and lens system. Record measurements of the diameter of the bar, varying the vertical position of the measurement plane. Also take not for any visible blurring or aberration. Repeat the measurements $N$ times and record the retained mean and quantiles of induced noise.
+\end{quotation}
+
+This test can also be further extended by separating out each piece separately and testing them in isolation. For instance, if the deviation is consistently negative indicating that the light path is shrinking it may be necessary to confirm that the lens is properly correcting for the optical properties of the cuvette/polymer system. If the measurement simply fails entirely or records as far thicker than the known diameter check to be certain that the LED beam can correctly pass through the support polymer.
 
 \subsubsection{Frame Stability}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec lectus vitae odio faucibus luctus. Ut congue metus a augue luctus ac semper turpis tempor. Fusce at tempus sapien. Vivamus placerat placerat arcu, consequat elementum lacus hendrerit vel. Mauris tincidunt neque id sem aliquam condimentum. Vivamus accumsan pulvinar sapien dapibus viverra. Praesent eu dui nec dolor hendrerit suscipit eget ut nibh. Nullam nec hendrerit est. Praesent ullamcorper fringilla dui eget feugiat. Vivamus eu tellus et felis sagittis varius. Maecenas lacinia egestas nisl eget fermentum. Nulla lacus urna, euismod vel dignissim dignissim, ultricies sit amet dolor. Mauris massa libero, fringilla quis pharetra quis, volutpat eu velit. Phasellus eu eros vel arcu consequat ullamcorper et vitae est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque aliquet turpis a libero laoreet commodo. Sed sollicitudin urna in arcu molestie sed accumsan leo gravida.
