@@ -112,7 +112,7 @@ Each test is best performed using the micrometer itself. A test piece such as a 
 This test can also be further extended by separating out each piece separately and testing them in isolation. For instance, if the deviation is consistently negative indicating that the light path is shrinking it may be necessary to confirm that the lens is properly correcting for the optical properties of the cuvette/polymer system. If the measurement simply fails entirely or records as far thicker than the known diameter check to be certain that the LED beam can correctly pass through the support polymer.
 
 
-\subsubsection{Frame Stability}
+\subsubsection{Frame structure}
 The frame, as the support for the actuating drives, micrometer, and harness, is fundamental in reducing physical noise. Looseness in the connections of the frame, vibrations which translate through it, and changes in size and shape due to temperature all can cause noise and misalignment destroying the accuracy of the device
 
 \begin{quotation}
@@ -133,7 +133,7 @@ The frame mounts the two actuation drives. These motors are responsible for the 
 
 This subsystem is perhaps the most likely test to require an evaluation of the failure rate. Each motor is a highly precise device which performs thousands of minute operations during one repetition of a measurement. If motor failure is suspected it would become important to drill down to that level of testing and attempt to quantify the chance of motor failures. At this level it becomes very important to differentiate motor failure due to design and due to motor resiliance, however, and this is a difficult procedure.
 
-\subsubsection{Input/Output functionality}
+\subsubsection{Input/output streaming and control}
 The entire device's operation is orchestrated by the controller board. Since this board sends data to and from the motors, encoders, and micrometer it is necessary for functionality to prove that the entire setup is correctly streaming.
 
 \begin{quotation}
