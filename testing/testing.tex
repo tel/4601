@@ -144,7 +144,11 @@ This subsystem is perhaps the most likely test to require an evaluation of the f
 The entire device's operation is orchestrated by the controller board. Since this board sends data to and from the motors, encoders, and micrometer it is necessary for functionality to prove that the entire setup is correctly streaming.
 
 \begin{quotation}
-  \textbf{Base protocol} Fully power the device and controller, and load   a test piece similar to the functional test. For each motor, send a   fixed number of pulses (for instance 1000) in a discrete event and   check the encoder for an update (\textit{binary} test). Vary this   number of pulses and check for a linear relationship between pulse   count and encoder readout (\textit{binary} test). Read from the   micrometer through several positions on the test piece, demonstrating   that single measurements are similar to the known dimensions of the   piece.
+  \textbf{Base protocol: stream checking} Fully power the device and   controller, and load a test piece similar to the functional test.   For each motor, send a fixed number of pulses (for instance 1000) in   a discrete event and check the encoder for an update   (\textit{binary} test).  Vary this number of pulses and check for a   linear relationship between pulse count and encoder readout   (\textit{binary} test). Read from the micrometer through several   positions on the test piece, demonstrating that single measurements   are similar to the known dimensions of the piece.
+\end{quotation}
+
+\begin{quotation}
+  \textbf{Base protocol: completeness} Fully power the device and load   it with a test piece that simulates an eye having a region of   interest of roughly \SI{5}{\micro m} vertical. Run the device and   ensure that it checks to locate the bottom of the piece, scans   through the entire piece, and then stops at the top of the scanning   area (3 \textit{binary} tests). If image reconstruction is   implemented, also ensure that the reconstructed image is not clipped   on either end (\textit{another binary test}).
 \end{quotation}
 
 This subsystem does not introduce noise (besides negligible line noises on the insulate wires), but instead offers a battery of binary tests which demonstrate the control system's ability to operate the device.
