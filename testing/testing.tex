@@ -18,63 +18,21 @@
 
 \newpage
 
-\section{Testing methods}
-\label{sec:testing-protocols}
+The prototyped device is a desk-sized accurate three-dimensional micrometer designed to digitize --- create digital meshes corresponding to --- the gross surface anatomy of dissected rat eyes. It actuates the eye in a gel-filled harness through the measurement plane of an LED micrometer at all angles to obtain the full dataset for reconstruction. To be most useful to the end users intending to use the device in ophthalmological research it must achieve high ($\approx$ \SI{2}{\micro m}) accuracy in the measurements.
 
-A prototype device is considered successful if it fufills the needs
-outlined in the Engineering Design Specifications. For our device,
-this can be simplified to four testing concerns which combine
-effectively to ensure a successful device. These concerns will be
-referred to throughout this document.
+The success of a prototype design hinges on its functionality and accuracy. It must repeatably digitize the object with a level of noise that does not impact the accuracy: a single measurement per eye should, assuming successful operation, be sufficient for scientific analysis. To ensure this the final functional test, an accurate measurement of an example object of known dimension, must be accompanied by a range of \textit{unit tests} which can be used to isolate sections of the device and locate the most important design failures preventing successful operation.
 
-\paragraph{Fixation} The eye to be measured must fit into its harness
-and thus be appropriately fixed. It should act as a rigid body under
-the forces (and pertubations from) constant velocity during
-measurement. It should remain fixed in location relative to its
-harness and not slip or wobble.
+This methodology creates a hierarchy of tests where each higher level test is contingent on the success of its child units. In this document, the details of the highest level functional tests along with considerations for testing the major subunits and predicted sources of error and failure.
 
-\paragraph{Articulation and positioning} The harness must be
-articulated accurately and precisely by the frame
-motors. Additionally, the position of the harness must be accurately
-measured by the motors' encoders in order to perform the
-reconstruction.
+\section{Test administration}
+\label{sec:test-administration}
 
-\paragraph{Recording} The micrometer must be able to read the eye
-without hinderance or distortion from the harness.
-
-\paragraph{Noise minimization} The noise induced from eye, harness,
-and frame vibrations should not total to overwhelm the desired
-accuracy bounds. Additionally, the reconstruction algorithm should not
-transform small signal noise to large disortions at any point.
-
-A device implementation which can achieve these four ends will succeed
-in meeting the design specifications and thus be a strong choice for a
-final prototype.
-
-\subsection{Performing the tests}
-\label{sec:hierarchical-testing}
-
-Since all device implementations will contain a number of subsystems,
-it is necessary to test each one in isolation as a set of unit
-tests. The necessary assumptions for a subsystem to act as a unit is
-that each component is fault-free and no components interact to cause
-a failure. For our device, this demands that each motor and frame
-component is individually tested and then in combination. This forces
-a necessary hierarchy and ordering on the tests: systems are only
-tested once all of their dependent systems have individually passed.
-
-The test protocols in the rest of this document are presented with
-respect to this dependency ordering.
+Methodological testing requires a consistent basis for data acquisition, storage, comparison, and presentation.
 
 \subsection{Data acquisition and storage}
 \label{sec:data-acqu-stor}
 
-The data obtained during these tests is never sensitive but may very
-easily be extremely high volume. This implies that storage need not be
-secure, but some preproccessing will be necessary. Each test sequence
-will be labeled by date, prototype ID and necessary preprocessing and
-sufficient summary statistics will be presented in each section as
-necessary as the \emph{stored test data}.
+The primary problem with data acquisition and storage is not related to privacy concerns as many other medical testing experiments might be, but instead is difficult due to the high data volume of each test. Each test will be identified by the date and the ID of the prototype being tested and stored in a central, mirrored relational database. Tests that involve a high data density step are reduced to a few sufficient summary statistics known as the \textit{retained statistics}. In order to be comparable across prototypes and useful for design analysis these statistics must encode all relevant information from the tests.
 
 \subsection{Statistics}
 \label{sec:statistics}
@@ -86,58 +44,95 @@ labeled by the form of statistic needed to evaluate test certainty.
 \subsubsection{Continuous}
 \label{sec:continuous}
 
-These tests result in an uncertain measurement of the amount of
-physical noise induced by a given subsystem. Since physical noise is
-linear and has infinite support, we represent noise as the variance in
-a Gaussian term. Since overall noise must be less than \SI{2}{\micro
-  m} in order to ensure sufficient accuracy, these tests only fail if
-we are less than 95\% certain that the noise induced by this level is
-sub-\SI{2}{\micro m}.
+These statistics represent an uncertain estimation of the physical variance in measurement induced at some given unit. The retained statistics are thus means and $(5\%, 25\%, 75\%, 95\%)$ quantiles of the standard deviation of measurements, reported in physical units (\textit{viz.} \SI{}{\micro m}). However, since variances are spread measures and thus exist on a exponential support they are graphically compared on a logarithmic scale.
 
-The geometry of the device is used to combine errors in larger
-systems. For instance, the noise at a certain subsystem could be the
-weighted sum of the noises generated at its component sublayers. In
-general, the expectation of total error is monotonically increasing in
-more complex subsystems and the uncertainty is additive therefore
-exceeding \SI{2}{\micro m} at any point constitutes a failure and
-justifies discontinuing tests.
+Given that we are most concerned with these measurements when they are sub-\SI{2}{\micro m} we can estimate them accurately with $N \ge 10$ repetitions.
 
 \subsubsection{Binary}
 \label{sec:binary}
 
-These tests can result as either a certain or probabilistic pass or
-failure. For instance, the type of support polymer used in the eye
-harness could either obstruct the LED measurement beam (fail) or
-permit it (pass). Since this is purely a function of very consistent
-physical processes --- the absorbance spectrum of the polymer --- a
-single test is sufficient for prototyping purposes. Other binary tests
-such as the presence slippage between the harness and the articulating
-motors may be better modeled via a full failure analysis.
+These statistics represent tests which can result in either passage or failure and may have a certain lifetime before failure. For instance, slippage may be induced between the radial actuation drive and the eye harness on average once in every one hundred repetitions. If it's reasonable to believe a very strong dependence between repetitions --- the absorbency properties of the eye-support polymer will either pass or fail and are unlikely to change on repetition --- then no estimation of the failure probability is needed.
 
-Failure analysis is interested in the average time between failures or, in the event of catastrophic failure, the average lifetime. These are roughly equivalent provided the chance of failure ($p$) is low and can both be represented as a discrete count $m = 1/p$. In general, to be 95\% certain that the average failure time is less than some $m$ you must
+If failure probability $p$ is required then an acceptable time to fail must be determined ($m$ repetitions, for instance) and greater than $N \ge 4m$ repetitions must be observed for 95\% confidence that the failure probability is indeed successfully constrained. After $N$ observations with $S$ successes, the best estimate of failure probability can be reported as
+\begin{align}
+  \hat{p} &= \frac{S}{2 + N}
+\end{align}
+although it is sufficient to retain $S$ and $N$ alone.
+
+At the prototyping stage $m$ should rarely exceed 20. This should be sufficient to demonstrate the repeatability of a design without reliability of the construction or material being conflated with the results.
 
 \subsection{Presentation}
 \label{sec:presentation}
 
-Due to the dependent nature of the full testing protocol, the
-progress of a given prototype through the full verification protocal
-can be easily visualized. Additionally, since both expected value and
-uncertainty about the induced noise are maintained and combined, at
-any given point the distribution of the noise can be graphically
-presented to indicate chance of a sufficiently accurate measurement.
+Due to the dependent nature of the full testing protocol, the progress of a given prototype through the full verification protocol can be easily visualized. Additionally, since both expected value and uncertainty (quantiles) about the induced noise are maintained and combined, at any given point the distribution of the noise can be graphically presented to indicate chance of a sufficiently accurate measurement.
 
 An example summary table is presented in Figure
 \ref{fig:result-summary}.
 
-\section{Testing Protocols}
+\section{Testing protocols}
 \label{sec:protocols}
 
-%
-% See notes.org
-%
+The following are protocols for the most important tests required to confirm a prototype's fulfillment of the design specifications. Each purchased component --- the micrometer, each motor, the control board --- is assumed to be entirely reliable on its own. 
+
+\subsection{Functionality Tests}
+\label{sec:functional-tests}
+
+The full functionality of the device can be tested at once via a fabricated eye model of known dimensions. An ideal model is a painted fabricated metal ball accurately measured in a metrology lab, however, simple models with areas of high curvature, such as a cross, can also be expected to be useful test objects since they are difficult for our device to accurately measure but easy to measure with a physical micrometer.
+
+This test has both binary and continuous components. The test can show a pass or fail for measuring the complete object and also will report a final, high-level measurement variance which will be a monotonic combination of all unit-level noises.
+
+\begin{quotation}
+\noindent\textbf{Base protocol} Obtain a test object along with a gold standard digital mesh of its surface. Load the object into the device identically to a subject eye and scan once per repetition. After $N = 10$ repetitions compute the representative deviations for each repetition as the three axial lengths (anterior-posterior, nasal-temporal, dorsal-ventral) minus their corresponding length on the gold standard model. Record and store mean and quantiles of the deviation for each axis.
+\end{quotation}
+
+This test, being entangled with all components of the system, can provide the most useful information to the functioning of the device, however, in the simple way it is stated here the primary purpose is as a final marker of a successful prototype. With diagnostic design analysis in mind, the reconstructions this test performs should be retained in addition to the errors mentioned in the protocol.
+
+Success of this test implies that the device is fully functional to the needs of the final consumer, though it alone is not sufficient for testing purposes. Without the supporting evidence of the unit tests it is difficult to understand either why this test fails if it does or if the device will perform consistently with repetition.
+
+\subsection{Unit tests}
+\label{sec:unit-tests}
+
+Should the functionality test fail it is evident that some or many parts of the device are failing to perform at the required spec. Unit tests dissect the problem by functional subunit.
+
+\subsubsection{Eye harness subunit}
+The eye harness consists of an optical cuvette, a transparent support polymer, a tweezer support, a lens correcting for the curve of the cuvette, and end caps which link it into the frame of the device. The primary sources of error are optical concerning the aberrations in the glass cuvette, the light dispersion from the polymer causing blurring of the LED signal, and miscorrection of the lens.
+
+\textit{TO BE CONTINUED}
+
+\subsubsection{Frame Stability}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec lectus vitae odio faucibus luctus. Ut congue metus a augue luctus ac semper turpis tempor. Fusce at tempus sapien. Vivamus placerat placerat arcu, consequat elementum lacus hendrerit vel. Mauris tincidunt neque id sem aliquam condimentum. Vivamus accumsan pulvinar sapien dapibus viverra. Praesent eu dui nec dolor hendrerit suscipit eget ut nibh. Nullam nec hendrerit est. Praesent ullamcorper fringilla dui eget feugiat. Vivamus eu tellus et felis sagittis varius. Maecenas lacinia egestas nisl eget fermentum. Nulla lacus urna, euismod vel dignissim dignissim, ultricies sit amet dolor. Mauris massa libero, fringilla quis pharetra quis, volutpat eu velit. Phasellus eu eros vel arcu consequat ullamcorper et vitae est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque aliquet turpis a libero laoreet commodo. Sed sollicitudin urna in arcu molestie sed accumsan leo gravida.
+
+\subsubsection{Frame acutation}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec lectus vitae odio faucibus luctus. Ut congue metus a augue luctus ac semper turpis tempor. Fusce at tempus sapien. Vivamus placerat placerat arcu, consequat elementum lacus hendrerit vel. Mauris tincidunt neque id sem aliquam condimentum. Vivamus accumsan pulvinar sapien dapibus viverra. Praesent eu dui nec dolor hendrerit suscipit eget ut nibh. Nullam nec hendrerit est. Praesent ullamcorper fringilla dui eget feugiat. Vivamus eu tellus et felis sagittis varius. Maecenas lacinia egestas nisl eget fermentum. Nulla lacus urna, euismod vel dignissim dignissim, ultricies sit amet dolor. Mauris massa libero, fringilla quis pharetra quis, volutpat eu velit. Phasellus eu eros vel arcu consequat ullamcorper et vitae est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque aliquet turpis a libero laoreet commodo. Sed sollicitudin urna in arcu molestie sed accumsan leo gravida.
+
+
+\subsubsection{Encoder synching}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec lectus vitae odio faucibus luctus. Ut congue metus a augue luctus ac semper turpis tempor. Fusce at tempus sapien. Vivamus placerat placerat arcu, consequat elementum lacus hendrerit vel. Mauris tincidunt neque id sem aliquam condimentum. Vivamus accumsan pulvinar sapien dapibus viverra. Praesent eu dui nec dolor hendrerit suscipit eget ut nibh. Nullam nec hendrerit est. Praesent ullamcorper fringilla dui eget feugiat. Vivamus eu tellus et felis sagittis varius. Maecenas lacinia egestas nisl eget fermentum. Nulla lacus urna, euismod vel dignissim dignissim, ultricies sit amet dolor. Mauris massa libero, fringilla quis pharetra quis, volutpat eu velit. Phasellus eu eros vel arcu consequat ullamcorper et vitae est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque aliquet turpis a libero laoreet commodo. Sed sollicitudin urna in arcu molestie sed accumsan leo gravida.
+
+
+\subsubsection{Data collection}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec lectus vitae odio faucibus luctus. Ut congue metus a augue luctus ac semper turpis tempor. Fusce at tempus sapien. Vivamus placerat placerat arcu, consequat elementum lacus hendrerit vel. Mauris tincidunt neque id sem aliquam condimentum. Vivamus accumsan pulvinar sapien dapibus viverra. Praesent eu dui nec dolor hendrerit suscipit eget ut nibh. Nullam nec hendrerit est. Praesent ullamcorper fringilla dui eget feugiat. Vivamus eu tellus et felis sagittis varius. Maecenas lacinia egestas nisl eget fermentum. Nulla lacus urna, euismod vel dignissim dignissim, ultricies sit amet dolor. Mauris massa libero, fringilla quis pharetra quis, volutpat eu velit. Phasellus eu eros vel arcu consequat ullamcorper et vitae est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque aliquet turpis a libero laoreet commodo. Sed sollicitudin urna in arcu molestie sed accumsan leo gravida.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\section{Conclusion}
+\label{sec:conclusion}
 
 \section{Addendums}
 \label{sec:addendums}
+
+\subsection{Figures}
+\label{sec:figures}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{../img/testing_summary}
+  \figcaption{\textbf{Example testing summary figure:}  
+  Each test of any given prototype is indexed by date and prototype ID. For each subsection the tests are marked by boxes arranged in a predetermined order. Green means test success, red means failure, gray means unperformed. Additionally, a graphical summary of the noise from two major sources is documented with both the maximally likely value and the uncertainty about the measurement.}
+  \label{fig:usage}
+\end{figure}
+
 
 \newpage
 \addcontentsline{toc}{section}{References}
