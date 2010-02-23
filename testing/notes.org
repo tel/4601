@@ -1,4 +1,28 @@
-﻿Notes on the Testing and Verification Protocol
+Notes on the Testing and Verification Protocol
+* Document
+** Testing Background
+   Specify phase: design iterations
+   Input to phase: a given prototype design
+   Attempting to verify: correctness, function, noise resilience
+*** Test Parts
+**** Fixation
+**** Movement/Positioning
+**** Recording
+**** Noise Reduction
+*** Statistics
+    There are two main types of tests
+    + Continuous (error components)
+    + Binary options (pass/fail)
+    
+    In order for the full test suite to pass, each binary option must
+    be shown to pass and each continuous error component must add
+    (with uncertainty) to be less than the needed accuracy of 2um.
+**** Binary
+     There are two varieties of binary tests. Some tests, such as the
+     ability of the micrometer to differentiate beteween the mounting
+     polymer and the observed piece, are virtually certain to either
+     pass or fail consistently and therefore do not need repeat
+     testing. 
 * TESTS
 ** Ginger 
    physical structure of the harness (it must support the eye, keep it
