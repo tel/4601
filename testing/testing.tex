@@ -15,6 +15,13 @@
 \section*{Executive summary}
 \label{sec:exec-summary}
 
+This document outlines testing concerns and protocols useful to encapsulate the prototyping process providing feedback between potential prototypes and the needs of the consumer as specified in the engineering design specification. The tested device, a desktop 3-dimensional digitizer specialized for organic material, is a highly complex device including many subsystems. This hierarchical structure affects the tests by providing clear failure and noise propagation dependencies, but also illuminates the difficulty of fully testing the device.
+
+Administrative details are outlined including the best methods for reducing data dimensionality, storing, and protecting the acquired testing data. Additionally, general concerns for the statistical frameworks that will be used to intelligently compare results are addressed including global estimates for necessary sample sizes. It is noted that tests tend to either have binary (pass/fail) summaries or Gaussian estimates for the amount of noise produced at a given level. Finally, a method of converting complex testing data to interpretable summary graphics for presentation is suggested.
+
+Testing concerns and example protocols are examined both for the top level functional tests and then many of the component unit-level tests. In particular, testing is considered at the unit levels of the eye harness, the stability of the frame, the actuation of the frame, the input/output and control circuitry, and the reconstruction algorithm.
+
+This document does not attempt to be a comprehensive testing protocol at each and every level, but instead outlines details and concerns which would be necessary components in the generation of any complete testing protocol. It also attempts to illustrate the deeper connections that create the testing dependencies mentioned so as to aid in troubleshooting and deconstruction of failures when they occur.
 
 \newpage
 
