@@ -59,7 +59,7 @@ If failure probability $p$ is required then an acceptable time to fail must be d
 \end{align}
 although it is sufficient to retain $S$ and $N$ alone.
 
-At the prototyping stage $m$ should rarely exceed 20. This should be sufficient to demonstrate the repeatability of a design without reliability of the construction or material conflating the results.
+At the prototyping stage $m$ should rarely exceed 20. This should be sufficient to demonstrate the repeatability of a design without reliability of the construction or material contaminating results.
 
 \subsection{Presentation}
 \label{sec:presentation}
@@ -131,6 +131,7 @@ The frame mounts the two actuation drives. These motors are responsible for the 
   \textbf{Base protocol: motion consistency} Motion consistency can be measured using the micrometer to detect the position of some driven piece. For the linear encoder, the micrometer is set to take rapid position measurements of the frame as it rises and the instantaneous velocity is computed. The variance of the instantaneous velocity is the \textit{continuous} retained statistic. A similar test can be performed for the radial actuator by measuring the x-position of an L-shaped test piece. It's position should follow a sinusoidal function with relation to the rate of the rotation and its deviance is another \textit{continuous} test statistic.
 \end{quotation}
 
+This subsystem is perhaps the most likely test to require an evaluation of the failure rate. Each motor is a highly precise device which performs thousands of minute operations during one repetition of a measurement. If motor failure is suspected it would become important to drill down to that level of testing and attempt to quantify the chance of motor failures. At this level it becomes very important to differentiate motor failure due to design and due to motor resiliance, however, and this is a difficult procedure.
 
 \subsubsection{Input/Output functionality}
 The entire device's operation is orchestrated by the controller board. Since this board sends data to and from the motors, encoders, and micrometer it is necessary for functionality to prove that the entire setup is correctly streaming.
@@ -155,10 +156,20 @@ The data reconstruction algorithm is the final step between the object and its d
 \section{Discussion}
 \label{sec:discussion}
 
+Fully unit testing a complex measuring device such as this is a equally complex affair. Each subsystem has its own battery of tests and can be decomposed into further meaningful sub-subsystems. However, the general need for this testing is to ensure two main goals: full functionality and sufficiently minimal noise.
 
+To the end of testing functionality, most tests are able to take simple pass/fail values. Since the tests have a strong hierarchical relationship it becomes easy to drill down to troubleshoot failures or build up to prove the functionality of the device. A successful prototype will pass every single functional test demonstrating its ability to satisfy the needs of the consumer.
+
+Noise level testing is a far more difficult affair. Noises are additive and suspect to transformations due to the geometry of the device. For this reason working up the dependencies from subsystem to full system does not ensure that small noises from certain areas will not grow into large, functionally damaging noises. To fully analyze these sources of noise is a difficult problem which will have to be considered on a prototype-by-prototype basis.
+
+It is additionally necessary to note that the battery of tests proposed in this document are designed to encapsulate the step of prototype choice. These tests are fundamental to the functioning of a successful device and thus can inform any sort of testing protocol, but the needs when considering other design choices, for instance scaling for manufacture or lifetime analysis for final products, may be far more extensive, trying, and statistically rigorous.
+
+The goal of these methods however is to generate the kind of summary knowledge similar to the representation in figure \ref{fig:summary}. This overview of prototype progress combined with the differential changes between them is vital for making informed design choices and finally choosing the strongest prototype.
 
 \section{Conclusion}
 \label{sec:conclusion}
+
+The testing choices and protocols outlined in this document are presented with the goal to aid and inform the design and prototyping process. They will enable meticulous quantification of sources of noise which can corrupt the goal of highly accurate reconstructions while also fleshing out and confirming the core functionalities which make the device operate. The final reporting will also serve as an immediate summary of the relative ability of each prototype to serve the consumer.
 
 \section{Addendums}
 \label{sec:addendums}
