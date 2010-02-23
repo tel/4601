@@ -18,11 +18,11 @@
 
 \newpage
 
-The prototyped device is a desk-sized accurate three-dimensional micrometer designed to digitize --- create digital meshes corresponding to --- the gross surface anatomy of dissected rat eyes. It actuates the eye in a gel-filled harness through the measurement plane of an LED micrometer at all angles to obtain the full dataset for reconstruction. To be most useful to the end users intending to use the device in ophthalmological research it must achieve high ($\sim$ \SI{2}{\micro m}) accuracy in the measurements.
+The prototyped device is a desk-sized accurate three-dimensional micrometer designed to digitize --- create digital meshes corresponding to --- the gross surface anatomy of dissected rat eyes. It actuates the eye in a gel-filled harness through the measurement plane of an LED micrometer at all angles to obtain the full dataset for reconstruction. To be most useful to the end users intending to use the device in ophthalmological research, it must achieve high ($\sim$ \SI{2}{\micro m}) accuracy in the measurements.
 
-The success of a prototype design hinges on its functionality and accuracy. It must repeatably digitize the object with a level of noise that does not impact the accuracy: a single measurement per eye should, assuming successful operation, be sufficient for scientific analysis. To ensure this the final functional test, an accurate measurement of an example object of known dimension, must be accompanied by a range of \textit{unit tests} which can be used to isolate sections of the device and locate the most important design failures preventing successful operation.
+The success of a prototype design hinges on its functionality and accuracy. It must repeatably digitize the object with a level of noise that does not impact the accuracy: assuming successful operation, a single measurement per eye should  be sufficient for scientific analysis. To ensure this final functional test, an accurate measurement of an example object of known dimension must be accompanied by a range of \textit{unit tests} which can be used to isolate sections of the device and locate the most important design failures preventing successful operation.
 
-This methodology creates a hierarchy of tests where each higher level test is contingent on the success of its child units. In this document, the details of the highest level functional tests along with considerations for testing the major subunits and predicted sources of error and failure.
+This methodology creates a hierarchy of tests where each higher level test is contingent on the success of its child units. In this document, the details of the highest level functional tests are presented along with considerations for testing the major subunits and predicted sources of error and failure.
 
 \section{Test administration}
 \label{sec:test-administration}
@@ -32,7 +32,7 @@ Methodological testing requires a consistent basis for data acquisition, storage
 \subsection{Data acquisition and storage}
 \label{sec:data-acqu-stor}
 
-The primary problem with data acquisition and storage is not related to privacy concerns as many other medical testing experiments might be, but instead is difficult due to the high data volume of each test. Each test will be identified by the date and the ID of the prototype being tested and stored in a central, mirrored relational database. Tests that involve a high data density step are reduced to a few sufficient summary statistics known as the \textit{retained statistics}. In order to be comparable across prototypes and useful for design analysis these statistics must encode all relevant information from the tests.
+Unlike many other medical testing experiments, the primary problem with data acquisition and storage is not related to privacy concerns but instead to the high data volume of each test. Each test will be identified by the date and the ID %what is ID? of the prototype being tested and stored in a central, mirrored relational database. Tests that involve a high data density step are reduced to a few sufficient summary statistics known as the \textit{retained statistics}. In order to be comparable across prototypes and useful for design analysis, these statistics must encode all relevant information from the tests.
 
 \subsection{Statistics}
 \label{sec:statistics}
