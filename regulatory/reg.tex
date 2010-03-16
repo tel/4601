@@ -14,6 +14,27 @@
 
 \section*{Executive summary}
 \label{sec:exec-summary}
+This focus of this document is on relevant FDA regulation of the
+device our team has designed. The first section of this document
+provides a general overview of FDA regulation of medical devices. The
+FDA regulatory overview covers device classes, filing requirements for
+510(k) and IDE/PMAs, and the meanings of FDA \textit{clearance} and
+FDA \textit{approval}. The second section of this document covers FDA
+regulation specific to our device. In this document, we explain that
+the FDA currently does not regulate our device. We further outline
+that since our device is meant only for use in research settings, does
+not come into contact with patients, and is not used for diagnosis or
+treatment, our device should not be regulated by the FDA. Our device
+is simply a laboratory device intended for measurement purposes. While
+there are a few standards from the FD \& C act which may apply to our
+device, the primary performance standard of our device derives
+directly from our client's needs and our design specifications. The
+appendix of this document contain a mock Traditional 510(k) for our
+device. In preparing the Traditional 510(k), we assumed that our
+device was regulated as a Class II device by the FDA, and did our best
+to draft the 510(k) under this premise. There are a number of elements
+of the 510(k) which were trivial in relation to our device as our
+device is not currently regulated by the FDA. 
 
 \section{Regulation Overview}
 \label{sec:test-administration}
@@ -151,7 +172,10 @@ differs significantly, as described above. However, considering the
 presence of electronic and visible radiation emitting components in
 our device, regulations in the FD\&C Act sections 531-542 Electronic
 Product Radiation Control provisions are still applicable to our
-device.
+device. We believe that our device does not need to be directly
+regulated by the FDA as it is meant for use solely in reserach
+settings, does not come in contact either directly or indirectly with
+patients, and is not used for diagnosis or treatment. 
 
 \appendix
 
@@ -201,11 +225,11 @@ clear pieces and a methyl cellulose support polymer.
     \hline
     Intended Use & x & x &  \\
     \\
-    Measurement Approach &   & x & x \\ 
+    Measurement Approach &   &  & x \\ 
     \\
-    Anatomical Site of Interest & & x & x \\
+    Anatomical Site of Interest & & x &  \\
     \\
-    Software Performance & & x & x\\
+    Output & & & x \\
     \bottomrule
   \end{tabularx}
   \caption{\textbf{Table of Substantially Equivalent Comparisons:}
@@ -235,7 +259,35 @@ device is intended for use only in research settings, wheras
 microscopes are allowed for use in medical settings.
 
 \subsubsection{Comparison to Optical Coherence Tomography}
-Our device is similar to 
+Ophthalmoscopes are described by the FDA (regulation number: 886.1570;
+product code: OBO) as diagnostic devcies which aid in the detection
+and management of various ocular diseases [\ldots] capable of viewing,
+imaging, measurement, and analysis of ocular structures. Our device is
+similar in that it precisely measures eyeballs and reconstructs their
+three dimensional external surface. Our device is clearly focused on
+the same anatomical site.
+
+Our device differs from ophthalmoscopes in a number of ways. Unlike
+ophthalmoscopes, our device makes measurements using an LED
+laser. Furthermore, our device differs in that it also takes
+cross-sectional slices by rotating the sample between the LED
+micrometer. Additionally, our device differs in that its intended use
+is not at all diagnostic in nature. 
+
+\subsubsection{Comparison to X-Ray Computed Tomography}
+Our device is similar to x-ray computed tomography systems in that it
+makes similar cross-sectional measurements of samples. Our device is
+also similar in that invovles a similar back-projection based
+reconstruction in generating the three dimensional surface of the
+measured object. 
+
+Our device is different from x-ray computed tomography systems in that
+it uses a laser which emits in the visible spectrum as opposed to
+x-ray radiation. Our device is also different in that it is not
+inteded for medical use, nor for use with live subjects. Our device is
+instead intended for use with dissected mouse eyeballs in research
+settings.
+
 
 \input{pages/labels}
 \input{pages/sterile}
