@@ -196,6 +196,53 @@ clear pieces and a methyl cellulose support polymer.
 
 \subsection{Software}
 
+The software elements in the described device are considered to be of
+\textit{minor regulatory concern} since neither the device nor the
+output of its software can in any way, direct or indirect, cause harm
+to operators or patients or deliver information useful in a medical
+diagnosis. The software involved with this device includes control and
+automation firmware for the motion of the device's frame, recording
+and reconstruction algorithms for interpreting data from the
+micrometer, and standalone software on a general purpose computer for
+control and viewing of the reconstructed meshes.
+
+The device is non-hazardous in that neither the operator nor the
+patient have any contact, direct or indirect, with the device while it
+is operational.
+
+The software requirements involve three stages: automation,
+reconstruction, and control. 
+
+\begin{itemize}
+\item The \textit{automation} section is required to accurately
+  control position of the measured piece and the micrometer within the
+  device while maintaining accurate realtime position information from
+  the motor encoders. This section will be written in National
+  Instrument's (NI) LabView Realtime and compiled to very-high-speed
+  integrated circuit hardware description language (VHDL) and deployed
+  on an NI Reprogrammable Input Output (RIO) device.
+\item The \textit{reconstruction} section is required to produce
+  online reconstructions of the measured data in a format readable
+  offline. This is instrumental in troubleshooting the usage of the
+  device during the scan and must also be carefully implemented to
+  prevent distortions. This section will be programmed partly in
+  LabView Realtime for any realtime processing as to be deployed on
+  the RIO and then completed in compiled C on the general purpose
+  platform.
+\item The \textit{control} section is the standalone software deployed
+  on a general purpose computer and in communication with the
+  device. This software both allows realtime feedback to the operator
+  from the device and also allows for sequence programming and
+  control. This section will be programmed in Python and deployed on
+  the general purpose computer platform.
+\end{itemize}
+
+The funtional software testing and validation are largely functional
+and have been previously specified in the previous Testing and
+Verification Protocol document. Current testing status has not yet
+reached the software level and therefore no results yet exist. The
+Testing and Verification Protocol document is available at request.
+
 \input{pages/elec}
 
 %\subsection{Performance Testing --- Lab, Animal, Clinical}
