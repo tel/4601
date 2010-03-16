@@ -166,6 +166,7 @@ device.
 \input{pages/conformity}
 
 % Real sections
+\newpage
 \setcounter{subsection}{0}
 \subsection{Executive Summary}
 \subsection{Device Description}
@@ -187,23 +188,51 @@ Additionally, the device uses a sophisticated loading harness to hold
 and rotate the object without needing to account for object
 deformation under stress. This harness involves a number of opticaly
 clear pieces and a methyl cellulose support polymer.
-
 \subsection{Substantial Equivalence Discussion}
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-\begin{figure}
+\begin{figure}[H]
   \begin{tabularx}{\textwidth}{YYYY}
     \toprule
     Characteristcs & \mbox{Microscopes} and \mbox{Micrometers} & Optical Coherence \mbox{Tomography} & Computed X-ray \mbox{Tomography} \\ 
     \hline
-    Intended Use & x & x & x \\
+    Intended Use & x & x &  \\
     \\
     Measurement Approach &   & x & x \\ 
+    \\
+    Anatomical Site of Interest & & x & x \\
+    \\
+    Software Performance & & x & x\\
     \bottomrule
   \end{tabularx}
-  \caption{\textbf{Table name goes here}
-  Table caption goes here}
+  \caption{\textbf{Table of Substantially Equivalent Comparisons:}
+    This table compares our device against substantially equivalent
+    devices.}
 \end{figure}
+
+\subsubsection{Comparison to Microscopes and Accessories}
+Microscopes and accessories are described by the FDA (regulation
+number: 864.3600; product code: KEH) as optical instruments used to
+enlarge images of specimens, preparations, and cultures for medical
+purposes. Our device is similar in the sense that it is an optical
+instrument, as it relies on a LED laser to take
+measurements. Furthermore, our device is similar in that the sample to
+be measured, namely mouse eyeballs, can be classified as a type of
+``tissue specimen.''
+
+Our device differs from microscopes in a number of ways. While the
+measurement is optical, the method in which the sample is measured is
+very different -- unlike microscopes, our devices takes
+cross-sectional measurement slices by rotating the sample between the
+LED micrometer. Our device also differs in that it further processes
+the stack of cross-sectional measurements to generate a
+three-dimensional reconstruction of the sample. Our device is also
+specfically intended to be used with mouse eyeballs. Lastly, our
+device is intended for use only in research settings, wheras
+microscopes are allowed for use in medical settings.
+
+\subsubsection{Comparison to Optical Coherence Tomography}
+Our device is similar to 
 
 \input{pages/labels}
 \input{pages/sterile}
