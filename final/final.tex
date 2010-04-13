@@ -118,8 +118,79 @@ affected by small quantities (less than 1 mL) of minimally hazardous solutions s
 \cite{users_manual}13
 which is typically used to keep the eye moist. Electrically, the device needs to function with
 120V 60Hz AC, the standard power supply of the United States.19
+
+
 \section{Prototype Development Discussion}
 \label{sec:prot-devel-disc}
+[intro]
+	The central component of the device is the Keyence LS-7030 LED digital micrometer provided by 
+the client. The LED micrometer assumes that light travels between the emitter and receiver in an 
+undistorted fashion, and that only the measured object occludes some of the light incident upon the 
+receiver, as reviewed in US patent No.6,947,152, High Speed Laser Micrometer. 
+	
+	A prior art and literature research found that among the current techniques, x-ray computed 
+tomography is most relevant to the design solution of the current opportunity because its core measuring 
+component is similar to the LS-7030 micrometer in concept. The principle steps in computed tomography 
+include measuring attenuation at different angles, reconstructing a slice via back-projection, and repeat the 
+step for next slice. The design solution will be based on this process, which requires angular (theta) and 
+translational (z) motion and image reconstruction. 
+
+[components]
+	The design solution prototype employs two motor for angular and translational motion. The initial 
+design focuses on resolution of the resulting image and intended to move the micrometer set both 
+translationally and angularly. However, there is a significant moment of inertia due to the weight of the 
+micrometer. In addition, the client raised concerns about damaging the core piece (the micrometers). 
+Based on these reasons, the solution changed to rotate the target of interest (mouse eyeball), and move 
+the micrometer translationally. Based on the tasks needed to be performed as described above and in the 
+EDS, the solution requires: core piece that holds mouse eyeball and keeps its shape; motors; connections 
+between motor and the core piece and between motor and the micrometer; structural frame work to ensure 
+alignment between components; data out put to comupter; and image reconstruction algorithm and user 
+interface. 
+
+[frame]
+	The device is set up so that the axis of rotation of the theta motor, the eyeball, and the structures 
+that support the eyeball is along the same axis. The micrometer heads are attached to their base, 
+connecting to a block whose position is controled by the z-motor through a threaded shaft, in such a way 
+that the plane of measurement is perpendicular to the axis of rotation. To achieve good alignment, the 
+solution uses specially designed pieces to hold components in place. The solution has a base where the 
+mechanical components sit on. A frame work, consisting of a top, a bottom, and two legs that connect and 
+support the top piece to the bottom piece, attaches to the base with bolts and nuts. The theta-motor sits 
+press-fitted in a designed cavity and defines the axis of rotation. The top piece has a hole that is concentric 
+to the axis of rotation and serves to maintain alignment of a set of core pieces that holds the eyeball. 
+
+[harness and fixate]
+	The core pieces consist of a clear tubing, top and bottom caps, holder on the top cap that holds 
+the eyeball in the tubing, and a connector between bottom cap and theta-motor. All of the core pieces are 
+cylindrical and have their centers on the axis of rotation. The bottom cap is detachable from the connector 
+to theta-motor so the tubing can leave the device to be loaded with new eyeball. The tubing will be loaded 
+with eyeball and tissue fixate that keeps the shape of the eyeball. Out side of the core, there will be optical 
+components that corrects the path of light that's distorted by the tube and fixate solution.
+
+[micrometers]
+	On the opposite side of the two support legs, the guiding and driving shafts and z-motor for 
+translational motion sits in simple aluminum housing fixed to the base. A connector block mounted on the 
+shafts connects to the base of the micrometer so that the z-motor can drive the micrometer to different z-
+position. A computer connects to the motors to control them and reads data from the micrometer for image 
+reconstruction. 
+	
+[optics somewhere...]
+[image reconstruction algorithm]
+
+[prototype construction]
+	Construction of the prototype employs Zprinter® 310 (inkjet) Printer with special starch powder 
+and the Stratasys(Registered) Dimension 1200 FDM (Fused deposition modeling) Printer with ABS 
+(acrylonitrile butadiene styrene) material to print the structural framework for review and testing.
+
+[Iteration]
+	The first draft of the prototype structural framework came from the Zprinter and showed that the 
+structures are sturdy enough to not vibrate much. However, since he Zprinter does not have good enough 
+resolution for tight connection and precise position, the FDM Printer is chosen to print the structures to be 
+used in final prototype. The second draft used the same blueprint but was printed with the FDM printer. The 
+second draft is lighter and has better precision and fitting between parts. It is also strong and does not 
+vibrate much.  Third draft is being printed now........
+	The first z-motor was was 0.6A mounted on a modified microscope stage. It did not have enough 
+power to drive the micrometer and was switched out with a 2A stepper motor on syringe pump.
+
 
 \section{Performance Testing and Results}
 \label{sec:perf-test-results}
