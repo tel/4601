@@ -40,9 +40,9 @@ that fund them, such as the National Institutes of Health (NIH). This in turn wo
 general public and resources at research institutions to be invested in making discoveries on more fronts,
 advancing scientific knowledge at a greater rate. %apparently we want to quantify this last bit how does this make sense?
 
-\section{Engineering Design Specifications}
+\section{Engineering Design Specifications (EDS)}
 \label{sec:engin-design-spec}
-A complete list of engineering design specifications is shown in Table \ref{tab:eds}.
+A complete list of engineering design specifications is shown in Table ONE \ref{tab:eds}.
 
 \subsection{Functional and Customer Requirements}
 \label:{sec:func-cust-req}
@@ -51,10 +51,10 @@ The customer requirements can be split into three categories: needs, wants, and 
 The most significant feature needed by the device is the ability to take automated measurements of ocular dimensions with a resolution of 0.5 diopters, equivalent to a resolution of 2 $\mu$m for mouse eyes. The critical active sensing components of the device need to have a resolution below 2 $\mu$m in order to ensure precise
 measurements at a resolution of 2 $\mu$m. The device also needs to be
 able to convert raw measurements into a 3D interactive reconstruction
-of the eyeball on a computer interface. As requested by the client,
-the device needs to be able to take a complete set of measurements in
+of the eyeball on a computer interface. The client initially requested that
+the device be able to take a complete set of measurements in
 under 3 minutes in order to prevent the eye from drying out and
-distorting the results. Also, the device needs to be able to fit onto
+distorting the results, but given the addition of a polymer fixate to the design, the time requirement was dropped. Also, the device needs to be able to fit onto
 a typical laboratory bench, into a space of 1m $\times$ 1m $\times$
 1m, but does not need to maintain a sterile field.
 
@@ -104,65 +104,55 @@ translational (z) motion and image reconstruction.
 
 \subsection{Design Components}
 \label{sec:prototype-comp}
-	The design solution prototype employs two motors for angular and translational motion. The initial design focused on resolution of the resulting image and intended to move the micrometer both translationally and angularly. However, the team found that this design was hampered by a significant moment of inertia due to the weight of the micrometer. In addition, the client raised concerns about damaging the micrometer, the core piece of the device. 
+	
+The design solution prototype employs two motors for angular and translational motion. The initial design focused on resolution of the resulting image and intended to move the micrometer both translationally and angularly. However, the team found that this design was hampered by a significant moment of inertia due to the weight of the micrometer. In addition, the client raised concerns about damaging the micrometer, the core piece of the device. 
 
-Given these concerns, the team re-designed the device to rotate the target of interest (the mouse eyeball) and, at the same time, move the micrometer translationally. In accordance with these goals and the requirements of the EDS (TABLE ONE), the design solution consists of the following components: 
+Given these concerns, the team re-designed the device to rotate the target of interest (the mouse eyeball) and, at the same time, move the micrometer translationally. In accordance with these goals and the requirements of the EDS (TABLE ONE), the initial design solution consisted of the following components: 
 
 \begin{enumerate}
  \item an optical tube with polymer fixate that suspends the mouse eyeball and helps it maintain its overall shape; 
-\item a harness that prevents the tube from moving translationally as it is being rotated;
-\item motors for angular and translational motion; 
-\item physical connector pieces between the rotational motor and the cylindrical tube and between the translational motor and the micrometer;
-\item a structural frame work to ensure physical alignment between components; 
-\item encoders, in conjunction with a National Instruments sbRIO board, which manipulate the motors and transfer data in between the motors to the computer;  
+\item a harness that holds that prevents the tube from moving translationally as it is being rotated and holds the tweezers that suspend the eyeball in the center of the tube;
+\item motors for rotational (theta) and translational (z-axis) motion; 
+\item connecting shafts between the rotational (theta) motor and the cylindrical tube and between the translational (z-axis) motor and the micrometer;
+\item a structural framework to ensure physical alignment between components; 
+\item encoders, in conjunction with a National Instruments sbRIO board, which manipulate the motors and transfer data between the motors to the computer;  
 \item an image reconstruction algorithm created in the LabVIEW Development System;
 \item and a user-centered computer interface. 
 \end{enumerate}
 
-
-[frame]
-	The device is set up so that the axis of rotation of the theta motor, the eyeball, and the structures 
-that support the eyeball is along the same axis. The micrometer heads are attached to their base, 
-connecting to a block whose position is controled by the z-motor through a threaded shaft, in such a way 
-that the plane of measurement is perpendicular to the axis of rotation. To achieve good alignment, the 
-solution uses specially designed pieces to hold components in place. The solution has a base where the 
-mechanical components sit on. A frame work, consisting of a top, a bottom, and two legs that connect and 
-support the top piece to the bottom piece, attaches to the base with bolts and nuts. The theta-motor sits 
-press-fitted in a designed cavity and defines the axis of rotation. The top piece has a hole that is concentric 
-to the axis of rotation and serves to maintain alignment of a set of core pieces that holds the eyeball. 
-
-[harness and fixate]
-	The core pieces consist of a clear tubing, top and bottom caps, holder on the top cap that holds 
-the eyeball in the tubing, and a connector between bottom cap and theta-motor. All of the core pieces are 
-cylindrical and have their centers on the axis of rotation. The bottom cap is detachable from the connector 
-to theta-motor so the tubing can leave the device to be loaded with new eyeball. The tubing will be loaded 
-with eyeball and tissue fixate that keeps the shape of the eyeball. Out side of the core, there will be optical 
-components that corrects the path of light that's distorted by the tube and fixate solution.
-
-[micrometers]
-	On the opposite side of the two support legs, the guiding and driving shafts and z-motor for 
-translational motion sits in simple aluminum housing fixed to the base. A connector block mounted on the 
-shafts connects to the base of the micrometer so that the z-motor can drive the micrometer to different z-
-position. A computer connects to the motors to control them and reads data from the micrometer for image 
-reconstruction. 
+\subsection{Harness and Fixate}
+\label{sec:harness}
 	
-[optics somewhere...]
-[image reconstruction algorithm]
+The interior piece of the device consists of an optical tube bookended by two caps on the top and bottom (SOME KIND OF PICTURE REFERENCE SHUYEN’S SOLIDWORKS YAY).  The top cap has a slit through which tweezers will be placed in order to suspend the eyeball by the optic nerve, while the bottom cap is connected to the theta (rotational) motor through a shaft. The bottom cap is detachable from the theta-motor shaft so that the tube can be removed from the device and be loaded with a new eyeball. A polymer fixate inside the tube allows the eyeball to maintain its gross shape.  All of the core pieces are cylindrical and have their centers on the axis of rotation. An optical lens outside of the tube will correct the path of light from the micrometer that is distorted by the tube and fixate solution.
+	
+The development of the eye harness and its associated components can be seen in TABLE TWO TO BE UPLOADED. Initially, the eyeball was placed in a standard test tube and a 10% methyl cellulose solution. However, the distortion of light caused by methyl cellulose was too great, and so the polymer fixate was switched to a 10:0.2 ratio of PDMS base and curing agent due to the optical and viscous properties of PDMS . The team then found that the optimal viscosity for the fixate was a 10:0.3 ratio of PDMS base and curing agent, and so used that solution as the final fixate. Finally, a custom-made cuvette was made in order for the tube to fit more neatly into the harness. The cuvette, however, was not made of optical glass, and an optical lens to correct for the distortion of the tube and polymer was never purchased due to temporal and financial constraints. 
+	
+The eye harness, tweezers, and connector pieces also each underwent several iterations (TABLE TWO TO BE UPLOADED). The harness and tweezers initially started off as big, bulky pieces whose size was narrowed down over the course of development. (REF, FIGURES HERE?)
 
-[prototype construction]
-	Construction of the prototype employs Zprinter® 310 (inkjet) Printer with special starch powder 
-and the Stratasys(Registered) Dimension 1200 FDM (Fused deposition modeling) Printer with ABS 
-(acrylonitrile butadiene styrene) material to print the structural framework for review and testing.
+\subsection{Framework}
+\label{sec:frame}
 
-[Iteration]
-	The first draft of the prototype structural framework came from the Zprinter and showed that the 
-structures are sturdy enough to not vibrate much. However, since he Zprinter does not have good enough 
-resolution for tight connection and precise position, the FDM Printer is chosen to print the structures to be 
-used in final prototype. The second draft used the same blueprint but was printed with the FDM printer. The 
-second draft is lighter and has better precision and fitting between parts. It is also strong and does not 
-vibrate much.  Third draft is being printed now........
-	The first z-motor was was 0.6A mounted on a modified microscope stage. It did not have enough 
-power to drive the micrometer and was switched out with a 2A stepper motor on syringe pump.
+The device contains a structural frame that allows the axis of rotation of the theta motor, the eyeball, and the structures that support the eyeball to be along the same axis. The micrometer heads are attached by their base to a block whose position is guided and driven by the z-motor through threaded shafts. The position of the micrometer is controlled in such a way that the plane of measurement is perpendicular to the axis of rotation (REF: PICS AND/OR SOLIDWORKS DRAWINGS). A computer connects to the motors to control them and reads data from the micrometer for image 
+reconstruction. 
+
+To achieve good alignment, the design solution uses custom-made pieces to hold components in place. A flat metal board is used as a base on which the mechanical components sit. A framework, consisting of a top, a bottom, and two legs that connect and support the top piece to the bottom piece, attaches to the base with bolts and nuts. The theta-motor is press-fitted to sit in a designed cavity and defines the axis of rotation. The top piece has a hole that is concentric to the axis of rotation and serves to maintain alignment of the eye harness, eyeball, and fixate tube. 
+
+Like the eye harness, the framework narrowed in size with each iteration. Additionally, the framework and other custom-made pieces were initially constructed using a  Zprinter® 310 (inkjet) Printer with special starch powder, but were later printed using the Stratasys(Registered) Dimension 1200 FDM (Fused deposition modeling) Printer with ABS (acrylonitrile butadiene styrene) material. 
+
+\subsection{Notable Iterations}
+
+The first draft of the prototype structural framework from the Zprinter showed that the structure was sturdy enough to not vibrate excessively when connected to the motor. However, since the Zprinter does not have good enough resolution for tight connection and precise position, the FDM Printer was chosen to print the structures for later iterations. The second draft of the framework used the same blueprint as the initial draft but was printed with the FDM printer, resulting in a framework that is lighter, more precise, and allowed better fitting between parts. Like the z-printed model, it is also strong and does not vibrate much. 
+
+The first z-motor was was 0.6A mounted on a modified microscope stage. It did not have enough power to drive the micrometer and was switched out with a 2A stepper motor on syringe pump.
+
+
+ [image reconstruction algorithm]
+
+
+
+
+The prototype development timeline can be seen in TABLETWO-TO-BE-UPLOADED. The frame, eye harness, electrical components, and computer interface were all developed separately. Each aspect of the device underwent several iterations.
+
 
 
 \section{Performance Testing and Results}
