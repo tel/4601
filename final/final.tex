@@ -90,30 +90,35 @@ the standard power supply of the United States.
 
 \section{Prototype Development Discussion}
 \label{sec:prot-devel-disc}
-[intro]
+ 
+The device design consisted of four main aspects. The frame, eye harness, electrical components, and computer interface were all developed separately. Each aspect of the device underwent several iterations. A prototype development timeline can be seen in TABLETWO-TO-BE-UPLOADED.
+
+\subsection{Introduction}
+\label{sec:prior-art}
 	The central component of the device is the Keyence LS-7030 LED digital micrometer provided by 
 the client. The LED micrometer assumes that light travels between the emitter and receiver in an 
 undistorted fashion, and that only the measured object occludes some of the light incident upon the 
-receiver, as reviewed in US patent No.6,947,152, High Speed Laser Micrometer. 
-	
-	A prior art and literature research found that among the current techniques, x-ray computed 
-tomography is most relevant to the design solution of the current opportunity because its core measuring 
-component is similar to the LS-7030 micrometer in concept. The principle steps in computed tomography 
-include measuring attenuation at different angles, reconstructing a slice via back-projection, and repeat the 
-step for next slice. The design solution will be based on this process, which requires angular (theta) and 
+receiver, as reviewed in US patent No.6,947,152, High Speed Laser Micrometer.  A prior art and literature search found that among the current techniques, x-ray computed tomography is most relevant to the design solution of the current opportunity because its core measuring component is similar to the LS-7030 micrometer in concept. The principal steps in computed tomography 
+include measuring attenuation at different angles, reconstructing a slice via back-projection, and repeat the step for next slice. The design solution was based on this process, which requires angular (theta) and 
 translational (z) motion and image reconstruction. 
 
-[components]
-	The design solution prototype employs two motor for angular and translational motion. The initial 
-design focuses on resolution of the resulting image and intended to move the micrometer set both 
-translationally and angularly. However, there is a significant moment of inertia due to the weight of the 
-micrometer. In addition, the client raised concerns about damaging the core piece (the micrometers). 
-Based on these reasons, the solution changed to rotate the target of interest (mouse eyeball), and move 
-the micrometer translationally. Based on the tasks needed to be performed as described above and in the 
-EDS, the solution requires: core piece that holds mouse eyeball and keeps its shape; motors; connections 
-between motor and the core piece and between motor and the micrometer; structural frame work to ensure 
-alignment between components; data out put to comupter; and image reconstruction algorithm and user 
-interface. 
+\subsection{Design Components}
+\label{sec:prototype-comp}
+	The design solution prototype employs two motors for angular and translational motion. The initial design focused on resolution of the resulting image and intended to move the micrometer both translationally and angularly. However, the team found that this design was hampered by a significant moment of inertia due to the weight of the micrometer. In addition, the client raised concerns about damaging the micrometer, the core piece of the device. 
+
+Given these concerns, the team re-designed the device to rotate the target of interest (the mouse eyeball) and, at the same time, move the micrometer translationally. In accordance with these goals and the requirements of the EDS (TABLE ONE), the design solution consists of the following components: 
+
+\begin{enumerate}
+ \item an optical tube with polymer fixate that suspends the mouse eyeball and helps it maintain its overall shape; 
+\item a harness that prevents the tube from moving translationally as it is being rotated;
+\item motors for angular and translational motion; 
+\item physical connector pieces between the rotational motor and the cylindrical tube and between the translational motor and the micrometer;
+\item a structural frame work to ensure physical alignment between components; 
+\item encoders, in conjunction with a National Instruments sbRIO board, which manipulate the motors and transfer data in between the motors to the computer;  
+\item an image reconstruction algorithm created in the LabVIEW Development System;
+\item and a user-centered computer interface. 
+\end{enumerate}
+
 
 [frame]
 	The device is set up so that the axis of rotation of the theta motor, the eyeball, and the structures 
