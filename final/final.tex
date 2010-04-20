@@ -174,6 +174,33 @@ Tables FOURFIVEANDSIX (tests-c.pdf, tests-e.pdf, and tests-p.pdf) contain the te
 \section{Final Design Solution}
 \label{sec:final-design-solut}
 
+The final device will have similar structural frame work as the most recent prototype since it is stable and 
+strong enough to sustain moderate weight. The electronics will be compressed into printed circuit board, or 
+PCB, to reduce volume as the prototyped bread board circuit is messy and not space-efficient. The 
+physical set-up of the device is demonstrated in Fig##(final schematic.jpg) The prototype has all its 
+components exposed. This raises concerns about messing up the alignment of the device and thus 
+rendering it unusable until the lignment is fixed. These components will be put into a metallic case to keep 
+them safe from liquid reagents present in the laboratory. The metallic case will be designed to have the 
+smallest size possible. Spatially inside the case, the top frame will be on the very top of the case and 
+exposed to outside environment so that user can assemble and place the eye harness in the device 
+through the top frame. The PCBs will be attached at the bottom of the case and all wiring and connections 
+will run along the wall of the case to an connection window. The edges of the case will be rounded for 
+safety and made out of aluminum sheet of at least 0.1 inch thickness so that it is strong enough to sustain 
+40lbs of weight. 
+
+The z-actuator will consist of the guiding rails, driving shaft, and the z-motor. The rails and shaft will be essentially the same as the ones used in the current prototype. However, a new z-motor with encoder will replace what is in use right now so that there will be less vibration and the z-position can be more accurately determined. The theta-motor will also be replaced for better driving power, accuracy and heat resistivity. Heat resistivity is of interest because thermal expansion can mess up the alignment and perhaps melt any plastic piece in immediate contact with the motor.
+
+The harness pieces will also retain similar profile to that of the prototype, containing top and bottom caps, optical fixate solution container and optical correction lens. The top cap of the harness will be designed to have a button that opens up a reverse tweezer tip to hold the eyeball. The optical correction for the bent light beams that passes through the tube containing the eyeball needs to be accurate so as to not distort the data. Therefore, the harness requires high accuracy production so that all optical properties will be correct and all alignment between the components will be perfect. The fixate solution is also specially made so that its optical properties match the correction.
+
+The final software will do the following: control the motors, readout from the micrometer and motors, and 
+reconstruct a 3D image using collected data. The motor will be driving the eyeball and the micrometer in 
+the following fashion: 1.) the theta-motor initializes and drives the eyeball at constant speed 2.) after each 
+full rotation, the z-motor drives the micrometer to the next z-position for acquisition of a new slice. The two 
+steps repeat until the whole eyeball is scanned: the stopping condition will be two thresholds outside of 
+which indicate that data collected is no longer from the eyeball. The interface will contain start scanning, emergency stop, image reconstruction and display and other minor funcions. The micrometer reading speed is set to ???, the theta motor speed is set to ???.
+
+
+
 \section{Discussion}
 \label{sec:discussion}
 
