@@ -104,8 +104,7 @@ translational (z) motion and image reconstruction.
 
 \subsection{Design Components}
 \label{sec:prototype-comp}
-	
-The design solution prototype employs two motors for angular and translational motion. The initial design focused on resolution of the resulting image and intended to move the micrometer both translationally and angularly. However, the team found that this design was hampered by a significant moment of inertia due to the weight of the micrometer. In addition, the client raised concerns about damaging the micrometer, the core piece of the device. 
+	The design solution prototype employs two motors for angular and translational motion. The initial design focused on resolution of the resulting image and intended to move the micrometer both translationally and angularly. However, the team found that this design was hampered by a significant moment of inertia due to the weight of the micrometer. In addition, the client raised concerns about damaging the micrometer, the core piece of the device. 
 
 Given these concerns, the team re-designed the device to rotate the target of interest (the mouse eyeball) and, at the same time, move the micrometer translationally. In accordance with these goals and the requirements of the EDS (TABLE ONE), the initial design solution consisted of the following components: 
 
@@ -122,8 +121,7 @@ Given these concerns, the team re-designed the device to rotate the target of in
 
 \subsection{Harness and Fixate}
 \label{sec:harness}
-	
-The interior piece of the device consists of an optical tube bookended by two caps on the top and bottom (SOME KIND OF PICTURE REFERENCE SHUYEN’S SOLIDWORKS YAY).  The top cap has a slit through which tweezers will be placed in order to suspend the eyeball by the optic nerve, while the bottom cap is connected to the theta (rotational) motor through a shaft. The bottom cap is detachable from the theta-motor shaft so that the tube can be removed from the device and be loaded with a new eyeball. A polymer fixate inside the tube allows the eyeball to maintain its gross shape.  All of the core pieces are cylindrical and have their centers on the axis of rotation. An optical lens outside of the tube will correct the path of light from the micrometer that is distorted by the tube and fixate solution.
+	The interior piece of the device consists of an optical tube bookended by two caps on the top and bottom (SOME KIND OF PICTURE REFERENCE SHUYEN’S SOLIDWORKS YAY).  The top cap has a slit through which tweezers will be placed in order to suspend the eyeball by the optic nerve, while the bottom cap is connected to the theta (rotational) motor through a shaft. The bottom cap is detachable from the theta-motor shaft so that the tube can be removed from the device and be loaded with a new eyeball. A polymer fixate inside the tube allows the eyeball to maintain its gross shape.  All of the core pieces are cylindrical and have their centers on the axis of rotation. An optical lens outside of the tube will correct the path of light from the micrometer that is distorted by the tube and fixate solution.
 	
 The development of the eye harness and its associated components can be seen in TABLE TWO TO BE UPLOADED. Initially, the eyeball was placed in a standard test tube and a 10\% methyl cellulose solution. However, the distortion of light caused by methyl cellulose was too great, and so the polymer fixate was switched to a 10:0.2 ratio of PDMS base and curing agent due to the optical and viscous properties of PDMS . The team then found that the optimal viscosity for the fixate was a 10:0.3 ratio of PDMS base and curing agent, and so used that solution as the final fixate. Finally, a custom-made cuvette was made in order for the tube to fit more neatly into the harness. The cuvette, however, was not made of optical glass, and an optical lens to correct for the distortion of the tube and polymer was never purchased due to temporal and financial constraints. 
 	
@@ -131,64 +129,46 @@ The eye harness, tweezers, and connector pieces also each underwent several iter
 
 \subsection{Framework}
 \label{sec:frame}
-
-The device contains a structural frame that allows the axis of rotation of the theta motor, the eyeball, and the structures that support the eyeball to be along the same axis. The micrometer heads are attached by their base to a block whose position is guided and driven by the z-motor through threaded shafts. The position of the micrometer is controlled in such a way that the plane of measurement is perpendicular to the axis of rotation (REF: PICS AND/OR SOLIDWORKS DRAWINGS). A computer connects to the motors to control them and reads data from the micrometer for image 
+	The device contains a structural framework that allows the axis of rotation of the theta motor, the eyeball, and the structures that support the eyeball to be along the same axis. The micrometer heads are attached by their base to a block whose position is guided and driven by the translational or z-motor through threaded shafts. The position of the micrometer is controlled in such a way that the plane of measurement is perpendicular to the axis of rotation (REF: PICS AND/OR SOLIDWORKS DRAWINGS). A computer connects to the motors to control them and reads data from the micrometer for image 
 reconstruction. 
-
-To achieve good alignment, the design solution uses custom-made pieces to hold components in place. A flat metal board is used as a base on which the mechanical components sit. A framework, consisting of a top, a bottom, and two legs that connect and support the top piece to the bottom piece, attaches to the base with bolts and nuts. The theta-motor is press-fitted to sit in a designed cavity and defines the axis of rotation. The top piece has a hole that is concentric to the axis of rotation and serves to maintain alignment of the eye harness, eyeball, and fixate tube. 
-
-Like the eye harness, the framework narrowed in size with each iteration. Additionally, the framework and other custom-made pieces were initially constructed using a  Zprinter® 310 (inkjet) Printer with special starch powder, but were later printed using the Stratasys(Registered) Dimension 1200 FDM (Fused deposition modeling) Printer with ABS (acrylonitrile butadiene styrene) material. 
+To achieve good alignment, the design solution uses custom-made pieces to hold components in place. A flat metal board is used as a base on which the mechanical components sit. A frame, consisting of a top, a bottom, and two legs that connect and support the top piece to the bottom piece, attaches to the base with bolts and nuts. The theta-motor is press-fitted to sit in a designed cavity and defines the axis of rotation. The top piece has a hole that is concentric to the axis of rotation and serves to maintain alignment of the eye harness, eyeball, and fixate tube. 
+	Like the eye harness, the framework narrowed in size with each iteration. Additionally, the framework parts and other custom-made pieces were initially constructed using a  Zprinter® 310 (inkjet) Printer with special starch powder, but were later printed using the Stratasys(Registered) Dimension 1200 FDM (Fused deposition modeling) Printer with ABS (acrylonitrile butadiene styrene) material. 
 
 \subsection{Notable Iterations}
+\label{sec:iterations}
 
-The first draft of the prototype structural framework from the Zprinter showed that the structure was sturdy enough to not vibrate excessively when connected to the motor. However, since the Zprinter does not have good enough resolution for tight connection and precise position, the FDM Printer was chosen to print the structures for later iterations. The second draft of the framework used the same blueprint as the initial draft but was printed with the FDM printer, resulting in a framework that is lighter, more precise, and allowed better fitting between parts. Like the z-printed model, it is also strong and does not vibrate much. 
+The first draft of the prototype’s structural framework from the Zprinter showed that the structure was sturdy enough to not vibrate excessively when connected to the motor. However, since the Zprinter does not have good enough resolution for tight connections and precise positioning of parts, the FDM Printer was chosen to print the structures for later iterations. The second draft of the framework used the same blueprint as the initial draft but was printed with the FDM printer, resulting in a framework that is lighter, more precise, and allowed better fitting between parts. Like the z-printed model, it is also strong and does not vibrate much. 
+	The first z-motor was was 0.6 amperes mounted on a modified microscope stage. It did not have enough power to drive the micrometer and was switched with a 2 ampere stepper motor on syringe pump.
 
-The first z-motor was was 0.6A mounted on a modified microscope stage. It did not have enough power to drive the micrometer and was switched out with a 2A stepper motor on syringe pump.
+\subsection{Electronics and Programming}
+\label{sec:electronics}
 
+The National Instruments sbRIO board, which runs using LabVIEW Real-Time and LabVIEW FPGA software on the computer, links the computer and the hardware and is used as a controller for the entire device (PIC#). The board collects all measurement data at an appropriate rate, and also inputs commands to both the rotational and translational motor, providing the user with real-time, deterministic control over the device. The protoboard (PIC#) converts inputs from the sbRIO board into outputs that drive the motors, while the host computer provides a user interface for control of the device in addition to logging trinary measurement data (from the z-axis, theta axis, and micrometer) and performing image reconstruction using such data. 
 
- [image reconstruction algorithm]
+The team initially faced difficulty in recording binary code decimal (BCD) digits, the form of data given by the micrometer, and in collecting the data from the motors and micrometer in a real-time, simultaneous fashion required for accurate reconstruction. However, with each iteration (and each successive experiment with the LabVIEW software), the team became more familiar with the software and gradually de-bugged and polished the code to solve these problems. 
 
+	Image reconstruction was performed using an online freeware called MeshLab. CITATION MORE DETAIL
 
-
-
-The prototype development timeline can be seen in TABLETWO-TO-BE-UPLOADED. The frame, eye harness, electrical components, and computer interface were all developed separately. Each aspect of the device underwent several iterations.
-
-
+The current version of the prototype can be seen in FIGURES  TWO THREE FOUR FIVE SIX (Joe’s pics from today, numbered and labeled with all parts)
 
 \section{Performance Testing and Results}
 \label{sec:perf-test-results}
 
-Performance testing took place for each aspect of the device after every iteration and revision. Due to time constraints, all of the testing was done in a binary (pass/fail) fashion to see if the component met certain minimal requirements. The tests were broken down according to three major subsystems: physical/mechanical components, 
-electrical components, and computer control tests. Under each system there were sub-subsystem such as the frame and eye harness for mechanical tests and the motors for the electrical tests. The testing hierarchy and details are listed in the TableTHREE (tests.csv). Tests were done on a case-by-case basis and did not correlate to those listed in the verification protocol since they required revision after each design iteration. 
+Performance testing took place for each aspect of the device after every iteration and revision. Due to time constraints, all of the testing was done in a binary (pass/fail) fashion to see if the component met certain minimal requirements. The tests were broken down according to three major subsystems: physical/mechanical components, electrical components, and computer control tests. Under each system there were sub-subsystem such as the frame and eye harness for mechanical tests and the motors for the electrical tests. The testing hierarchy and details are listed in the TableTHREE (tests.csv). Tests were done on a case-by-case basis and did not correlate to those listed in the verification protocol since they required revision after each design iteration. 
 	
-Tables FOURFIVEANDSIX (tests-c.pdf, tests-e.pdf, and tests-p.pdf) contain the test results, showing whether each revision (as referenced in the TABLE TWO) achieves a certain requirement. Major physical failures generally pertained to the theta motor and eye harness; an angle exists between the axis of rotation and the axis of the eye harness tube, causing the eyeball to shift in space and resulting in poor accuracy and precision for collected data and reconstruction. Other failures like the inability of the theta motor to resist heating and possible eye shape distortion over a two-hour time span set an upper limit for the data acquisition time. Electrically, the only significant failure was the inability to record binary code decimal (BCD) digits from the micrometer. BCDs are the form of data given by the micrometer, so this failure limited the method applicable for image reconstruction. 
+Tables FOURFIVEANDSIX (tests-c.pdf, tests-e.pdf, and tests-p.pdf) contain the test results, showing whether each revision (as referenced in the TABLE TWO) achieved a certain requirement. Major physical failures generally pertained to the rotational theta motor and eye harness; an angle exists between the axis of rotation and the axis of the eye harness tube, causing the eyeball to shift in space and resulting in poor accuracy and precision for collected data and reconstruction. Other failures like the inability of the theta motor to resist heating and possible eye shape distortion over a two-hour time span set an upper limit for the data acquisition time. Electrically, the only significant failure was the inability to record binary code decimal (BCD) digits from the micrometer. Since BCDs are the form of data given by the micrometer, this failure initially limited the method applicable for image reconstruction. 
 
-	During the final image reconstruction phase, most of the failure occurred on the software side. Currently, the software is not able to control the motors and collect data in a real-time fashion. In addition, as the software controls and records data, there are small time-delays between recordings of theta position, z position, and the length information from the micrometer. Thus, each aspect of the trinary measurement data does not correspond to the same time, an error that is carried over into reconstruction. 
-
-
-
-
-
-
+	For the computer  control aspect of testing, most of the failure occurred on the software side. The software was not able to control the motors and collect data in a real-time fashion. In addition, as the software controlled and recorded data, there were small time-delays between recordings of theta position, z position, and the length information from the micrometer.  This problem was solved during further design iterations that polished and optimized the code in the LabVIEW software. 
 
 \section{Final Design Solution}
 \label{sec:final-design-solut}
 
-The final device will have similar structural frame work as the most recent prototype since it is stable and 
-strong enough to sustain moderate weight. The electronics will be compressed into printed circuit board, or 
-PCB, to reduce volume as the prototyped bread board circuit is messy and not space-efficient. The 
-physical set-up of the device is demonstrated in Fig##(final schematic.jpg) The prototype has all its 
-components exposed. This raises concerns about messing up the alignment of the device and thus 
-rendering it unusable until the lignment is fixed. These components will be put into a metallic case to keep 
-them safe from liquid reagents present in the laboratory. The metallic case will be designed to have the 
-smallest size possible. Spatially inside the case, the top frame will be on the very top of the case and 
-exposed to outside environment so that user can assemble and place the eye harness in the device 
-through the top frame. The PCBs will be attached at the bottom of the case and all wiring and connections 
-will run along the wall of the case to an connection window. The edges of the case will be rounded for 
-safety and made out of aluminum sheet of at least 0.1 inch thickness so that it is strong enough to sustain 
-40lbs of weight. 
+The final device will have a structural framework similar to the one found in the most recent prototype; this framework design is stable and strong enough to sustain moderate weight. The electronics will be compressed into printed circuit board, or PCB, to reduce volume, since the current prototyped bread board circuit is messy and not spatially efficient. The physical set-up of the device is demonstrated in Fig##(final schematic.jpg) .
 
-The z-actuator will consist of the guiding rails, driving shaft, and the z-motor. The rails and shaft will be essentially the same as the ones used in the current prototype. However, a new z-motor with encoder will replace what is in use right now so that there will be less vibration and the z-position can be more accurately determined. The theta-motor will also be replaced for better driving power, accuracy and heat resistivity. Heat resistivity is of interest because thermal expansion can mess up the alignment and perhaps melt any plastic piece in immediate contact with the motor.
+The prototype, as seen in FIGURE-PIC, currently has all of its components exposed, leading to a risk of misalignment or other accidents like liquid reagent spills in the laboratory that affect device function.  For the final design solution, all of these components will be placed inside a metal enclosure designed to be the smallest size possible. The top of the structural framework with the tweezers slit will be at exposed to the outside environment through a small opening at the top of the enclosure, allowing the user to assemble the eye harness with inverted tweezers, an eyeball, and a tube of polymer fixate and insert it into the device. The PCBs will be attached to the bottom of the case - a role currently served in the prototype by the heavy metal base board (FIG SOLIDWORKS topdown_frame) -  and all wiring and connections will run along the wall of the case to a connection window that opens to the outside. The edges of the case will be rounded for safety considerations and made out of aluminum sheet of at least 0.1 inch thickness, ensuring that it is strong enough to sustain 40lbs of weight. Rubber feet will on the bottom corners of the box in order to prevent the box from sliding off of a table or damaging the surface on which it is placed. The case will also have ergonomic, padded handles with rubber grips to facilitate lifting and transportation of the case.  
+
+The z-actuator will consist of the guiding rails, driving shaft, and the z-motor. The rails and shaft will essentially be the same as the ones used in the current prototype. However, a more highly powered z-motor with an attached encoder will replace the motor currently in use so that the micrometer will experience less vibration and the z-position can be more accurately determined. The theta motor will also be replaced for better driving power, accuracy and heat resistivity. Heat resistivity is of interest because thermal expansion can mess up the alignment and perhaps melt any plastic piece in immediate contact with the motor.
+
 
 The harness pieces will also retain similar profile to that of the prototype, containing top and bottom caps, optical fixate solution container and optical correction lens. The top cap of the harness will be designed to have a button that opens up a reverse tweezer tip to hold the eyeball. The optical correction for the bent light beams that passes through the tube containing the eyeball needs to be accurate so as to not distort the data. Therefore, the harness requires high accuracy production so that all optical properties will be correct and all alignment between the components will be perfect. The fixate solution is also specially made so that its optical properties match the correction.
 
