@@ -12,6 +12,25 @@
 \section*{Executive summary}
 \label{sec:exec-summary}
 
+Modern research suggests that genetics is closely related to ophthalmological diseases such as 
+myopia, a trend that can be studied by examining alterations in gross eye shape. Currently research is performed using mouse models which are easily available, genetically altered, and affordable. Due to the small size of mouse eyes, such research calls for high-resolution devices capable of measuring the dimensions of an object on a very small scale. This project proposes a 3D imaging device capable of 
+measuring eye shape with micrometer precision. The target users of the device are primarily ophthalmological researchers studying genetics, but the application of the device may be extended to any field that requires 3D imaging of small object. 
+The client of the project, Dr. John Nickerson of Emory University, requested that the final solution be able to produce a reconstructed 3D image of a mouse eye ball down to the resolution of 2 $\mu$m given a non-deformed eyeball with no concavities. The client also provided a Keyence LS-7030 LED digital micrometer as the  device’s core component. Device design centers on the provided micrometer, which utilizes parallel visible light beams in a concept  similar to early CT
+designs. Thus, the design of the imaging device resembles that of earlier CTs. Theoretically, 
+the device will rotate the object and measure each slice, and once finished will move to the 
+next slice. The image will be reconstructed through back projection of the 
+measurements of each slice and subsequent stacking of all the reconstructed slices. To achieve 
+the tasks, the design solution uses motors to rotate the eyeball, which is fixed in a 
+harness and polymer solution-filled tube, and to drive the micrometer, connected to a designed block, up and down shafts in order to create image slices. The solution also includes National Instruments LanVIEW software and hardware that control the device and perform image reconstruction of the eye.
+
+Performance testing occurred throughout the process of prototype development to 
+verify if each version of component satisfied certain criteria. Tests were done in a binary pass/fail fashion due to time constraints and divided into three categories: physical, electrical, and computer or programming. Initial prototype iterations had major failures related to misalignment of the physical components that resulted in skewed measurement data. The latest prototype did not fail any tests.
+
+The envisioned final device will a structural framework similar to the prototype, but its mechanical and electrical components will be placed in a metal casing so that the user will be interacting with a black box and its controlling software rather than being exposed to several messy circuits. The eyeball will also be held in an optical tube, and an optical lens will be purchased to correct for the distorted measurement caused by the polymer fixate. Recommendations for design improvement include replacement of motors to those with encoders to increase accuracy, more precise manufacture of components to improve alignment, and a redesign of the optical lens/tube/polymer system to avoid bending the path of light from the micrometer. After implementing these suggestions, the final 
+solution will fulfill the major requirement that 3D image resolution should be at micron 
+level. 
+
+
 \newpage
 
 \section{Project Description}
@@ -131,7 +150,7 @@ The eye harness, tweezers, and connector pieces also each underwent several iter
 \label{sec:frame}
 	The device contains a structural framework that allows the axis of rotation of the theta motor, the eyeball, and the structures that support the eyeball to be along the same axis. The micrometer heads are attached by their base to a block whose position is guided and driven by the translational or z-motor through threaded shafts. The position of the micrometer is controlled in such a way that the plane of measurement is perpendicular to the axis of rotation (REF: PICS AND/OR SOLIDWORKS DRAWINGS). A computer connects to the motors to control them and reads data from the micrometer for image 
 reconstruction. 
-To achieve good alignment, the design solution uses custom-made pieces to hold components in place. A flat metal board is used as a base on which the mechanical components sit. A frame, consisting of a top, a bottom, and two legs that connect and support the top piece to the bottom piece, attaches to the base with bolts and nuts. The theta-motor is press-fitted to sit in a designed cavity and defines the axis of rotation. The top piece has a hole that is concentric to the axis of rotation and serves to maintain alignment of the eye harness, eyeball, and fixate tube. 
+To achieve good alignment, the design solution uses custom-made pieces to hold components in place. A flat metal board is used as a base on which the mechanical components sit. A frame, consisting of a top, a bottom, and two legs that connect and support the top piece to the bottom piece, attaches to the heavy metal base with bolts and nuts. The theta-motor is press-fitted to sit in a designed cavity and defines the axis of rotation. The top piece has a hole that is concentric to the axis of rotation and serves to maintain alignment of the eye harness, eyeball, and fixate tube. 
 	Like the eye harness, the framework narrowed in size with each iteration. Additionally, the framework parts and other custom-made pieces were initially constructed using a  Zprinter® 310 (inkjet) Printer with special starch powder, but were later printed using the Stratasys(Registered) Dimension 1200 FDM (Fused deposition modeling) Printer with ABS (acrylonitrile butadiene styrene) material. 
 
 \subsection{Notable Iterations}
@@ -147,7 +166,7 @@ The National Instruments sbRIO board, which runs using LabVIEW Real-Time and Lab
 
 The team initially faced difficulty in recording binary code decimal (BCD) digits, the form of data given by the micrometer, and in collecting the data from the motors and micrometer in a real-time, simultaneous fashion required for accurate reconstruction. However, with each iteration (and each successive experiment with the LabVIEW software), the team became more familiar with the software and gradually de-bugged and polished the code to solve these problems. 
 
-	Image reconstruction was performed using an online freeware called MeshLab. CITATION MORE DETAIL
+	Image reconstruction was performed using an online freeware program called MeshLab. \citeMESHLAB_CREATE CITATION, which used a combination of Poisson reconstruction and Ball-pivoting surface reconstruction to perform 3D reconstruction on the acquired data. 
 
 The current version of the prototype can be seen in FIGURES  TWO THREE FOUR FIVE SIX (Joe’s pics from today, numbered and labeled with all parts)
 
@@ -167,24 +186,7 @@ The final device will have a structural framework similar to the one found in th
 
 The prototype, as seen in FIGURE-PIC, currently has all of its components exposed, leading to a risk of misalignment or other accidents like liquid reagent spills in the laboratory that affect device function.  For the final design solution, all of these components will be placed inside a metal enclosure designed to be the smallest size possible. The top of the structural framework with the tweezers slit will be at exposed to the outside environment through a small opening at the top of the enclosure, allowing the user to assemble the eye harness with inverted tweezers, an eyeball, and a tube of polymer fixate and insert it into the device. The PCBs will be attached to the bottom of the case - a role currently served in the prototype by the heavy metal base board (FIG SOLIDWORKS topdown_frame) -  and all wiring and connections will run along the wall of the case to a connection window that opens to the outside. The edges of the case will be rounded for safety considerations and made out of aluminum sheet of at least 0.1 inch thickness, ensuring that it is strong enough to sustain 40lbs of weight. Rubber feet will on the bottom corners of the box in order to prevent the box from sliding off of a table or damaging the surface on which it is placed. The case will also have ergonomic, padded handles with rubber grips to facilitate lifting and transportation of the case.  
 
-The z-actuator will consist of the guiding rails, driving shaft, and the z-motor. The rails and shaft will essentially be the same as the ones used in the current prototype. However, a more highly powered z-motor with an attached encoder will replace the motor currently in use so that the micrometer will experience less vibration and the z-position can be more accurately determined. The theta motor will also be replaced for better driving power, accuracy and heat resistivity. Heat resistivity is of interest because thermal expansion can mess up the alignment and perhaps melt any plastic piece in immediate contact with the motor.
-
-<<<<<<< HEAD
-The final device will have similar structural frame work as the most recent prototype since it is stable and 
-strong enough to sustain moderate weight. The electronics will be compressed into printed circuit board, or 
-PCB, to reduce volume as the prototyped bread board circuit is messy and not space-efficient. The 
-physical set-up of the device is demonstrated in Fig???(final schematic.jpg) The prototype has all its 
-components exposed. This raises concerns about messing up the alignment of the device and thus 
-rendering it unusable until the lignment is fixed. These components will be put into a metallic case to keep 
-them safe from liquid reagents present in the laboratory. The metallic case will be designed to have the 
-smallest size possible. Spatially inside the case, the top frame will be on the very top of the case and 
-exposed to outside environment so that user can assemble and place the eye harness in the device 
-through the top frame. The PCBs will be attached at the bottom of the case and all wiring and connections 
-will run along the wall of the case to an connection window. The edges of the case will be rounded for 
-safety and made out of aluminum sheet of at least 0.1 inch thickness so that it is strong enough to sustain 
-40lbs of weight. 
-
-The z-actuator will consist of the guiding rails, driving shaft, and the z-motor. The rails and shaft will be essentially the same as the ones used in the current prototype. However, a new z-motor with encoder will replace what is in use right now so that there will be less vibration and the z-position can be more accurately determined. The theta-motor will also be replaced for better driving power, accuracy and heat resistivity. Heat resistivity is of interest because thermal expansion can mess up the alignment and perhaps melt any plastic piece in immediate contact with the motor.
+The z-actuator (REF FIGURE final_schematic) will consist of the guiding rails, driving shaft, and the z-motor. The rails and shaft will essentially be the same as the ones used in the current prototype. However, a more highly powered z-motor with an attached encoder will replace the motor currently in use so that the micrometer will experience less vibration and the z-position can be more accurately determined. The theta motor will also be replaced for better driving power, accuracy and heat resistivity. Heat resistivity is of interest because thermal expansion can mess up the alignment and perhaps melt any plastic piece in immediate contact with the motor.
 
 The eye harness pieces will also retain similar profiles to those of the prototype, consisting of a top and bottom cap, a polymer fixate solution within an optical tube, and inverted tweezers.  The final device will also contain an optical correction lens to account for the distortion of the polymer solution and the tube. The top cap of the harness will be designed to have a ratchet button attached to a pair of reverse tweezers whose tip opens up when the button is pressed, allowing the eyeball to be loaded more easily into the device. The harness requires high accuracy production so that all of its optical properties are correct and all of the components are accurately aligned. The fixate solution will also be custom manufactured so that its optical properties match the corrective lens.
 
@@ -196,33 +198,16 @@ full rotation, the z-motor drives the micrometer to the next z-position for acqu
 The user interface, currently not designed, will consist of a graphical user interface with buttons for starting the scan, emergency stop, image reconstruction and display and other minor functions. 
 
 
-\section{Discussion, Conclusion and Recommendations}
+\section{Discussion, Conclusion, and Recommendations}
 \label{sec:concl-recomm}
 
-The final prototype fails many requirements of the EDS. It can not acquire the desired data for 3D 
-reconstruction and therefore completely failed the main functionality. However, it still achieved some sub 
-tasks that need to be performed for data acquisition and image reconstruction. It is able to move the object 
-and the micrometer. Its structural frame work is sturdy enough to produce little vibration. And the whole 
-device is somewhat bulky that it is stable. As of now, the prototype still needs much improvement. To 
-reach the final solution, the motors need to be changed and the harness piece produced with better 
-accuracy to ensure perfect alignment. This is not a simple project and much more work is required.
+The final prototype meets some of the requirements of the EDS (TABLE ONE). It can acquire the desired measurement data and perform 3D reconstruction using such data, therefore it fulfills its main functionality. It is able to move both the object and the micrometer, and its structural framework is sturdy enough to produce little vibration.  It is also able to fit onto a typical laboratory counter in space of 1m $\times$ 1m $\times$\1m and functions under the standard United States electrical power supply of 120V 60Hz AC. The loudness of the device does not exceed 80 dB, and the computer user interface actually exceeds the user’s expectations; all of the measurements by the device are automatically transferred to the computer, and no action by the user is required beyond clicking a start button to begin the measurements. 
 
-The envisioned final design utilizes the high through put of the micrometer. As show in the calculation in 
-Appendix??, the set micrometer speed and rotation speed should theoretically yield a resolution of ?????, 
-satisfying the main requirement of good resolution image. Also at that speed, the eyeball can be scanned 
-within ????(time). Although speed is not a requirement, it is desirable because it saves time. The sturdy 
-structural frame, reinforced by the metal casing, satisfies the stability requirement which also affects the 
-resolution. The software will be able to make 3D rendering as requested by the client. The small size and 
-simplicity of the device, being essentially a black box with its controller, satisfies the requirement of 
-mobility. The user interface is fairly simple because the scanning and reconstruction are automated, 
-requiring no more effort than clicking the start button. 
+However, the prototype still needs much more improvement and testing in order to meet its other specifications. The measurements taken by the device are of unknown resolution, and the device cannot easily be lifted by one person due to the exposed circuitry of the hardware and the heavy metal base board of the framework.  It cannot be considered robust because one could easily brush up against the device and cause misalignment of the exposed interior frame pieces or circuits and skew the accuracy of the measurements. Moreover, the effect of common laboratory reagents such as PBS upon the device components has not been tested. 
 
-Recommended next steps includes: changing the motors out for higher power motors with encoders for 
-better control and accuracy; fix the optical components so that the measurements aren't distorted or 
-redesign the harness parts completely so as to avoid bending the path of light altogether; manufacture the 
-components with better accuracy so that alignment in the assembly is good; and lastly, replace the digital 
-micrometer with a single laser reflectance micrometer so that it will be capable of scanning concavities.
+ The envisioned final design utilizes the high through put of the micrometer. As show in the calculation in Appendix??, the z-motor speed and theta motor speed (5 RPM) should theoretically yield a resolution of ?????,  satisfying the main requirement of good resolution image. At that speed, the eyeball can also be scanned within ????(time). Although speed is not a requirement, it is desirable because it saves time. The sturdy structural frame, reinforced by the metal casing, will satisfy the stability requirement which also affects the accuracy of the measurement. The software will be able to make 3D rendering as requested by the client, and the small size and simplicity of the device, being essentially a black box with its controller, satisfies the requirement of mobility. However, the user interface of the final design solution will increase in complexity by providing more options on its graphical interface.  
 
+Recommendations for improvement can be seen in TABLE SOMETHING. 
 
 \newpage
 \addcontentsline{toc}{section}{References}
@@ -233,4 +218,4 @@ micrometer with a single laser reflectance micrometer so that it will be capable
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: t
-%%% End: 
+%%% End:
