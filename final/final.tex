@@ -158,27 +158,13 @@ The prototype development timeline can be seen in TABLETWO-TO-BE-UPLOADED. The f
 \section{Performance Testing and Results}
 \label{sec:perf-test-results}
 
-Tests take place after each iteration and revision of any parts. Due to time constraints, all of the 
-testing is done in a binary (pass/fail) fasion to see if the component meet certain minimal requirement. The 
-tests are broken down according to the subsystems. The three major subsystems includes: physical, 
-electrical, and computer system. Under each system there are sub-subsystem such as frame, motors, eye 
-harness, sbRIO, PWN microstepper, etc.  The hierarchy and details are listed in the Table# (tests.xls). 
-	Tables###(tests-c.pdf, tests-e.pdf, and tests-p.pdf) contains the test results.) are tests versus 
-prototype/revision and show whether eac revision achieves certain requirement. Table# (prototype.xls)  
-contain information about detailed fail mode. As seen in the tables, the most recent version of the prototype 
-still fails some of the tests and therefore is not representative of the final design. Major physical failures 
-almost all pertain to theta motor and eye harness. The theta motor and eye harness aren't aligned 
-perfectly. There exists an angle between the axis of rotation and the axis of the eye harness tube which 
-cause the eyeball to shift in space. These failures will cause misalignments, poor accuracy and precision 
-for collected data, and make recontruction harder. Other failures like inability of theta motor to resist 
-heating and eye shape distortion over 2-hour time span set upper limit for the acquisition time. Electrically, 
-the only significant failure is the inability to record binary code decimal digits from the micrometer. This 
-failure limits the method applicable for image reconstruction. 
-	During this last phase, most of the failure occurs on the software side as it is the last to be 
-developed. Currently, the software is not able to control the motors and collect data in a "real-time" fashion. 
-As the software controls and records data, there are little "time-delays" between recodings of theta 
-position, z position and the length information from the micrometer. This means the data in the sets of 
-three aren't truely corresponding to the same time and will thus carry the error into reconstruction.
+Performance testing took place for each aspect of the device after every iteration and revision. Due to time constraints, all of the testing was done in a binary (pass/fail) fashion to see if the component met certain minimal requirements. The tests were broken down according to three major subsystems: physical/mechanical components, 
+electrical components, and computer control tests. Under each system there were sub-subsystem such as the frame and eye harness for mechanical tests and the motors for the electrical tests. The testing hierarchy and details are listed in the TableTHREE (tests.csv). Tests were done on a case-by-case basis and did not correlate to those listed in the verification protocol since they required revision after each design iteration. 
+	
+Tables FOURFIVEANDSIX (tests-c.pdf, tests-e.pdf, and tests-p.pdf) contain the test results, showing whether each revision (as referenced in the TABLE TWO) achieves a certain requirement. Major physical failures generally pertained to the theta motor and eye harness; an angle exists between the axis of rotation and the axis of the eye harness tube, causing the eyeball to shift in space and resulting in poor accuracy and precision for collected data and reconstruction. Other failures like the inability of the theta motor to resist heating and possible eye shape distortion over a two-hour time span set an upper limit for the data acquisition time. Electrically, the only significant failure was the inability to record binary code decimal (BCD) digits from the micrometer. BCDs are the form of data given by the micrometer, so this failure limited the method applicable for image reconstruction. 
+
+	During the final image reconstruction phase, most of the failure occurred on the software side. Currently, the software is not able to control the motors and collect data in a real-time fashion. In addition, as the software controls and records data, there are small time-delays between recordings of theta position, z position, and the length information from the micrometer. Thus, each aspect of the trinary measurement data does not correspond to the same time, an error that is carried over into reconstruction. 
+
 
 
 
