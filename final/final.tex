@@ -185,24 +185,18 @@ safety and made out of aluminum sheet of at least 0.1 inch thickness so that it 
 40lbs of weight. 
 
 The z-actuator will consist of the guiding rails, driving shaft, and the z-motor. The rails and shaft will be essentially the same as the ones used in the current prototype. However, a new z-motor with encoder will replace what is in use right now so that there will be less vibration and the z-position can be more accurately determined. The theta-motor will also be replaced for better driving power, accuracy and heat resistivity. Heat resistivity is of interest because thermal expansion can mess up the alignment and perhaps melt any plastic piece in immediate contact with the motor.
-=======
->>>>>>> origin/HEAD
 
-The harness pieces will also retain similar profile to that of the prototype, containing top and bottom caps, optical fixate solution container and optical correction lens. The top cap of the harness will be designed to have a button that opens up a reverse tweezer tip to hold the eyeball. The optical correction for the bent light beams that passes through the tube containing the eyeball needs to be accurate so as to not distort the data. Therefore, the harness requires high accuracy production so that all optical properties will be correct and all alignment between the components will be perfect. The fixate solution is also specially made so that its optical properties match the correction.
+The eye harness pieces will also retain similar profiles to those of the prototype, consisting of a top and bottom cap, a polymer fixate solution within an optical tube, and inverted tweezers.  The final device will also contain an optical correction lens to account for the distortion of the polymer solution and the tube. The top cap of the harness will be designed to have a ratchet button attached to a pair of reverse tweezers whose tip opens up when the button is pressed, allowing the eyeball to be loaded more easily into the device. The harness requires high accuracy production so that all of its optical properties are correct and all of the components are accurately aligned. The fixate solution will also be custom manufactured so that its optical properties match the corrective lens.
 
-The final software will do the following: control the motors, readout from the micrometer and motors, and 
-reconstruct a 3D image using collected data. The motor will be driving the eyeball and the micrometer in 
-the following fashion: 1.) the theta-motor initializes and drives the eyeball at constant speed 2.) after each 
-full rotation, the z-motor drives the micrometer to the next z-position for acquisition of a new slice. The two 
-steps repeat until the whole eyeball is scanned: the stopping condition will be two thresholds outside of 
-which indicate that data collected is no longer from the eyeball. The interface will contain start scanning, emergency stop, image reconstruction and display and other minor funcions. The micrometer reading speed is set to ???, the theta motor speed is set to ???.
+The software and hardware of the final device will have the same functions as in the prototype. They will control the motors, gather data from the micrometer and motors, and reconstruct a 3D image using the collected data. 
+
+The motors will drive the eyeball and the micrometer in the following fashion as seen in FIGURE SOMETHING. The theta-motor initializes and drives the eyeball at constant speed, and after each 
+full rotation, the z-motor drives the micrometer to the next z-position for acquisition of a new image slice. These two steps repeat until the whole eyeball is scanned. The stopping condition will be two thresholds outside of data is no longer collected from the eyeball. The micrometer reading speed is set to ???, the theta motor speed is set to ???.
+
+The user interface, currently not designed, will consist of a graphical user interface with buttons for starting the scan, emergency stop, image reconstruction and display and other minor functions. 
 
 
-
-\section{Discussion}
-\label{sec:discussion}
-
-\section{Conclusion and Recommendations}
+\section{Discussion, Conclusion and Recommendations}
 \label{sec:concl-recomm}
 
 The final prototype fails many requirements of the EDS. It can not acquire the desired data for 3D 
